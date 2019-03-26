@@ -1,0 +1,2 @@
+# MGDB
+my game database
