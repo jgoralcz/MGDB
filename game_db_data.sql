@@ -33,9 +33,18 @@ INSERT INTO Games VALUES (NULL, 3, 1002, 'Grand Theft Auto IV is an action-adven
 INSERT INTO Games VALUES (NULL, 4, 1001, 'The Legend of Zelda: Ocarina of Time is an action-adventure game developed and published by Nintendo for the Nintendo 64.', 'The Legend of Zelda: Ocarina of Time', 'Zelda 10', 'https://en.wikipedia.org/wiki/File:The_Legend_of_Zelda_Ocarina_of_Time_box_art.png');
 INSERT INTO Games VALUES (NULL, 5, 1000, 'The Witcher 3: Wild Hunt[a] is a 2015 action role-playing game developed and published by CD Projekt.', 'Witcher 3', 'Witcher', 'https://en.wikipedia.org/wiki/File:Witcher_3_cover_art.jpg');
 
+
 -- Data for table: Critics
 INSERT INTO Critics VALUES (NULL, 'Metacritic');
 INSERT INTO Critics VALUES (NULL, 'Game Informer');
 INSERT INTO Critics VALUES (NULL, 'Forbes');
 INSERT INTO Critics VALUES (NULL, 'The Verge');
 INSERT INTO Critics VALUES (NULL, 'Polygon');
+
+
+-- Data for table: Companies
+INSERT INTO Companies VALUES (NULL, 'Electronic Arts', 'An American video game company headquartered in Redwood City, California.');
+INSERT INTO Companies VALUES (NULL, 'Valve Corporation', 'An American video game developer, publisher and digital distribution company headquartered in Bellevue, Washington.');
+INSERT INTO Companies VALUES (NULL, 'Rockstar Games', 'An American video game publisher based in New York City.');
+INSERT INTO Companies VALUES (NULL, 'Nintendo', 'A Japanese multinational consumer electronics and video game company headquartered in Kyoto.');
+INSERT INTO Companies VALUES (NULL, 'CD Projekt', 'A Polish video game publisher and distributor based in Warsaw, founded in May 1994 by Marcin Iwiński and Michał Kiciński.');
