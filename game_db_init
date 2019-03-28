@@ -2,4 +2,175 @@
 -- SER 322 Deliverable 3
 -- Authors: Josh Goralczyk (jgoralcz), Jeremy Powell (jcpowel5)
 
--- * Create tables with their keys, dependencies, etc. *
+
+-- TABLES
+
+CREATE TABLE Game {
+	id INT,
+	engine_id INT,
+	description VARCHAR(255),
+	english_name VARCHAR(32),
+	other_name VARCHAR(32),
+	image VARCHAR(256)
+}
+
+CREATE TABLE Ratings {
+	id INT,
+	game_id INT,
+	game_critic_id INT,
+	score INT,
+	date DATE,
+	description VARCHAR(255)
+}
+
+CREATE TABLE Game_Critics {
+	id INT,
+	ratings_id INT,
+	game_critic_name VARCHAR(32)
+}
+
+CREATE TABLE Game_Release_Date {
+	id INT,
+	game_id INT,
+	platform_id INT,
+	date DATE
+}
+
+CREATE TABLE Platform {
+	id INT,
+	description VARCHAR(255),
+	date DATE,
+	image VARCHAR(256),
+	type VARCHAR(16)
+}
+
+CREATE TABLE Game_Genre {
+	id INT,
+	game_id VARCHAR(64),
+	genre_id VARCHAR(64)
+
+}
+
+CREATE TABLE Game {
+	id INT,
+	description VARCHAR(255),
+	category VARCHAR(16)
+}
+
+CREATE TABLE Series {
+	id INT,
+	game_id INT,
+	release_date DATE,
+	name VARCHAR(32)
+}
+
+CREATE TABLE Cosmetics {
+	id INT,
+	game_id INT,
+	dlc_id INT,
+	description VARCHAR(255),
+	name VARCHAR(32),
+	status_description VARCHAR(16)
+}
+
+CREATE TABLE Weapons {
+	id INT,
+	game_id INT,
+	dlc_id INT,
+	description VARCHAR(255),
+	name VARCHAR(32),
+	status_description VARCHAR(16)
+}
+
+CREATE TABLE Dlc {
+	id INT,
+	game_id INT,
+	release_date_id INT,
+	description VARCHAR(255),
+	name VARCHAR(32),
+	date DATE,
+	image VARCHAR(256)
+}
+
+CREATE TABLE Engine {
+	id INT,
+	description VARCHAR(255),
+	name VARCHAR(32),
+	date DATE,
+	image VARCHAR(256)
+}
+
+CREATE TABLE Main_Character {
+	id INT,
+	description VARCHAR(255),
+	name VARCHAR(32)
+}
+
+CREATE TABLE Side_Character {
+	id INT,
+	description VARCHAR(255),
+	name VARCHAR(32)
+}
+
+CREATE TABLE Developer {
+	id INT,
+	worker_id INT
+}
+
+CREATE TABLE Director {
+	id INT,
+	worker_id INT
+}
+
+CREATE TABLE Writers {
+	id INT,
+	worker_id INT
+}
+
+CREATE TABLE Composer {
+	id INT,
+	worker_id INT
+}
+
+CREATE TABLE Producer {
+	id INT,
+	worker_id INT
+}
+
+CREATE TABLE Works_On {
+	id INT,
+	worker_id INT,
+	game_id INT
+}
+
+CREATE TABLE Char_In {
+	id INT,
+	worker_id INT,
+	game_id INT
+}
+
+CREATE TABLE Release_Date {
+	id INT,
+	game_id INT,
+	platform_id INT
+}
+
+CREATE TABLE Worker {
+	id INT,
+	first_name VARCHAR(32),
+	last_name VARCHAR(32),
+	bio VARCHAR(255)
+}
+
+CREATE TABLE Dlc_Release_Date {
+	id INT,
+	dlc_id INT,
+	platform_id INT,
+	date DATE
+}
+
+
+-- FOREIGN KEY
+
+
+-- CONSTRAINTS
