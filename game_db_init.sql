@@ -86,6 +86,8 @@ CREATE TABLE IF NOT EXISTS Companies_Game (
   id          INTEGER AUTO_INCREMENT,
   company_id  INTEGER NOT NULL,
   game_id     INTEGER,
+  date_start  DATE,
+  date_end    DATE,
 
   CONSTRAINT pk_game_company_id PRIMARY KEY (id),
   CONSTRAINT fk_game_company_id FOREIGN KEY (company_id) REFERENCES Companies(id),
@@ -255,6 +257,8 @@ CREATE TABLE IF NOT EXISTS Companies_Worker (
   id          INTEGER AUTO_INCREMENT,
   company_id  INTEGER NOT NULL,
   worker_id   INTEGER,
+  date_start  DATE,
+  date_end    DATE,
 
   CONSTRAINT pk_company_worker_id PRIMARY KEY (id),
   CONSTRAINT fk_company_worker_id FOREIGN KEY (company_id) REFERENCES Companies(id),
