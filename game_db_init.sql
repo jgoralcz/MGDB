@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS Games (
   engine_id     INTEGER NOT NULL,
   series_id     INTEGER,
   description   TEXT,
-  english_name  VARCHAR(32) NOT NULL UNIQUE,
+  english_name  VARCHAR(64) NOT NULL UNIQUE,
   other_name    VARCHAR(32),
   image         VARCHAR(256),
 
