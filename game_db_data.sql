@@ -19,11 +19,11 @@ INSERT INTO Engines VALUES (5, 'REDengine 3', 'REDengine is a game engine develo
 
 
 -- Data for table: Series
--- INSERT INTO Series VALUES ('Witcher', '2007-10-026');         -- ID: 1000
--- INSERT INTO Series VALUES ('Zelda', '1986-02-21');            -- ID: 1001
--- INSERT INTO Series VALUES ('Grand Theft Auto', '1997-10-21');
--- INSERT INTO Series VALUES ('Portal', '2007-10-10');
--- INSERT INTO Series VALUES ('Mass Effect', '2007-11-20');
+INSERT INTO Series VALUES (1000, 'Witcher', '2007-10-26', 'The Witcher by Polish writer Andrzej Sapkowski, is a fantasy series of short stories and novels about the witcher Geralt of Rivia.', 'https://en.wikipedia.org/wiki/File:The_Witcher_EU_box.jpg');
+INSERT INTO Series VALUES (1001, 'Zelda', '1986-02-21', 'The Legend of Zelda is a fantasy action-adventure video game franchise created by Japanese game designers Shigeru Miyamoto and Takashi Tezuka.', 'https://en.wikipedia.org/wiki/File:Zelda_Logo.svg');
+INSERT INTO Series VALUES (1002, 'Grand Theft Auto', '1997-10-21', 'Grand Theft Auto (GTA) is a long-running series of video games, published by Rockstar Games and developed by subsidiary companies.', 'https://en.wikipedia.org/wiki/File:Grand_Theft_Auto_logo_series.svg');
+INSERT INTO Series VALUES (1003, 'Portal', '2007-10-10', 'Portal is a series of first-person puzzle-platform video games developed by Valve Corporation.', 'https://en.wikipedia.org/wiki/File:Portal_logo.png');
+INSERT INTO Series VALUES (1004, 'Mass Effect', '2007-11-20', 'Mass Effect is a science-fiction action-role-playing third-person-shooter video-game series developed by the Canadian company BioWare and released for the Xbox 360, PlayStation 3, and Microsoft Windows, with the third instalment also released on the Wii U.', 'https://en.wikipedia.org/wiki/File:Logo_of_Mass_Effect.png');
 
 
 -- Data for table: Games

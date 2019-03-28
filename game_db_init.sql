@@ -45,9 +45,9 @@ CREATE TABLE Critics (
 -- a game can be part of a series.
 CREATE TABLE IF NOT EXISTS Series (
   id           INTEGER AUTO_INCREMENT,
-  release_date DATE,
-  description  DATE,
   name         VARCHAR(128),
+  release_date DATE,
+  description  TEXT,
   image        VARCHAR(256),
 
   CONSTRAINT pk_series PRIMARY KEY(id)
