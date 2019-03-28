@@ -34,7 +34,7 @@ INSERT INTO Games VALUES (NULL, 1, 1004, 'Mass Effect 2 is an action role-playin
 INSERT INTO Games VALUES (NULL, 2, 1003, 'Like the original Portal (2007), players solve puzzles by placing portals and teleporting between them. Portal 2 adds features including tractor beams, lasers, light bridges, and paint-like gels that alter player movement or allow portals to be placed on any surface.', 'Portal 2', '', 'https://en.wikipedia.org/wiki/File:Portal2cover.jpg');
 INSERT INTO Games VALUES (NULL, 3, 1002, 'Grand Theft Auto V is an action-adventure video game developed by Rockstar North and published by Rockstar Games.', 'Grand Theft Auto V', 'GTAV', 'https://en.wikipedia.org/wiki/File:Grand_Theft_Auto_V.png');
 INSERT INTO Games VALUES (NULL, 4, 1001, 'The Legend of Zelda: Ocarina of Time is an action-adventure game developed and published by Nintendo for the Nintendo 64.', 'The Legend of Zelda: Ocarina of Time', 'Zelda 10', 'https://en.wikipedia.org/wiki/File:The_Legend_of_Zelda_Ocarina_of_Time_box_art.png');
-INSERT INTO Games VALUES (NULL, 5, 1000, 'The Witcher 3: Wild Hunt[a] is a 2015 action role-playing game developed and published by CD Projekt.', 'Witcher 3', 'Witcher', 'https://en.wikipedia.org/wiki/File:Witcher_3_cover_art.jpg');
+INSERT INTO Games VALUES (NULL, 5, 1000, 'The Witcher 3: Wild Hunt is a 2015 action role-playing game developed and published by CD Projekt.', 'Witcher 3', 'Witcher', 'https://en.wikipedia.org/wiki/File:Witcher_3_cover_art.jpg');
 
 
 -- Data for table: Critics
@@ -62,3 +62,12 @@ INSERT INTO Ratings VALUES (NULL, 100001, 1001, 95, '2011-04-18', 'Portal 2 scor
 INSERT INTO Ratings VALUES (NULL, 100002, 1002, 100, '2013-09-16', 'Grand Theft Auto V score on Forbes');
 INSERT INTO Ratings VALUES (NULL, 100003, 1003, 100, '1998-11-25', 'The Legend of Zelda: Ocarina of Time score on IGN');
 INSERT INTO Ratings VALUES (NULL, 100004, 1004, 80, '2016-05-26', 'The Witcher 3 score on GameSpot based on 2110 ratings');
+
+
+-- Data for table: Companies Game
+-- Keys start at: 1000
+INSERT INTO Companies_Game VALUES (NULL, 1000, 100000, '2007-10-26', '2019-03-28');
+INSERT INTO Companies_Game VALUES (NULL, 1001, 100001, '1986-02-21', '2019-03-28');
+INSERT INTO Companies_Game VALUES (NULL, 1002, 100002, '1997-10-21', '2019-03-28');
+INSERT INTO Companies_Game VALUES (NULL, 1003, 100003, '2007-10-10', '2019-03-28');
+INSERT INTO Companies_Game VALUES (NULL, 1004, 100004, '2007-11-20', '2019-03-28');
