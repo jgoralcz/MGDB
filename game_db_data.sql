@@ -71,3 +71,12 @@ INSERT INTO Companies_Game VALUES (NULL, 1001, 100001, '1986-02-21', '2019-03-28
 INSERT INTO Companies_Game VALUES (NULL, 1002, 100002, '1997-10-21', '2019-03-28');
 INSERT INTO Companies_Game VALUES (NULL, 1003, 100003, '2007-10-10', '2019-03-28');
 INSERT INTO Companies_Game VALUES (NULL, 1004, 100004, '2007-11-20', '2019-03-28');
+
+
+-- Data for table: Platforms
+-- Keys start at: 1
+INSERT INTO Platforms VALUES (NULL, 'PlayStation 4', 'The PlayStation 4 (PS4) is an eighth-generation home video game console developed by Sony Interactive Entertainment.', '2013-11-15', 'https://en.wikipedia.org/wiki/File:PS4-Console-wDS4.jpg');
+INSERT INTO Platforms VALUES (NULL, 'PlayStation 3', 'The PlayStation 3 (PS3) is a home video game console developed by Sony Computer Entertainment.', '2006-11-15', 'https://en.wikipedia.org/wiki/File:Sony-PlayStation-3-2001A-wController-L.jpg');
+INSERT INTO Platforms VALUES (NULL, 'Xbox One', 'Xbox One is a line of eighth generation home video game consoles developed by Microsoft. Announced in May 2013, it is the successor to Xbox 360 and the third console in the Xbox family.', '2013-11-22', 'https://en.wikipedia.org/wiki/File:Microsoft-Xbox-One-Console-Set-wKinect.jpg');
+INSERT INTO Platforms VALUES (NULL, 'Xbox 360', 'The Xbox 360 is a home video game console developed by Microsoft. As the successor to the original Xbox, it is the second console in the Xbox series.', '2016-04-20', 'https://en.wikipedia.org/wiki/File:Xbox-360-Pro-wController.jpg');
+INSERT INTO Platforms VALUES (NULL, 'PC', 'A gaming computer or gaming rig is a personal computer designed for playing video games that normally require a lot of power.', '1970-01-01', 'https://en.wikipedia.org/wiki/File:Gaming_PC_set_up.jpg');
