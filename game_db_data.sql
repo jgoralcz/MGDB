@@ -32,3 +32,10 @@ INSERT INTO Games VALUES (NULL, 2, 1003, 'Like the original Portal (2007), playe
 INSERT INTO Games VALUES (NULL, 3, 1002, 'Grand Theft Auto IV is an action-adventure video game developed by Rockstar North and published by Rockstar Games.', 'Grand Theft Auto IV', 'GTAV', 'https://en.wikipedia.org/wiki/File:Grand_Theft_Auto_IV_cover.jpg');
 INSERT INTO Games VALUES (NULL, 4, 1001, 'The Legend of Zelda: Ocarina of Time is an action-adventure game developed and published by Nintendo for the Nintendo 64.', 'The Legend of Zelda: Ocarina of Time', 'Zelda 10', 'https://en.wikipedia.org/wiki/File:The_Legend_of_Zelda_Ocarina_of_Time_box_art.png');
 INSERT INTO Games VALUES (NULL, 5, 1000, 'The Witcher 3: Wild Hunt[a] is a 2015 action role-playing game developed and published by CD Projekt.', 'Witcher 3', 'Witcher', 'https://en.wikipedia.org/wiki/File:Witcher_3_cover_art.jpg');
+
+-- Data for table: Critics
+INSERT INTO Critics VALUES (NULL, 'Metacritic');
+INSERT INTO Critics VALUES (NULL, 'Game Informer');
+INSERT INTO Critics VALUES (NULL, 'Forbes');
+INSERT INTO Critics VALUES (NULL, 'The Verge');
+INSERT INTO Critics VALUES (NULL, 'Polygon');
