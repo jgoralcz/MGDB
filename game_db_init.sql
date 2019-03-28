@@ -12,12 +12,13 @@ USE `mygame_db`;
 -- game engine
 CREATE TABLE IF NOT EXISTS Engines (
   id            INTEGER AUTO_INCREMENT,
-  description   TEXT,
   name          VARCHAR(32) NOT NULL UNIQUE,
+  description   TEXT,
   date          DATE,
   image         VARCHAR(256),
 
   CONSTRAINT pk_engine_id PRIMARY KEY (id)
+
 ) AUTO_INCREMENT = 1;
 
 -- workers can work for various companies
@@ -44,10 +45,11 @@ CREATE TABLE Critics (
 -- a game can be part of a series.
 CREATE TABLE IF NOT EXISTS Series (
   id           INTEGER AUTO_INCREMENT,
-  release_date DATE,
   name         VARCHAR(128),
+  release_date DATE,
 
   CONSTRAINT pk_series PRIMARY KEY(id)
+
 ) AUTO_INCREMENT=1000;
 
 -- video games, starts at 1000000 (1 million)
