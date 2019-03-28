@@ -21,11 +21,11 @@ INSERT INTO Engines VALUES (NULL, 'REDengine 3', 'REDengine is a game engine dev
 
 -- Data for table: Series
 -- Keys start at: 1000
-INSERT INTO Series VALUES (NULL, 'Witcher', '2007-10-26', 'The Witcher by Polish writer Andrzej Sapkowski, is a fantasy series of short stories and novels about the witcher Geralt of Rivia.', 'https://en.wikipedia.org/wiki/File:The_Witcher_EU_box.jpg');
-INSERT INTO Series VALUES (NULL, 'Zelda', '1986-02-21', 'The Legend of Zelda is a fantasy action-adventure video game franchise created by Japanese game designers Shigeru Miyamoto and Takashi Tezuka.', 'https://en.wikipedia.org/wiki/File:Zelda_Logo.svg');
-INSERT INTO Series VALUES (NULL, 'Grand Theft Auto', '1997-10-21', 'Grand Theft Auto (GTA) is a long-running series of video games, published by Rockstar Games and developed by subsidiary companies.', 'https://en.wikipedia.org/wiki/File:Grand_Theft_Auto_logo_series.svg');
-INSERT INTO Series VALUES (NULL, 'Portal', '2007-10-10', 'Portal is a series of first-person puzzle-platform video games developed by Valve Corporation.', 'https://en.wikipedia.org/wiki/File:Portal_logo.png');
 INSERT INTO Series VALUES (NULL, 'Mass Effect', '2007-11-20', 'Mass Effect is a science-fiction action-role-playing third-person-shooter video-game series developed by the Canadian company BioWare and released for the Xbox 360, PlayStation 3, and Microsoft Windows, with the third instalment also released on the Wii U.', 'https://en.wikipedia.org/wiki/File:Logo_of_Mass_Effect.png');
+INSERT INTO Series VALUES (NULL, 'Portal', '2007-10-10', 'Portal is a series of first-person puzzle-platform video games developed by Valve Corporation.', 'https://en.wikipedia.org/wiki/File:Portal_logo.png');
+INSERT INTO Series VALUES (NULL, 'Grand Theft Auto', '1997-10-21', 'Grand Theft Auto (GTA) is a long-running series of video games, published by Rockstar Games and developed by subsidiary companies.', 'https://en.wikipedia.org/wiki/File:Grand_Theft_Auto_logo_series.svg');
+INSERT INTO Series VALUES (NULL, 'Zelda', '1986-02-21', 'The Legend of Zelda is a fantasy action-adventure video game franchise created by Japanese game designers Shigeru Miyamoto and Takashi Tezuka.', 'https://en.wikipedia.org/wiki/File:Zelda_Logo.svg');
+INSERT INTO Series VALUES (NULL, 'Witcher', '2007-10-26', 'The Witcher by Polish writer Andrzej Sapkowski, is a fantasy series of short stories and novels about the witcher Geralt of Rivia.', 'https://en.wikipedia.org/wiki/File:The_Witcher_EU_box.jpg');
 
 
 -- Data for table: Games
@@ -76,7 +76,15 @@ INSERT INTO Companies_Game VALUES (NULL, 1004, 100004, '2007-11-20', '2019-03-28
 -- Data for table: Platforms
 -- Keys start at: 1
 INSERT INTO Platforms VALUES (NULL, 'PlayStation 4', 'The PlayStation 4 (PS4) is an eighth-generation home video game console developed by Sony Interactive Entertainment.', '2013-11-15', 'https://en.wikipedia.org/wiki/File:PS4-Console-wDS4.jpg');
-INSERT INTO Platforms VALUES (NULL, 'PlayStation 3', 'The PlayStation 3 (PS3) is a home video game console developed by Sony Computer Entertainment.', '2006-11-15', 'https://en.wikipedia.org/wiki/File:Sony-PlayStation-3-2001A-wController-L.jpg');
 INSERT INTO Platforms VALUES (NULL, 'Xbox One', 'Xbox One is a line of eighth generation home video game consoles developed by Microsoft. Announced in May 2013, it is the successor to Xbox 360 and the third console in the Xbox family.', '2013-11-22', 'https://en.wikipedia.org/wiki/File:Microsoft-Xbox-One-Console-Set-wKinect.jpg');
 INSERT INTO Platforms VALUES (NULL, 'Xbox 360', 'The Xbox 360 is a home video game console developed by Microsoft. As the successor to the original Xbox, it is the second console in the Xbox series.', '2016-04-20', 'https://en.wikipedia.org/wiki/File:Xbox-360-Pro-wController.jpg');
 INSERT INTO Platforms VALUES (NULL, 'PC', 'A gaming computer or gaming rig is a personal computer designed for playing video games that normally require a lot of power.', '1970-01-01', 'https://en.wikipedia.org/wiki/File:Gaming_PC_set_up.jpg');
+INSERT INTO Platforms VALUES (NULL, 'Nintendo 64', 'The Nintendo 64, stylized as NINTENDO64 and abbreviated as N64, is Nintendo third home video game console for the international market.', '1996-10-29', 'https://en.wikipedia.org/wiki/File:Nintendo-64-wController-L.jpg');
+
+-- Data for table: Game Release Date
+-- Keys start at: 1000000
+INSERT INTO Game_Release_Date VALUES (NULL, 100000, 3, '2010-01-26');   -- Mass Effect 2 : Xbox 360
+INSERT INTO Game_Release_Date VALUES (NULL, 100001, 4, '2011-04-19');   -- Portal 2 : PC
+INSERT INTO Game_Release_Date VALUES (NULL, 100002, 1, '2008-12-02');   -- Grand Theft Auto V : PS4
+INSERT INTO Game_Release_Date VALUES (NULL, 100003, 5, '1998-11-21');   -- Zelda: OOT : Nintendo 64
+INSERT INTO Game_Release_Date VALUES (NULL, 100004, 2, '2015-05-19');   -- The Witcher 3 : Xbox One
