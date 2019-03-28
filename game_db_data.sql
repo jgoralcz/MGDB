@@ -11,11 +11,11 @@
 
 
 -- Data for table: Engines
-INSERT INTO Engines VALUES ('Unreal Engine 3', 'The Unreal Engine is a game engine developed by Epic Games, first showcased in the 1998 first-person shooter game Unreal.', '1998-05-01');
--- INSERT INTO Engines VALUES ('Source', 'Source is a 3D video game engine developed by Valve Corporation. ', '2004-06-01');
--- INSERT INTO Engines VALUES ('Rockstar Advanced Game Engine', 'The Rockstar Advanced Game Engine (RAGE) is a proprietary game engine developed by RAGE Technology Group, a division of Rockstar Games Rockstar San Diego studio.', '2006-05-23');
--- INSERT INTO Engines VALUES ('M64 engine', 'The engine details are unknown.', '1996-01-01');
--- INSERT INTO Engines VALUES ('REDengine 3', 'REDengine is a game engine developed by CD Projekt Red. It was designed for CD Projekt Red nonlinear role-playing video games.', '2011-05-01');
+INSERT INTO Engines VALUES (1, 'Unreal Engine 3', 'The Unreal Engine is a game engine developed by Epic Games, first showcased in the 1998 first-person shooter game Unreal.', '1998-05-01', 'https://en.wikipedia.org/wiki/File:UE_Logo_Black_Centered.svg');
+INSERT INTO Engines VALUES (2, 'Source', 'Source is a 3D video game engine developed by Valve Corporation. ', '2004-06-01', 'https://en.wikipedia.org/wiki/File:Source_engine_logo_and_wordmark.svg');
+INSERT INTO Engines VALUES (3, 'Rockstar Advanced Game Engine', 'The Rockstar Advanced Game Engine (RAGE) is a proprietary game engine developed by RAGE Technology Group, a division of Rockstar Games Rockstar San Diego studio.', '2006-05-23', 'https://en.wikipedia.org/wiki/File:Rockstar_Advanced_Game_Engine_Logo.svg');
+INSERT INTO Engines VALUES (4, 'M64 engine', 'The engine details are unknown.', '1996-01-01', 'https://en.wikipedia.org/wiki/File:Nintendo.svg');
+INSERT INTO Engines VALUES (5, 'REDengine 3', 'REDengine is a game engine developed by CD Projekt Red. It was designed for CD Projekt Red nonlinear role-playing video games.', '2011-05-01', 'https://en.wikipedia.org/wiki/File:REDEngine_3_logo.jpg');
 
 
 -- Data for table: Series
