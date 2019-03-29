@@ -151,8 +151,8 @@ CREATE TABLE Game_Genres (
 CREATE TABLE IF NOT EXISTS DLC (
   id              INTEGER AUTO_INCREMENT,
   game_id         INTEGER NOT NULL,
-  description     TEXT,
   name            VARCHAR(256),
+  description     TEXT,
   date            DATE,
   image           VARCHAR(256),
 
