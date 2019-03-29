@@ -202,7 +202,13 @@ INSERT INTO Workers VALUES (NULL, 'Nadine', NULL, 'Briggs', 'Nadine is a conside
 INSERT INTO Workers VALUES (NULL, 'Flora', NULL, 'Davis', 'Flora is a brave former gallery-commisioned artist who is obsessed with running.');
 INSERT INTO Workers VALUES (NULL, 'Aryaan', 'Farrington', 'Markham', 'She is a Dutch Hindu who defines herself as bisexual. She did not finish school. She is allergic to nickel.');
 INSERT INTO Workers VALUES (NULL, 'Kevin', 'Kaia', 'Pate', 'Kevin is a British Christian who suffers from a severe phobia of butterflies.');
-INSERT INTO Workers VALUES (NULL, 'Roger', 'Hannah', 'Wilson', 'Roger is a former cleaner at a studio with a serious addiction to chocolate');
+INSERT INTO Workers VALUES (NULL, 'Roger', 'Hannah', 'Wilson', 'Roger is a former cleaner at a studio with a serious addiction to chocolate.');
+INSERT INTO Workers VALUES (NULL, 'Cuthbert', 'Mohammad', 'Sparkle', 'Cuthbert is a 52-year-old trainee tradesperson who enjoys listening to music, glamping and meditation. He is bright and exciting, but can also be very standoffish and a bit unstable.');
+INSERT INTO Workers VALUES (NULL, 'Carla', 'kinkle', 'Dinkle', 'Physically, Carla is slightly overweight but otherwise in good shape. She is tall with brown skin, black hair and green eyes. She has a mole on the end of her nose.');
+INSERT INTO Workers VALUES (NULL, 'Fred', 'Rob', 'Mohammad', 'Fred is a brave named partner at a law firm who enjoys stealing candy from babies.');
+INSERT INTO Workers VALUES (NULL, 'Gregory', NULL, 'Plumb', 'He grew up in an upper class neighbourhood. He was raised in a happy family home with three loving parents.');
+INSERT INTO Workers VALUES (NULL, 'Garth', 'Pete', 'Meadows', 'She is an 45-year-old Australian senior Jedi who who enjoys checking news stories against Snopes.');
+
 
 
 -- Data for table: Companies Worker
@@ -219,4 +225,10 @@ INSERT INTO Companies_Worker VALUES (NULL, 1004, 10004, '2015-02-05', '2019-02-1
 INSERT INTO Developers VALUES (NULL, 10000);
 INSERT INTO Developers VALUES (NULL, 10001);
 INSERT INTO Developers VALUES (NULL, 10002);
-INSERT INTO Developers VALUES (NULL, 10003);
+
+
+-- Data for table: Directors
+-- Keys start at: 100000
+INSERT INTO Directors VALUES (NULL, 10003);
+INSERT INTO Directors VALUES (NULL, 10004);
+INSERT INTO Directors VALUES (NULL, 10005);
