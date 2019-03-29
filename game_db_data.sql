@@ -151,3 +151,12 @@ INSERT INTO Weapons VALUES (NULL, 100003, NULL, 'Ocarina of Time', 'An instrumen
 INSERT INTO Weapons VALUES (NULL, 100003, NULL, 'Master Sword', 'The Master Sword is the final key to the sacred realm that holds the Triforce, and only the one worthy of the title of the Hero of Time can draw it.', 'Durability: Continuous'); -- The Legend of Zelda: Ocarina of Time
 INSERT INTO Weapons VALUES (NULL, 100004, NULL, 'Griffin Silver Sword', 'Griffin Silver Sword is a Diagram in the Witcher 3: Wild Hunt that can be crafted by a Blacksmith (Weapons) or Armorsmith (Armor).', 'Damage: 180'); -- Witcher 3
 INSERT INTO Weapons VALUES (NULL, 100004, 100008, 'Aerondight', 'Aerondight is a legendary sword that has appeard in all Witcher games. Now it has been added to The Witcher 3 as well, and it’s probably the best sword there is.', 'Stats'); -- Witcher 3
+
+
+-- Data for table: Characters
+-- Keys start at: 100000
+INSERT INTO Characters VALUES (NULL, 'Mass Effect 2 Characters', 'All character types in Mass Effect 2'); -- Mass Effect 2
+INSERT INTO Characters VALUES (NULL, 'Portal 2 Characters', 'All character types in Portal 2'); -- Portal 2
+INSERT INTO Characters VALUES (NULL, 'Grand Theft Auto V Characters', 'All character types in Grand Theft Auto V'); -- Grand Theft Auto V
+INSERT INTO Characters VALUES (NULL, 'The Legend of Zelda: Ocarina of Time Characters', 'All character types in The Legend of Zelda: Ocarina of Time'); -- The Legend of Zelda: Ocarina of Time
+INSERT INTO Characters VALUES (NULL, 'Witcher 3 Characters', 'All character types in Witcher 3'); -- Witcher 3
