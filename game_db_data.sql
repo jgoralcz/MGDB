@@ -97,3 +97,13 @@ INSERT INTO Genres VALUES (NULL, 'Action Role-playing', 'The games emphasize rea
 INSERT INTO Genres VALUES (NULL, 'Action-adventure', 'Action-adventure is a video game genre that combine core elements from both the action game and adventure game genres.');
 INSERT INTO Genres VALUES (NULL, 'Puzzle-platform', 'In a platformer the player controlled character must jump and climb between suspended platforms while avoiding obstacles.');
 INSERT INTO Genres VALUES (NULL, 'Third-person Shooter', 'A third-person shooter is a game structured around shooting,[1] and in which the player can see the avatar on-screen in a third-person view.');
+
+
+-- Data for table: Game Genres
+-- Keys start at: 1
+INSERT INTO Game_Genres VALUES (NULL, 100000, 1); -- Mass Effect 2
+INSERT INTO Game_Genres VALUES (NULL, 100000, 4); -- Mass Effect 2
+INSERT INTO Game_Genres VALUES (NULL, 100001, 3); -- Portal 2
+INSERT INTO Game_Genres VALUES (NULL, 100002, 2); -- Grand Theft Auto V
+INSERT INTO Game_Genres VALUES (NULL, 100003, 2); -- Zelda
+INSERT INTO Game_Genres VALUES (NULL, 100004, 1); -- The Witcher 3
