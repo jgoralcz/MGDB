@@ -221,10 +221,10 @@ CREATE TABLE IF NOT EXISTS Main_Characters (
   id           INTEGER AUTO_INCREMENT,
   character_id INTEGER NOT NULL,
   game_id      INTEGER NOT NULL,
-  description  TEXT,
   name         VARCHAR(64),
+  description  TEXT,
 
-  CONSTRAINT pk_mc_id PRIMARY KEY(id),
+  CONSTRAINT pk_mc_id PRIMARY KEY (id),
   CONSTRAINT fk_mc_id FOREIGN KEY (character_id) REFERENCES Characters(id),
   CONSTRAINT fk_mc_game_id FOREIGN KEY (game_id) REFERENCES Games(id)
 ) AUTO_INCREMENT = 100000;

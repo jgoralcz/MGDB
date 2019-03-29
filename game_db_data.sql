@@ -160,3 +160,19 @@ INSERT INTO Characters VALUES (NULL, 'Portal 2 Characters', 'All character types
 INSERT INTO Characters VALUES (NULL, 'Grand Theft Auto V Characters', 'All character types in Grand Theft Auto V'); -- Grand Theft Auto V
 INSERT INTO Characters VALUES (NULL, 'The Legend of Zelda: Ocarina of Time Characters', 'All character types in The Legend of Zelda: Ocarina of Time'); -- The Legend of Zelda: Ocarina of Time
 INSERT INTO Characters VALUES (NULL, 'Witcher 3 Characters', 'All character types in Witcher 3'); -- Witcher 3
+
+
+-- Data for table: Main Characters
+-- Keys start at: 100000
+INSERT INTO Main_Characters VALUES (NULL, 100000, 100000, 'Commander Shepard', 'Lieutenant Commander Shepard is the human protagonist of Mass Effect, Mass Effect 2, and Mass Effect 3, whose gender, appearance, skills and pre-service history are all customizable and have an impact on the story.'); -- Mass Effect 2
+INSERT INTO Main_Characters VALUES (NULL, 100001, 100001, 'Chell', 'Chell is the silent protagonist in the Portal video game series developed by Valve Corporation.'); -- Portal 2
+INSERT INTO Main_Characters VALUES (NULL, 100001, 100001, 'GLaDOS', 'GLaDOS (Genetic Lifeform and Disk Operating System) is the central core designed to control, guide, and oversee the Aperture Science computer-aided Enrichment Center.'); -- Portal 2
+INSERT INTO Main_Characters VALUES (NULL, 100002, 100002, 'Trevor Philips', 'Trevor Philips is a fictional character in Grand Theft Auto V, a video game in the Grand Theft Auto series made by Rockstar Games.'); -- Grand Theft Auto V
+INSERT INTO Main_Characters VALUES (NULL, 100002, 100002, 'Claude', 'Claude is a fictional character and the main protagonist of Grand Theft Auto III, a game in the Grand Theft Auto series by Rockstar Games. '); -- Grand Theft Auto V
+INSERT INTO Main_Characters VALUES (NULL, 100002, 100002, 'Carl Johnson', 'Carl Johnson is a fictional character and the main playable protagonist from Rockstar Norths Grand Theft Auto: San Andreas, published by Rockstar Games.'); -- Grand Theft Auto V
+INSERT INTO Main_Characters VALUES (NULL, 100003, 100003, 'Ganondorf', 'Ganondorf Dragmire known as the King of Thieves, the Great King of Evil, the Emperor of the Dark Realm[1], or the Dark Lord, is the primary antagonist of the majority of games in the Legend of Zelda series.'); -- The Legend of Zelda: Ocarina of Time
+INSERT INTO Main_Characters VALUES (NULL, 100003, 100003, 'Link', 'Link He is the everlasting hero of the setting, having appeared throughout the ages in a never ending line of incarnations.'); -- The Legend of Zelda: Ocarina of Time
+INSERT INTO Main_Characters VALUES (NULL, 100003, 100003, 'Princess Zelda', 'Zelda, Princess of Hyrule, best known simply as Princess Zelda is the name for several female Hylians, usually members of the Royal Family of Hyrule, who often play an integral role in the series.'); -- The Legend of Zelda: Ocarina of Time
+INSERT INTO Main_Characters VALUES (NULL, 100004, 100004, 'Geralt of Rivia', 'Geralt of Rivia is a fictional character, the protagonist of The Witcher series of short stories and novels by Polish writer Andrzej Sapkowski, as well as its adaptations, which include film, TV series, comic books and video games.'); -- Witcher 3
+INSERT INTO Main_Characters VALUES (NULL, 100004, 100004, 'Yennefer', 'Yennefer, born on Belleteyn in 1173, was a sorceress who lived in Vengerberg, the capital city of Aedirn.'); -- Witcher 3
+INSERT INTO Main_Characters VALUES (NULL, 100004, 100004, 'Ciri', 'Cirilla Fiona Elen Riannon (better known as Ciri), was born in 1253, and most likely during the Belleteyn holiday.'); -- Witcher 3
