@@ -3,9 +3,9 @@
 -- Authors: Josh Goralczyk (jgoralcz), Jeremy Powell (jcpowel5)
 
 --  Games Used:
--- 1)
+-- 1) Mass Effect 2
 -- 2) Portal 2
--- 3) Grand Theft Auto IV
+-- 3) Grand Theft Auto V
 -- 4) The Legend of Zelda: Ocarina of Time
 -- 5) Witcher 3
 
@@ -125,5 +125,15 @@ INSERT INTO DLC VALUES (NULL, 100004, 'Hearts of Stone', 'Hearts of Stone packs 
 
 -- Data for table: DLC Release Dates
 -- Keys start at: 1000000
-INSERT INTO DLC VALUES (NULL, 100007, 1, '2014-11-18'); -- Grand Theft Auto V : PS4 : Shark Cards
-INSERT INTO DLC VALUES (NULL, 100007, 4, '2015-06-09'); -- Grand Theft Auto V : PC : Shark Cards
+INSERT INTO DLC_Release_Dates VALUES (NULL, 100007, 1, '2014-11-18'); -- Grand Theft Auto V : PS4 : Shark Cards
+INSERT INTO DLC_Release_Dates VALUES (NULL, 100007, 4, '2015-06-09'); -- Grand Theft Auto V : PC : Shark Cards
+
+
+-- Data for table: Cosmetics
+-- Keys start at: 10000
+INSERT INTO Cosmetics VALUES (NULL, 100000, 100003, 'Alternate Appearance Pack', '3 new outfits, one each for squadmates Garrus Vakarian, Jack, and Thane Krios', 'Jack straps on a black biker vest, low-slung jeans, and steel-toe boots made for starting riots. Garrus suits up in a new military-grade, blue-lit armor equipped with a dual-input communication headset.'); -- Mass Effect 2 : DLC
+INSERT INTO Cosmetics VALUES (NULL, 100001, NULL, 'Headwear', 'Items that can be equipped in the "Head" slot of the loadout screen.', ''); -- Portal 2: No DLC
+INSERT INTO Cosmetics VALUES (NULL, 100001, NULL, 'Skins', 'Items that can be equipped in the "Skins" slot of the loadout screen, and change the default textures of Atlas and P-body.', ''); -- Portal 2: No DLC
+INSERT INTO Cosmetics VALUES (NULL, 100002, NULL, 'Clothes', 'Dress characters however you please, with a default wardrobe located in their closets.', ''); -- Grand Theft Auto V: No DLC
+INSERT INTO Cosmetics VALUES (NULL, 100002, 100006, 'Lowriders', 'Dozens of new options to match your new Lowriders.', ''); -- Grand Theft Auto V: DLC
+INSERT INTO Cosmetics VALUES (NULL, 100004, NULL, 'Alternative Look for Yennefer', 'Check out this entirely new look for the mighty sorceress Yennefer of Vengerberg!', ''); -- Witcher 3: DLC

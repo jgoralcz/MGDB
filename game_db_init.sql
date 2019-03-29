@@ -180,8 +180,8 @@ CREATE TABLE IF NOT EXISTS Cosmetics (
 	id                INTEGER AUTO_INCREMENT,
 	game_id           INTEGER NOT NULL,
 	dlc_id            INTEGER,
+    name              VARCHAR(128),
 	description       TEXT NOT NULL,
-	name              VARCHAR(128),
 	stats             TEXT,
 
 	CONSTRAINT pk_cosmetic_id PRIMARY KEY(id),
