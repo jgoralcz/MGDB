@@ -194,3 +194,12 @@ INSERT INTO Side_Characters VALUES (NULL, 100003, 100003, 'Impa', 'description')
 INSERT INTO Side_Characters VALUES (NULL, 100004, 100004, 'Keira Metz', 'Keira Metz of Carreras was a sorceress and former advisor to King Foltest of Temeria, a role that had also been held by Triss Merigold and Fercart.'); -- Witcher 3
 INSERT INTO Side_Characters VALUES (NULL, 100004, 100004, 'Emhyr var Emreis', 'Emhyr var Emreis was Emperor of the Nilfgaardian Empire, Lord of Metinna, Ebbing, Gemmera, and Sovereign of Nazair and Vicovaro from 1257 until his death sometime in the late 13th century. He also became the King of Cintra after marrying Cirilla in 1268.'); -- Witcher 3
 INSERT INTO Side_Characters VALUES (NULL, 100004, 100004, 'Letho', 'Letho of Gulet, also known as the Kingslayer, was a witcher from the School of the Viper. His closest associates were Auckes and Serrit, also kingslayers and fellow witchers from the School of the Viper.'); -- Witcher 3
+
+
+-- Data for table: Workers
+-- Keys start at: 10000
+INSERT INTO Workers VALUES (NULL, 'Nadine', NULL, 'Briggs', 'Nadine is a considerate personal trainer who is obsessed with the murder of her friend Jasper, nine years ago.');
+INSERT INTO Workers VALUES (NULL, 'Flora', NULL, 'Davis', 'Flora is a brave former gallery-commisioned artist who is obsessed with running.');
+INSERT INTO Workers VALUES (NULL, 'Aryaan', 'Farrington', 'Markham', 'She is a Dutch Hindu who defines herself as bisexual. She did not finish school. She is allergic to nickel.');
+INSERT INTO Workers VALUES (NULL, 'Kevin', 'Kaia', 'Pate', 'Kevin is a British Christian who suffers from a severe phobia of butterflies.');
+INSERT INTO Workers VALUES (NULL, 'Roger', 'Hannah', 'Wilson', 'Roger is a former cleaner at a studio with a serious addiction to chocolate');
