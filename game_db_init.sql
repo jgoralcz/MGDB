@@ -236,8 +236,8 @@ CREATE TABLE IF NOT EXISTS Side_Characters (
   id           INTEGER AUTO_INCREMENT,
   character_id INTEGER NOT NULL,
   game_id      INTEGER NOT NULL,
-  description  TEXT,
   name         VARCHAR(64),
+  description  TEXT,
 
   CONSTRAINT pk_sc_id PRIMARY KEY(id),
   CONSTRAINT fk_sc_id FOREIGN KEY (character_id) REFERENCES Characters(id),

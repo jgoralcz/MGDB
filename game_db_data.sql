@@ -176,3 +176,21 @@ INSERT INTO Main_Characters VALUES (NULL, 100003, 100003, 'Princess Zelda', 'Zel
 INSERT INTO Main_Characters VALUES (NULL, 100004, 100004, 'Geralt of Rivia', 'Geralt of Rivia is a fictional character, the protagonist of The Witcher series of short stories and novels by Polish writer Andrzej Sapkowski, as well as its adaptations, which include film, TV series, comic books and video games.'); -- Witcher 3
 INSERT INTO Main_Characters VALUES (NULL, 100004, 100004, 'Yennefer', 'Yennefer, born on Belleteyn in 1173, was a sorceress who lived in Vengerberg, the capital city of Aedirn.'); -- Witcher 3
 INSERT INTO Main_Characters VALUES (NULL, 100004, 100004, 'Ciri', 'Cirilla Fiona Elen Riannon (better known as Ciri), was born in 1253, and most likely during the Belleteyn holiday.'); -- Witcher 3
+INSERT INTO Main_Characters VALUES (NULL, 100004, 100004, 'Triss Merigold', 'Triss Merigold of Maribor was a legendary Temerian sorceress of the 13th century.'); -- Witcher 3
+
+
+-- Data for table: Side Characters
+-- Keys start at: 100000
+INSERT INTO Side_Characters VALUES (NULL, 100000, 100000, 'Garrus Vakarian', 'Garrus Vakarian is a turian, formerly part of C-Secs Investigation Division.'); -- Mass Effect 2
+INSERT INTO Side_Characters VALUES (NULL, 100000, 100000, 'Grunt', 'Grunt is a genetically engineered krogan super soldier.'); -- Mass Effect 2
+INSERT INTO Side_Characters VALUES (NULL, 100000, 100000, 'Miranda Lawson', 'Miranda Lawson is a human Cerberus Officer. As Jacob Taylor informant, she gives him guidance and advice during missions, often via hologram.'); -- Mass Effect 2
+INSERT INTO Side_Characters VALUES (NULL, 100001, 100001, 'Wheatley', 'Wheatley is a fictional artificial intelligence from the Portal franchise first introduced in the 2011 video game Portal 2.'); -- Portal 2
+INSERT INTO Side_Characters VALUES (NULL, 100002, 100002, 'Amanda De Santa', 'Amanda De Santa (previously Amanda Townley) is the wife of Michael, and the mother of Jimmy and Tracey. She is played by Vicki Van Tassel.'); -- Grand Theft Auto V
+INSERT INTO Side_Characters VALUES (NULL, 100002, 100002, 'Lazlow', 'Lazlow is an insecure, ill-mannered, and perverted radio host who has retained work across the Grand Theft Auto rendition of the United States for nearly thirty years, portrayed by Lazlow Jones.'); -- Grand Theft Auto V
+INSERT INTO Side_Characters VALUES (NULL, 100002, 100002, 'Floyd Hebert', 'Floyd Hebert is Wade cousin and lives in his girlfriend Debra condo in Vespucci Beach. Jimmy Ray Bennett plays Floyd.'); -- Grand Theft Auto V
+INSERT INTO Side_Characters VALUES (NULL, 100003, 100003, 'Impa', 'Impa typically serves as a nursemaid and/or bodyguard to Princess Zelda and often offers guidance to Link.'); -- The Legend of Zelda: Ocarina of Time
+INSERT INTO Side_Characters VALUES (NULL, 100003, 100003, 'Sheik', 'Sheik serves as Princess Zelda alter ego in the game; to escape Ganondorf capture, Zelda passes herself off as a male Sheikah known as Sheik.'); -- The Legend of Zelda: Ocarina of Time
+INSERT INTO Side_Characters VALUES (NULL, 100003, 100003, 'Impa', 'description'); -- The Legend of Zelda: Ocarina of Time
+INSERT INTO Side_Characters VALUES (NULL, 100004, 100004, 'Keira Metz', 'Keira Metz of Carreras was a sorceress and former advisor to King Foltest of Temeria, a role that had also been held by Triss Merigold and Fercart.'); -- Witcher 3
+INSERT INTO Side_Characters VALUES (NULL, 100004, 100004, 'Emhyr var Emreis', 'Emhyr var Emreis was Emperor of the Nilfgaardian Empire, Lord of Metinna, Ebbing, Gemmera, and Sovereign of Nazair and Vicovaro from 1257 until his death sometime in the late 13th century. He also became the King of Cintra after marrying Cirilla in 1268.'); -- Witcher 3
+INSERT INTO Side_Characters VALUES (NULL, 100004, 100004, 'Letho', 'Letho of Gulet, also known as the Kingslayer, was a witcher from the School of the Viper. His closest associates were Auckes and Serrit, also kingslayers and fellow witchers from the School of the Viper.'); -- Witcher 3
