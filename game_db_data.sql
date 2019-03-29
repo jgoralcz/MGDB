@@ -108,6 +108,7 @@ INSERT INTO Game_Genres VALUES (NULL, 100002, 2); -- Grand Theft Auto V
 INSERT INTO Game_Genres VALUES (NULL, 100003, 2); -- Zelda
 INSERT INTO Game_Genres VALUES (NULL, 100004, 1); -- The Witcher 3
 
+
 -- Data for table: DLC
 -- Keys start at: 100000
 INSERT INTO DLC VALUES (NULL, 100000, 'Kasumi: Stolen Memory', 'Concerns the recovery of data of great importance to Kasumi Goto. Adds two missions, a squad member, a submachine gun, and other items.', '2010-04-06', 'https://en.wikipedia.org/wiki/File:Mass_Effect_2_Kasumi_Stolen_Memory_logo.jpg'); -- Mass Effect 2
@@ -120,3 +121,9 @@ INSERT INTO DLC VALUES (NULL, 100002, 'Criminal Enterprise Starter Pack', 'The C
 INSERT INTO DLC VALUES (NULL, 100002, 'Shark Cash Cards', 'Cash is king in this town. Solve your money problem and help get what you want across Los Santos and Blaine County with the occasional purchase of cash packs for Grand Theft Auto Online.', '2015-06-09', 'https://steamcdn-a.akamaihd.net/steam/apps/376850/header.jpg?t=1447375880'); -- Grand Theft Auto V
 INSERT INTO DLC VALUES (NULL, 100004, 'Blood and Wine', 'Blood and Wine offers over 30 hours of adventure, where beauty clashes with horror, and love dances with deceit.', '2016-05-30', 'https://en.wikipedia.org/wiki/File:Blood_and_wine_art.jpg'); -- The Witcher 3
 INSERT INTO DLC VALUES (NULL, 100004, 'Hearts of Stone', 'Hearts of Stone packs over 10 hours of new adventures, introducing new characters, powerful monsters, unique romance and a brand new storyline shaped by your choices.', '2015-10-12', 'https://en.wikipedia.org/wiki/File:Hearts_of_stone_art.jpg'); -- The Witcher 3
+
+
+-- Data for table: DLC Release Dates
+-- Keys start at: 1000000
+INSERT INTO DLC VALUES (NULL, 100007, 1, '2014-11-18'); -- Grand Theft Auto V : PS4 : Shark Cards
+INSERT INTO DLC VALUES (NULL, 100007, 4, '2015-06-09'); -- Grand Theft Auto V : PC : Shark Cards
