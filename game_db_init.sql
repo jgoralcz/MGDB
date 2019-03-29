@@ -266,9 +266,9 @@ CREATE TABLE IF NOT EXISTS Companies_Worker (
 
   CONSTRAINT pk_company_worker_id PRIMARY KEY (id),
   CONSTRAINT fk_company_worker_id FOREIGN KEY (company_id) REFERENCES Companies(id),
-  CONSTRAINT fk_worker_company_id FOREIGN KEY (worker_id) REFERENCES Games(id)
+  CONSTRAINT fk_worker_company_id FOREIGN KEY (worker_id) REFERENCES Workers(id)
 
-) AUTO_INCREMENT=1000;
+) AUTO_INCREMENT = 1000;
 
 
 -- separate tables in case we want to add more information later on, and separation of concerns to join on only stuff we want.

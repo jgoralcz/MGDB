@@ -203,3 +203,12 @@ INSERT INTO Workers VALUES (NULL, 'Flora', NULL, 'Davis', 'Flora is a brave form
 INSERT INTO Workers VALUES (NULL, 'Aryaan', 'Farrington', 'Markham', 'She is a Dutch Hindu who defines herself as bisexual. She did not finish school. She is allergic to nickel.');
 INSERT INTO Workers VALUES (NULL, 'Kevin', 'Kaia', 'Pate', 'Kevin is a British Christian who suffers from a severe phobia of butterflies.');
 INSERT INTO Workers VALUES (NULL, 'Roger', 'Hannah', 'Wilson', 'Roger is a former cleaner at a studio with a serious addiction to chocolate');
+
+
+-- Data for table: Companies Worker
+-- Keys start at: 1000
+INSERT INTO Companies_Worker VALUES (NULL, 1000, 10000, '2008-06-17', '2019-03-28');
+INSERT INTO Companies_Worker VALUES (NULL, 1001, 10001, '2002-11-23', '2002-11-24');
+INSERT INTO Companies_Worker VALUES (NULL, 1002, 10002, '2010-04-20', '2018-04-20');
+INSERT INTO Companies_Worker VALUES (NULL, 1003, 10003, '2016-12-25', '2017-01-01');
+INSERT INTO Companies_Worker VALUES (NULL, 1004, 10004, '2015-02-05', '2019-02-12');
