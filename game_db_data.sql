@@ -81,6 +81,7 @@ INSERT INTO Platforms VALUES (NULL, 'Xbox 360', 'The Xbox 360 is a home video ga
 INSERT INTO Platforms VALUES (NULL, 'PC', 'A gaming computer or gaming rig is a personal computer designed for playing video games that normally require a lot of power.', '1970-01-01', 'https://en.wikipedia.org/wiki/File:Gaming_PC_set_up.jpg');
 INSERT INTO Platforms VALUES (NULL, 'Nintendo 64', 'The Nintendo 64, stylized as NINTENDO64 and abbreviated as N64, is Nintendo third home video game console for the international market.', '1996-10-29', 'https://en.wikipedia.org/wiki/File:Nintendo-64-wController-L.jpg');
 
+
 -- Data for table: Game Release Date
 -- Keys start at: 1000000
 INSERT INTO Game_Release_Date VALUES (NULL, 100000, 3, '2010-01-26');   -- Mass Effect 2 : Xbox 360
@@ -88,3 +89,11 @@ INSERT INTO Game_Release_Date VALUES (NULL, 100001, 4, '2011-04-19');   -- Porta
 INSERT INTO Game_Release_Date VALUES (NULL, 100002, 1, '2008-12-02');   -- Grand Theft Auto V : PS4
 INSERT INTO Game_Release_Date VALUES (NULL, 100003, 5, '1998-11-21');   -- Zelda: OOT : Nintendo 64
 INSERT INTO Game_Release_Date VALUES (NULL, 100004, 2, '2015-05-19');   -- The Witcher 3 : Xbox One
+
+
+-- Data for table: Genres
+-- Keys start at: 1
+INSERT INTO Genres VALUES (NULL, 'Action Role-playing', 'The games emphasize real-time combat where the player has direct control over the characters as opposed to turn or menu-based combat');
+INSERT INTO Genres VALUES (NULL, 'Action-adventure', 'Action-adventure is a video game genre that combine core elements from both the action game and adventure game genres.');
+INSERT INTO Genres VALUES (NULL, 'Puzzle-platform', 'In a platformer the player controlled character must jump and climb between suspended platforms while avoiding obstacles.');
+INSERT INTO Genres VALUES (NULL, 'Third-person Shooter', 'A third-person shooter is a game structured around shooting,[1] and in which the player can see the avatar on-screen in a third-person view.');

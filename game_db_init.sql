@@ -128,8 +128,8 @@ CREATE TABLE IF NOT EXISTS Game_Release_Date (
 -- genres, starts at 1
 CREATE TABLE Genres (
  id           INTEGER AUTO_INCREMENT,
- description  INTEGER NOT NULL,
- category     INTEGER NOT NULL,
+ category     VARCHAR(32) NOT NULL,
+ description  TEXT NOT NULL,
 
   CONSTRAINT pk_genre_id PRIMARY KEY (id)
 ) AUTO_INCREMENT = 1;
