@@ -195,8 +195,8 @@ CREATE TABLE IF NOT EXISTS Weapons (
   id                INTEGER AUTO_INCREMENT,
   game_id           INTEGER NOT NULL,
   dlc_id            INTEGER,
-  description       TEXT NOT NULL,
   name              VARCHAR(128),
+  description       TEXT NOT NULL,
   stats             TEXT,
 
   CONSTRAINT pk_weapons_id PRIMARY KEY(id),

@@ -137,3 +137,17 @@ INSERT INTO Cosmetics VALUES (NULL, 100001, NULL, 'Skins', 'Items that can be eq
 INSERT INTO Cosmetics VALUES (NULL, 100002, NULL, 'Clothes', 'Dress characters however you please, with a default wardrobe located in their closets.', ''); -- Grand Theft Auto V: No DLC
 INSERT INTO Cosmetics VALUES (NULL, 100002, 100006, 'Lowriders', 'Dozens of new options to match your new Lowriders.', ''); -- Grand Theft Auto V: DLC
 INSERT INTO Cosmetics VALUES (NULL, 100004, NULL, 'Alternative Look for Yennefer', 'Check out this entirely new look for the mighty sorceress Yennefer of Vengerberg!', ''); -- Witcher 3: DLC
+
+
+-- Data for table: Weapons
+-- Keys start at: 10000
+INSERT INTO Weapons VALUES (NULL, 100000, NULL, 'M-8 Avenger', 'Default starting assault rifle', 'Type: Assault Rifle, Accuracy: Moderate, Recoil: Moderate, Fire Mode: Automatic, Fire Rate: 850 RPM, Ammo Per Clip: 40'); -- Mass Effect 2
+INSERT INTO Weapons VALUES (NULL, 100000, NULL, 'M-92 Mantis', 'A sniper rifle.', 'Type: Sniper Rifle, Accuracy: High, Recoil: High, Fire Mode: Single shot, Fire Rate: Low, Ammo Per Clip: 1'); -- Mass Effect 2
+INSERT INTO Weapons VALUES (NULL, 100000, 100001, 'M-490 Mantis', 'A heavy weapon.', 'Type: Heavy Weapon, Accuracy: Unknown, Recoil: Unknown, Fire Mode: Single-Shot, Fire Rate: Low (Charge-Time: 3 s), Ammo Per Clip: N/A'); -- Mass Effect 2
+INSERT INTO Weapons VALUES (NULL, 100001, NULL, 'Handheld Portal Device', 'The Aperture Science Handheld Portal Device (also known as the Portal Gun, ASHPoD or ASHPD) is the experimental tool designed to place two portals that objects can pass through.', 'Type: Prototype teleportation weapon, Affiliation: Aperture Science, Manufacturer: Aperture Science, Magazine size: N/A, Accuracy: High, Range: Long'); -- Portal 2
+INSERT INTO Weapons VALUES (NULL, 100002, NULL, 'Railgun', 'The Coil Railgun is an experimental weapon featured in the Enhanced Version of Grand Theft Auto V.', 'Weapon class: Heavy Weapons, Weapon type: Rail Gun, Ammunition capacity: 20 rounds'); -- Grand Theft Auto V
+INSERT INTO Weapons VALUES (NULL, 100002, 100006, 'Gusenberg Sweeper', 'It is based on the .45 ACP M1928A1 Thompson Submachine Gun (popularly known as the "Tommy Gun"), which is famous for its role in 1920s gangster culture and in the Second World War.', 'Weapon class: Machine Gun, Weapon type: Submachine gun, Ammunition capacity: 30 rounds (50 with extended clip)'); -- Grand Theft Auto V
+INSERT INTO Weapons VALUES (NULL, 100003, NULL, 'Ocarina of Time', 'An instrument Link uses to play music.', 'Use(s): Various'); -- The Legend of Zelda: Ocarina of Time
+INSERT INTO Weapons VALUES (NULL, 100003, NULL, 'Master Sword', 'The Master Sword is the final key to the sacred realm that holds the Triforce, and only the one worthy of the title of the Hero of Time can draw it.', 'Durability: Continuous'); -- The Legend of Zelda: Ocarina of Time
+INSERT INTO Weapons VALUES (NULL, 100004, NULL, 'Griffin Silver Sword', 'Griffin Silver Sword is a Diagram in the Witcher 3: Wild Hunt that can be crafted by a Blacksmith (Weapons) or Armorsmith (Armor).', 'Damage: 180'); -- Witcher 3
+INSERT INTO Weapons VALUES (NULL, 100004, 100008, 'Aerondight', 'Aerondight is a legendary sword that has appeard in all Witcher games. Now it has been added to The Witcher 3 as well, and it’s probably the best sword there is.', 'Stats'); -- Witcher 3
