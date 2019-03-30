@@ -12,12 +12,13 @@ USE `mygame_db`;
 -- game engine
 CREATE TABLE IF NOT EXISTS Engines (
   id            INTEGER AUTO_INCREMENT,
-  description   TEXT,
   name          VARCHAR(32) NOT NULL UNIQUE,
+  description   TEXT,
   date          DATE,
   image         VARCHAR(256),
 
   CONSTRAINT pk_engine_id PRIMARY KEY (id)
+
 ) AUTO_INCREMENT = 1;
 
 -- workers can work for various companies
@@ -32,7 +33,7 @@ CREATE TABLE IF NOT EXISTS Companies (
 ) AUTO_INCREMENT = 1000;
 
 -- game critics
-CREATE TABLE Critics (
+CREATE TABLE IF NOT EXISTS Critics (
   id            INTEGER AUTO_INCREMENT,
   name          VARCHAR(32),
 
@@ -44,12 +45,13 @@ CREATE TABLE Critics (
 -- a game can be part of a series.
 CREATE TABLE IF NOT EXISTS Series (
   id           INTEGER AUTO_INCREMENT,
+  name         VARCHAR(128),
   release_date DATE,
   description  TEXT,
-  name         VARCHAR(128),
   image        VARCHAR(256),
 
   CONSTRAINT pk_series PRIMARY KEY(id)
+
 ) AUTO_INCREMENT=1000;
 
 -- video games, starts at 1000000 (1 million)
@@ -58,7 +60,7 @@ CREATE TABLE IF NOT EXISTS Games (
   engine_id     INTEGER NOT NULL,
   series_id     INTEGER,
   description   TEXT,
-  english_name  VARCHAR(32) NOT NULL UNIQUE,
+  english_name  VARCHAR(64) NOT NULL UNIQUE,
   other_name    VARCHAR(32),
   image         VARCHAR(256),
 
@@ -124,16 +126,16 @@ CREATE TABLE IF NOT EXISTS Game_Release_Date (
 ) AUTO_INCREMENT = 1000000;
 
 -- genres, starts at 1
-CREATE TABLE Genres (
+CREATE TABLE IF NOT EXISTS Genres (
  id           INTEGER AUTO_INCREMENT,
- description  INTEGER NOT NULL,
- category     INTEGER NOT NULL,
+ category     VARCHAR(32) NOT NULL,
+ description  TEXT NOT NULL,
 
   CONSTRAINT pk_genre_id PRIMARY KEY (id)
 ) AUTO_INCREMENT = 1;
 
 -- many games have various genres game genres, starts at 1
-CREATE TABLE Game_Genres (
+CREATE TABLE IF NOT EXISTS Game_Genres (
   id       INTEGER AUTO_INCREMENT,
   game_id  INTEGER NOT NULL,
   genre_id INTEGER NOT NULL,
@@ -149,8 +151,8 @@ CREATE TABLE Game_Genres (
 CREATE TABLE IF NOT EXISTS DLC (
   id              INTEGER AUTO_INCREMENT,
   game_id         INTEGER NOT NULL,
-  description     TEXT,
   name            VARCHAR(256),
+  description     TEXT,
   date            DATE,
   image           VARCHAR(256),
 
@@ -178,8 +180,8 @@ CREATE TABLE IF NOT EXISTS Cosmetics (
 	id                INTEGER AUTO_INCREMENT,
 	game_id           INTEGER NOT NULL,
 	dlc_id            INTEGER,
+  name              VARCHAR(128),
 	description       TEXT NOT NULL,
-	name              VARCHAR(128),
 	stats             TEXT,
 
 	CONSTRAINT pk_cosmetic_id PRIMARY KEY(id),
@@ -193,8 +195,8 @@ CREATE TABLE IF NOT EXISTS Weapons (
   id                INTEGER AUTO_INCREMENT,
   game_id           INTEGER NOT NULL,
   dlc_id            INTEGER,
-  description       TEXT NOT NULL,
   name              VARCHAR(128),
+  description       TEXT NOT NULL,
   stats             TEXT,
 
   CONSTRAINT pk_weapons_id PRIMARY KEY(id),
@@ -206,8 +208,8 @@ CREATE TABLE IF NOT EXISTS Weapons (
 -- games can have many characters, but this table mainly serves to solve the impedance mismatch we have with inheritance.
 CREATE TABLE IF NOT EXISTS Characters (
   id                INTEGER AUTO_INCREMENT,
-  description       TEXT NOT NULL,
   name              VARCHAR(128),
+  description       TEXT NOT NULL,
 
   CONSTRAINT pk_characters_id PRIMARY KEY(id)
 ) AUTO_INCREMENT = 100000;
@@ -219,10 +221,10 @@ CREATE TABLE IF NOT EXISTS Main_Characters (
   id           INTEGER AUTO_INCREMENT,
   character_id INTEGER NOT NULL,
   game_id      INTEGER NOT NULL,
-  description  TEXT,
   name         VARCHAR(64),
+  description  TEXT,
 
-  CONSTRAINT pk_mc_id PRIMARY KEY(id),
+  CONSTRAINT pk_mc_id PRIMARY KEY (id),
   CONSTRAINT fk_mc_id FOREIGN KEY (character_id) REFERENCES Characters(id),
   CONSTRAINT fk_mc_game_id FOREIGN KEY (game_id) REFERENCES Games(id)
 ) AUTO_INCREMENT = 100000;
@@ -234,8 +236,8 @@ CREATE TABLE IF NOT EXISTS Side_Characters (
   id           INTEGER AUTO_INCREMENT,
   character_id INTEGER NOT NULL,
   game_id      INTEGER NOT NULL,
-  description  TEXT,
   name         VARCHAR(64),
+  description  TEXT,
 
   CONSTRAINT pk_sc_id PRIMARY KEY(id),
   CONSTRAINT fk_sc_id FOREIGN KEY (character_id) REFERENCES Characters(id),
@@ -264,9 +266,9 @@ CREATE TABLE IF NOT EXISTS Companies_Worker (
 
   CONSTRAINT pk_company_worker_id PRIMARY KEY (id),
   CONSTRAINT fk_company_worker_id FOREIGN KEY (company_id) REFERENCES Companies(id),
-  CONSTRAINT fk_worker_company_id FOREIGN KEY (worker_id) REFERENCES Games(id)
+  CONSTRAINT fk_worker_company_id FOREIGN KEY (worker_id) REFERENCES Workers(id)
 
-) AUTO_INCREMENT=1000;
+) AUTO_INCREMENT = 1000;
 
 
 -- separate tables in case we want to add more information later on, and separation of concerns to join on only stuff we want.
