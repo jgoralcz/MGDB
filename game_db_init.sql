@@ -45,7 +45,7 @@ CREATE TABLE Critics (
 CREATE TABLE IF NOT EXISTS Series (
   id           INTEGER AUTO_INCREMENT,
   release_date DATE,
-  description  DATE,
+  description  TEXT,
   name         VARCHAR(128),
   image        VARCHAR(256),
 
