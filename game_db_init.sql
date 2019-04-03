@@ -206,7 +206,8 @@ CREATE TABLE IF NOT EXISTS Weapons (
 ) AUTO_INCREMENT = 10000;
 
 -- games can have many characters, but this table mainly serves to solve the impedance mismatch we have with inheritance.
-CREATE TABLE IF NOT EXISTS Characters (Developers.worker_id is a FK to Workers.idw
+-- Developers.worker_id is a FK to Workers.idw
+CREATE TABLE IF NOT EXISTS Characters (
   id                INTEGER AUTO_INCREMENT,
   name              VARCHAR(128),
   description       TEXT NOT NULL,
