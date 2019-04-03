@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS Games (
   series_id     INTEGER,
   description   TEXT,
   english_name  VARCHAR(64) NOT NULL UNIQUE,
-  other_name    VARCHAR(32),
+  other_name    VARCHAR(64),
   image         VARCHAR(256),
 
   CONSTRAINT pk_game_id PRIMARY KEY (id),
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS Ratings (
   critic_id      INTEGER NOT NULL,
   score          INT NOT NULL,
   date           DATE,
-  description    VARCHAR(255),
+  description    TEXT,
 
   CONSTRAINT pk_critic_id PRIMARY KEY(id),
   CONSTRAINT fk_ratings_game_id FOREIGN KEY (game_id) REFERENCES Games(id),
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS Weapons (
 ) AUTO_INCREMENT = 10000;
 
 -- games can have many characters, but this table mainly serves to solve the impedance mismatch we have with inheritance.
-CREATE TABLE IF NOT EXISTS Characters (
+CREATE TABLE IF NOT EXISTS Characters (Developers.worker_id is a FK to Workers.idw
   id                INTEGER AUTO_INCREMENT,
   name              VARCHAR(128),
   description       TEXT NOT NULL,
