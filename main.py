@@ -106,3 +106,79 @@ for i in range(1, args):
     for j in range(depth):
         print(ins.insert("DLC_Release_Dates", "NULL, %d, %s, %s") % (random.randint(dlc_offset, i+dlc_offset), random.randint(platforms_offset, i+platforms_offset), pop.random_date()))
     print(ins.insert("DLC_Release_Dates", "NULL, %d, %s, %s") % (i+dlc_offset, i+platforms_offset, pop.random_date()))
+
+# run for Cosmetics
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Cosmetics", "NULL, %d, %d, %s, %s, %s") % (random.randint(game_offset, i+game_offset), random.randint(dlc_offset, i+dlc_offset), pop.random_string(256), pop.random_string(1000), pop.random_string(1000)))
+    print(ins.insert("Cosmetics", "NULL, %d, %d, %s, %s, %s") % (i+game_offset, i+dlc_offset, pop.random_string(256), pop.random_string(1000), pop.random_string(1000)))
+
+# run for Weapons
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Weapons", "NULL, %d, %d, %s, %s, %s") % (random.randint(game_offset, i+game_offset), random.randint(dlc_offset, i+dlc_offset), pop.random_string(256), pop.random_string(1000), pop.random_string(1000)))
+    print(ins.insert("Weapons", "NULL, %d, %d, %s, %s, %s") % (i+game_offset, i+dlc_offset, pop.random_string(256), pop.random_string(1000), pop.random_string(1000)))
+
+# run for Characters
+for i in range(1, args):
+        print(ins.insert("Characters", "NULL, %d, %s, %s, %s, %s") % (pop.random_string(256), pop.random_string(1000)))
+
+# run for Main_Characters
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Main_Characters", "NULL, %d, %d, %s, %s") % (random.randint(characters_offest, i+characters_offest), random.randint(game_offset, i+game_offset), pop.random_string(64), pop.random_string(1000)))
+    print(ins.insert("Main_Characters", "NULL, %d, %d, %s, %s") % (random.randint(characters_offest, i+characters_offest), random.randint(game_offset, i+game_offset), pop.random_string(64), pop.random_string(1000)))
+
+# run for Side_Characters
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Side_Characters", "NULL, %d, %d, %s, %s") % (random.randint(characters_offest, i+characters_offest), random.randint(game_offset, i+game_offset), pop.random_string(64), pop.random_string(1000)))
+    print(ins.insert("Side_Characters", "NULL, %d, %d, %s, %s") % (random.randint(characters_offest, i+characters_offest), random.randint(game_offset, i+game_offset), pop.random_string(64), pop.random_string(1000)))
+
+# run for Workers
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Workers", "NULL, %s, %s, %s, %s") % (pop.random_string(64), pop.random_string(64), pop.random_string(64), pop.random_string(1000)))
+    print(ins.insert("Workers", "NULL, %s, %s, %s, %s") % (pop.random_string(64), pop.random_string(64), pop.random_string(64), pop.random_string(1000)))
+
+# run for Companies_Worker
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Companies_Worker", "NULL, %d, %d, %s, %s") % (random.randint(companies_offset, i+companies_offset), random.randint(workers_offset, i+workers_offset), pop.random_date(), pop.random_date()))
+    print(ins.insert("Companies_Worker", "NULL, %d, %d, %s, %s") % (random.randint(companies_offset, i+companies_offset), random.randint(workers_offset, i+workers_offset), pop.random_date(), pop.random_date()))
+
+# run for Developers
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Developers", "NULL, %d") % (random.randint(workers_offset, i+workers_offset)))
+    print(ins.insert("Developers", "NULL, %d") % (random.randint(workers_offset, i+workers_offset)))
+
+# run for Directors
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Directors", "NULL, %d") % (random.randint(workers_offset, i+workers_offset)))
+    print(ins.insert("Directors", "NULL, %d") % (random.randint(workers_offset, i+workers_offset)))
+
+# run for Writers
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Writers", "NULL, %d") % (random.randint(workers_offset, i+workers_offset)))
+    print(ins.insert("Writers", "NULL, %d") % (random.randint(workers_offset, i+workers_offset)))
+
+# run for Composers
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Composers", "NULL, %d") % (random.randint(workers_offset, i+workers_offset)))
+    print(ins.insert("Composers", "NULL, %d") % (random.randint(workers_offset, i+workers_offset)))
+
+# run for Producers
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Producers", "NULL, %d") % (random.randint(workers_offset, i+workers_offset)))
+    print(ins.insert("Producers", "NULL, %d") % (random.randint(workers_offset, i+workers_offset)))
+
+# run for Works_On
+for i in range(1, args):
+    for j in range(depth):
+        print(ins.insert("Works_On", "NULL, %d, %d") % (random.randint(workers_offset, i+workers_offset), random.randint(game_offset, i+game_offset)))
+    print(ins.insert("Works_On", "NULL, %d, %d") % (random.randint(workers_offset, i+workers_offset), random.randint(game_offset, i+game_offset)))
