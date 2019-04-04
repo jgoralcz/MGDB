@@ -12,4 +12,4 @@ class Insert:
         :type: str
         :return:
         """
-        return "INSERT IGNORE INTO %s VALUES(%s)" % (table_name, tuple_str)
+        return "INSERT IGNORE INTO %s VALUES(%s);\n" % (table_name, tuple_str)
