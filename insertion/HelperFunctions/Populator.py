@@ -37,7 +37,11 @@ class Populator:
         :rtype: str
         """
 
-        return Populator._random_digit(4, digits_year) + "-" + Populator._random_digit(2, digits_month) + "-" + Populator._random_digit(2, digits_day)
+        year = int(Populator._random_digit(4, digits_year))
+        if year <= 1001:
+            year = 1002
+
+        return year + "-" + Populator._random_digit(2, digits_month) + "-" + Populator._random_digit(2, digits_day)
 
     @staticmethod
     def _random_digit(size=2, digits="012"):
