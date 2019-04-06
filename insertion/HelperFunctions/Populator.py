@@ -41,7 +41,19 @@ class Populator:
         if year <= 1001:
             year = 1002
 
-        return year + "-" + Populator._random_digit(2, digits_month) + "-" + Populator._random_digit(2, digits_day)
+        # can't be 00
+        month_digit = int(Populator._random_digit(1, "01"))
+        month_digit_two = int(Populator._random_digit(1, "012"))
+        if month_digit == 0 and month_digit_two == 0:
+            month_digit_two = 1
+
+        # can't be 00
+        day_digit = int(Populator._random_digit(1, "01"))
+        day_digit_two = int(Populator._random_digit(1, "012"))
+        if day_digit == 0 and day_digit_two == 0:
+            day_digit_two = 1
+
+        return str(year) + "-" + str(month_digit) + str(month_digit_two) + "-" + str(day_digit) + str(day_digit_two)
 
     @staticmethod
     def _random_digit(size=2, digits="012"):
