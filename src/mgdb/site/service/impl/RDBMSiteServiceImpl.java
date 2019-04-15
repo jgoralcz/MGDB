@@ -19,7 +19,7 @@ public class RDBMSiteServiceImpl implements SiteService {
 	private static String __jdbcUser;
 	private static String __jdbcPasswd;
 	private static String __jdbcDriver;
-	
+
 	private Connection getConnection() throws Exception {
 		try {
 			Class.forName(__jdbcDriver);
@@ -253,8 +253,35 @@ public class RDBMSiteServiceImpl implements SiteService {
 	}
 
 	@Override
-	public ArrayList<GameEntry> getAllMainCharactersByGameID(String gameID) {
-		return null;
+	public ArrayList<Character> getAllMainCharactersByGameID(String gameID) {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+
+		ArrayList<Character> rval = new ArrayList<>();
+		try {
+			conn = getConnection();
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getAllMainCharactersByGameID"));
+			stmt.setString(1, gameID);
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+				rval.add(new Character(-1, -1, rs.getString(1), rs.getString(2), true));
+			}
+		} catch (Exception sqe) {
+			sqe.printStackTrace();
+			rval = null;
+		} finally {  // why nest all of these try/finally blocks?
+			try {
+				rs.close();
+				if (stmt != null) { stmt.close(); }
+			} catch (Exception e2) { e2.printStackTrace(); }
+			finally {
+				try {
+					if (conn != null) { conn.close(); }
+				} catch (Exception e3) { e3.printStackTrace(); }
+			}
+		}
+		return rval;
 	}
 
 
