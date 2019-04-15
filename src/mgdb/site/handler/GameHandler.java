@@ -48,15 +48,13 @@ public class GameHandler implements ActionHandler {
 				// list
 				else if (action.equals("games")) {
 
-					ArrayList<GameEntry> gameEntries = getGamesBySeriesTitle
-
-
+					ArrayList<GameEntry> gameEntries = getGamesBySeriesTitle;
 
 					String[] entries = _pbook.listEntries();
 					
 					ArrayList<String> allEntries = new ArrayList<String>(Arrays.asList(entries));
 					allEntries.add("\nSQL\n");
-					
+
 					//get all from database, this will be printed out using
 					Map<String, PhoneVO> mp = DAOMockBizLayer.getEntries();
 					PhoneVO phone = null;
@@ -64,13 +62,13 @@ public class GameHandler implements ActionHandler {
 				    while (it.hasNext()) {
 				        Map.Entry pair = (Map.Entry)it.next();
 				        System.out.println(pair.getKey() + " = " + pair.getValue());
-				        
+
 				        phone = (PhoneVO) pair.getValue();
 				        allEntries.add(phone.getFirstName()+"\n"+phone.getLastName()+"\n"+phone.getPhone());
 				        it.remove();
 				    }
 				    entries = allEntries.toArray(new String[allEntries.size()]);
-					
+
 					req.setAttribute("entries", entries);
 				}
 
