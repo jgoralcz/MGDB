@@ -1,8 +1,6 @@
 package mgdb.site.handler;
 
-import mgdb.jdbc.dao.DAOMockBizLayer;
-import mgdb.jdbc.dao.valueobject.PhoneVO;
-//import mgdb.site.controller.ControllerServlet;
+import mgdb.site.controller.ControllerServlet;
 //import mgdb.site.model.PhoneBook;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,11 +10,14 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
+import mgdb.site.model.GameEntry;
+import mgdb.site.service.impl.RDBMSiteServiceImpl;
+
 // get out database info
 
 public class GameHandler implements ActionHandler {
 
-//	private PhoneBook _pbook = ControllerServlet.get_pbook();
+	private RDBMSiteServiceImpl site = ControllerServlet.rdbm;
 
 	public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
 		try {
@@ -46,6 +47,8 @@ public class GameHandler implements ActionHandler {
 
 				// list
 				else if (action.equals("games")) {
+
+					ArrayList<GameEntry> gameEntries = getGamesBySeriesTitle
 
 
 

@@ -4,6 +4,7 @@ import mgdb.site.model.CompanyEntry;
 import mgdb.site.model.GameEntry;
 import mgdb.site.model.WorkerEntry;
 import mgdb.site.model.SeriesEntry;
+import mgdb.site.model.CharacterEntry;
 
 import java.util.ArrayList;
 
@@ -22,7 +23,7 @@ public interface SiteService {
 
     ArrayList<WorkerEntry> getAllWorkersByGameID(String gameID);
 
-    ArrayList<GameEntry> getAllMainCharactersByGameID(String gameID);
+    ArrayList<CharacterEntry> getAllMainCharactersByGameID(String gameID);
 
     ArrayList<SeriesEntry> getAllSeriesInfo(String id);
 

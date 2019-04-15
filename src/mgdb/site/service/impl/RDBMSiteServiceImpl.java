@@ -3,6 +3,7 @@ package mgdb.site.service.impl;
 import mgdb.site.service.SiteService;
 
 import mgdb.site.model.CompanyEntry;
+import mgdb.site.model.CharacterEntry;
 import mgdb.site.model.GameEntry;
 import mgdb.site.model.SeriesEntry;
 import mgdb.site.model.WorkerEntry;
@@ -19,6 +20,7 @@ public class RDBMSiteServiceImpl implements SiteService {
 	private static String __jdbcUser;
 	private static String __jdbcPasswd;
 	private static String __jdbcDriver;
+	public static RDBMSiteServiceImpl rdbm;
 
 	private Connection getConnection() throws Exception {
 		try {
@@ -253,19 +255,19 @@ public class RDBMSiteServiceImpl implements SiteService {
 	}
 
 	@Override
-	public ArrayList<Character> getAllMainCharactersByGameID(String gameID) {
+	public ArrayList<CharacterEntry> getAllMainCharactersByGameID(String gameID) {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
-		ArrayList<Character> rval = new ArrayList<>();
+		ArrayList<CharacterEntry> rval = new ArrayList<>();
 		try {
 			conn = getConnection();
 			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getAllMainCharactersByGameID"));
 			stmt.setString(1, gameID);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
-				rval.add(new Character(-1, -1, rs.getString(1), rs.getString(2), true));
+				rval.add(new CharacterEntry(-1, -1, rs.getString(1), rs.getString(2), true));
 			}
 		} catch (Exception sqe) {
 			sqe.printStackTrace();

@@ -1,6 +1,6 @@
 package mgdb.site.model;
 
-public class Character {
+public class CharacterEntry {
 
     private int id;
     private int gameID;
@@ -8,7 +8,7 @@ public class Character {
     private String description;
     private boolean isMainCharacter;
 
-    public Character(int id, int gameID, String name, String description, boolean mainCharacter) {
+    public CharacterEntry(int id, int gameID, String name, String description, boolean mainCharacter) {
         this.id = id;
         this.gameID = gameID;
         this.name = name;
