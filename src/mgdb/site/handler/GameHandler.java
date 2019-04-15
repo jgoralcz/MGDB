@@ -1,23 +1,18 @@
 package mgdb.site.handler;
 
-import mgdb.site.controller.ControllerServlet;
-//import mgdb.site.model.PhoneBook;
+import mgdb.site.model.GameEntry;
+import mgdb.site.service.SiteService;
+import mgdb.site.service.SiteServiceFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Map;
-
-import mgdb.site.model.GameEntry;
-import mgdb.site.service.impl.RDBMSiteServiceImpl;
 
 // get out database info
 
 public class GameHandler implements ActionHandler {
 
-	private RDBMSiteServiceImpl site = ControllerServlet.rdbm;
+	private SiteService site = SiteServiceFactory.getInstance();
 
 	public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
 		try {
@@ -47,31 +42,61 @@ public class GameHandler implements ActionHandler {
 
 				// list
 				else if (action.equals("games")) {
+					String gameAll = req.getParameter("all");
 
-					ArrayList<GameEntry> gameEntries = getGamesBySeriesTitle
+					if(!gameAll.equals("")) {
+
+						// get game entries
+						ArrayList<GameEntry> gameEntries = site.getAllInformationOnGame(gameAll);
+						ArrayList<String> entries = new ArrayList<>();
+						ArrayList<String> images = new ArrayList<>();
+
+						String add = "";
+						String image = "";
+						for (GameEntry ge : gameEntries) {
+							// output = g.english_name, g.description, g.image, s.name, s.description, e.name, e.description, c.name, c.description
+							add = "Series: " + ge.getSeries().getName() + "\n" + ge.getSeries().getDescription() +
+									"Game: " + ge.getEnglishName() + "\n" + ge.getDescription() +
+									"Engine: " + ge.getEngine().getName() + "\n" + ge.getEngine().getDescription() +
+									"Company: " + ge.getCompany().getName() + "\n" + ge.getCompany().getName();
+							image = ge.getImageURL();
+
+							// get the contents out and display
+							entries.add(add);
+							images.add(image);
+						}
+
+						String[] entriesStr = entries.toArray(new String[0]);
+						String[] imagesStr = images.toArray(new String[0]);
+						req.setAttribute("images", imagesStr);
+						req.setAttribute("entries", entriesStr);
+					}
+				}
+
+				// get series info
+				else if(action.equals("series")) {
+					String gameTitle = req.getParameter("title");
+
+					if(!gameTitle.equals("")) {
+						// get game entries
+						ArrayList<GameEntry> gameEntries = site.getGamesBySeriesTitle(gameTitle);
+						ArrayList<String> entries = new ArrayList<>();
+
+						String add = "";
+						for (GameEntry ge : gameEntries) {
+							add = ge.getSeries().getName() + ": " + ge.getEnglishName() + "\n" + ge.getSeries().getDescription();
+							// get the contents out and display
+							entries.add(add);
+						}
+
+						String[] entriesStr = entries.toArray(new String[0]);
+						req.setAttribute("entries", entriesStr);
+					}
+				}
+
+				else if(action.equals("workers")) {
 
 
-
-					String[] entries = _pbook.listEntries();
-					
-					ArrayList<String> allEntries = new ArrayList<String>(Arrays.asList(entries));
-					allEntries.add("\nSQL\n");
-					
-					//get all from database, this will be printed out using
-					Map<String, PhoneVO> mp = DAOMockBizLayer.getEntries();
-					PhoneVO phone = null;
-					Iterator it = mp.entrySet().iterator();
-				    while (it.hasNext()) {
-				        Map.Entry pair = (Map.Entry)it.next();
-				        System.out.println(pair.getKey() + " = " + pair.getValue());
-				        
-				        phone = (PhoneVO) pair.getValue();
-				        allEntries.add(phone.getFirstName()+"\n"+phone.getLastName()+"\n"+phone.getPhone());
-				        it.remove();
-				    }
-				    entries = allEntries.toArray(new String[allEntries.size()]);
-					
-					req.setAttribute("entries", entries);
 				}
 
 			} else {
@@ -86,6 +111,6 @@ public class GameHandler implements ActionHandler {
 			return "wrongmethod";
 		}
 
-		return "phone";
+		return "game";
 	}
 }

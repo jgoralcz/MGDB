@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PhoneFull</title>
+<title>My Game Database</title>
 </head>
 <body>
 <h1>My Game Database</h1>
@@ -10,31 +10,37 @@
 <h3>Games</h3>
 <form action="controller?action=games" method="POST">
 	<!-- search by game name-->
-	Firstname: <input type="text" name="firstname" size="20" value=""/><br/>
-	Lastname: <input type="text" name="lastname" size="20" value=""/><br/>
-	Phone: <input type="text" name="phone" size="20" value=""/><br/>
-	<input type="submit" name="Action" value="Add"/>
-	<input type="submit" name="Action" value="Remove"/>
-	<input type="submit" name="Action" value="List"/>
+	Title: <input type="text" name="title" size="20" value=""/><br/>
+	<input type="submit" name="Action" value="title"/>
+	<input type="submit" name="Action" value="all"/>
 </form>
 
 
 <h3>Series</h3>
 <form action="controller?action=series" method="POST">
 	<!-- search by series name-->
-	<input type="text" name="firstname" size="20" value=""/><br/>
-	<input type="submit" name="Action" value="Search"/>
+	Title: <input type="text" name="title" size="20" value=""/><br/>
+	<input type="submit" name="Action" value="title"/>
 </form>
 
 
-<h3>Developers</h3>
+<h3>Game Workers</h3>
 <form action="controller?action=workers" method="POST">
 	Firstname: <input type="text" name="firstname" size="20" value=""/><br/>
 	Lastname: <input type="text" name="lastname" size="20" value=""/><br/>
-	Phone: <input type="text" name="phone" size="20" value=""/><br/>
-	<input type="submit" name="Action" value="Add"/>
-	<input type="submit" name="Action" value="Remove"/>
-	<input type="submit" name="Action" value="List"/>
+	<input type="submit" name="Action" value="name"/>
+</form>
+
+<h3>Characters</h3>
+<form action="controller?action=characters" method="POST">
+	Name: <input type="text" name="charactername" size="20" value=""/><br/>
+	<input type="submit" name="Action" value="name"/>
+</form>
+
+<h3>Companies</h3>
+<form action="controller?action=characters" method="POST">
+	Name: <input type="text" name="companyname" size="20" value=""/><br/>
+	<input type="submit" name="Action" value="name"/>
 </form>
 
 </body>

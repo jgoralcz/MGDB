@@ -72,6 +72,14 @@ public class ControllerServlet extends HttpServlet {
 			}
 		});
 
+		handlers.put("characters", new ActionHandler() {
+			@Override
+			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
+				req.setAttribute("error", "Unexpected error.");
+				return "workers";
+			}
+		});
+
 
 		handlers.put("wrongmethod", new ActionHandler() {
 			@Override
@@ -81,7 +89,7 @@ public class ControllerServlet extends HttpServlet {
 			}
 		});
 
-		handlers.put("phone", new GameHandler());
+		handlers.put("game", new GameHandler());
 		
 		// pages too
 		pageViews.put("/", "/index.html");

@@ -13,7 +13,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Properties;
 
-//A simple impl of interface PhoneBookService
 public class RDBMSiteServiceImpl implements SiteService {
 	private static Properties __dbProperties;
 	private static String __jdbcUrl;
