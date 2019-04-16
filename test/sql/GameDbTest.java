@@ -24,9 +24,14 @@ package sql;
  *
  */
 
+import java.io.FileInputStream;
+
+
 import org.dbunit.DBTestCase;
 import org.dbunit.PropertiesBasedJdbcDatabaseTester;
 import org.dbunit.dataset.IDataSet;
+import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+import org.dbunit.operation.DatabaseOperation;
 
 class GameDbTest extends DBTestCase {
 	
@@ -42,9 +47,16 @@ class GameDbTest extends DBTestCase {
 
 	@Override
 	protected IDataSet getDataSet() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return new FlatXmlDataSetBuilder().build(new FileInputStream("dataset.xml"));
 	}
+	
+	protected DatabaseOperation getSetUpOperation() throws Exception {
+        return DatabaseOperation.REFRESH;
+    }
+
+    protected DatabaseOperation getTearDownOperation() throws Exception {
+        return DatabaseOperation.NONE;
+    }
 	
 
 
