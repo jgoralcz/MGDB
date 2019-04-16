@@ -1,5 +1,14 @@
 package sql;
 
+import java.io.FileInputStream;
+
+import org.dbunit.DBTestCase;
+import org.dbunit.PropertiesBasedJdbcDatabaseTester;
+import org.dbunit.dataset.IDataSet;
+import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+import org.dbunit.operation.DatabaseOperation;
+import org.junit.Test;
+
 /**
  * Copyright © 2019 Jeremy Powell
  *
@@ -24,40 +33,35 @@ package sql;
  *
  */
 
-import java.io.FileInputStream;
 
-
-import org.dbunit.DBTestCase;
-import org.dbunit.PropertiesBasedJdbcDatabaseTester;
-import org.dbunit.dataset.IDataSet;
-import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
-import org.dbunit.operation.DatabaseOperation;
 
 class GameDbTest extends DBTestCase {
 	
-	public GameDbTest(String name)
-    {
-        super(name);
-        System.setProperty( PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS, "org.hsqldb.jdbcDriver" );
-        System.setProperty( PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL, "localhost" );
-        System.setProperty( PropertiesBasedJdbcDatabaseTester.DBUNIT_USERNAME, "" );
-        System.setProperty( PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "" );
-	// System.setProperty( PropertiesBasedJdbcDatabaseTester.DBUNIT_SCHEMA, "" );
+	public GameDbTest(String name) {
+		super(name);
+        System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS, "com.mysql.jdbc.Driver");
+        System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL, "jdbc:mysql://localhost:3306/user");
+        System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_USERNAME, "root");
+        System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "");
     }
 
-	@Override
 	protected IDataSet getDataSet() throws Exception {
-		return new FlatXmlDataSetBuilder().build(new FileInputStream("dataset.xml"));
-	}
-	
-	protected DatabaseOperation getSetUpOperation() throws Exception {
+        return new FlatXmlDataSetBuilder().build(new FileInputStream("gameFile.xml"));
+    }
+ 
+    protected DatabaseOperation getSetUpOperation() throws Exception {
         return DatabaseOperation.REFRESH;
     }
-
+ 
     protected DatabaseOperation getTearDownOperation() throws Exception {
         return DatabaseOperation.NONE;
     }
-	
+ 
+    @Test
+    public void testById() {
+        int userId = 3;// get user id from database
+		//assertThat(1, is(userId));
+    }
 
 
 }
