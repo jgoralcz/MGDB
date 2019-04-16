@@ -98,9 +98,9 @@ public class RDBMSiteServiceImpl implements SiteService {
 			stmt.setString(2, word);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
-				rval.add(new GameEntry(-1, rs.getString(3), rs.getString(1), rs.getString(1), rs.getString(4),
+				rval.add(new GameEntry(-1, rs.getString(3), rs.getString(1), rs.getString(2), rs.getString(4),
 						null,
-						 new SeriesEntry(-1, rs.getString(4), rs.getDate(5), null, null),
+						 new SeriesEntry(-1, rs.getString(5), rs.getDate(6), null, null),
 						null));
 			}
 		} catch (Exception sqe) {

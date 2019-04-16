@@ -36,23 +36,20 @@ public class ControllerServlet extends HttpServlet {
 		// which path this stuff is actually in
 		System.out.println(this.getClass().getResource("/").getPath());
 
-
-		// normally we read this in from a config file
-//		handlers.put("/", new ActionHandler() {
-//			@Override
-//			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
-//				req.setAttribute("error", "Unexpected error.");
-//				return "/";
-//			}
-//		});
-
-
 		// wrong method error
 		handlers.put("wrongmethod", new ActionHandler() {
 			@Override
 			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
 				req.setAttribute("error", "Unexpected error.");
 				return "wrongmethod";
+			}
+		});
+
+		handlers.put("/", new ActionHandler() {
+			@Override
+			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
+				req.setAttribute("error", "Unexpected error.");
+				return "/";
 			}
 		});
 
@@ -92,9 +89,6 @@ public class ControllerServlet extends HttpServlet {
 
 		// print out our action for debuggin
 		System.out.println("action: " + action);
-
-		action = "games";
-		
 		
 		if (action != null && action.length() > 0) {
 			// Forward to web application to page indicated by action
@@ -117,6 +111,9 @@ public class ControllerServlet extends HttpServlet {
 		}
 
 		System.out.println("Forward Page: " + forwardPage);
+
+		System.out.println(request);
+		System.out.println(response);
 
 		// use our dispatcher to forward the request.
 		request.getRequestDispatcher(forwardPage).forward(request, response);

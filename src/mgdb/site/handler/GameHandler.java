@@ -24,13 +24,12 @@ public class GameHandler implements ActionHandler {
 			if ("POST".equals(req.getMethod()) || "GET".equals(req.getMethod())) {
 
 				// check for action
-				System.out.println("request URI: " + req.getRequestURI());
-				System.out.println("request URL: " + req.getRequestURL());
 				String action = req.getParameter("action");
+				System.out.println("Action POST or GET: " + action);
 				if (action == null || action.length() == 0) {
+					// redirect them back home.
 					req.setAttribute("error", "No action provided");
-					System.out.println("HIIIII!!");
-					return "wrongmethod";
+					return "/";
 				}
 
 				// add a new game
@@ -51,7 +50,9 @@ public class GameHandler implements ActionHandler {
 					String gameList = req.getParameter("list");
 					String gameAll = req.getParameter("all");
 
-					if(!gameAll.equals("")) {
+					System.out.println("Games: " + gameList + " " + gameAll);
+
+					if(gameAll != null && !gameAll.equals("")) {
 
 						// get game entries
 						ArrayList<GameEntry> gameEntries = site.getAllInformationOnGame(gameAll);
@@ -63,9 +64,9 @@ public class GameHandler implements ActionHandler {
 						for (GameEntry ge : gameEntries) {
 							// output = g.english_name, g.description, g.image, s.name, s.description, e.name, e.description, c.name, c.description
 							add = "Series: " + ge.getSeries().getName() + "\n" + ge.getSeries().getDescription() +
-									"Game: " + ge.getEnglishName() + "\n" + ge.getDescription() +
-									"Engine: " + ge.getEngine().getName() + "\n" + ge.getEngine().getDescription() +
-									"Company: " + ge.getCompany().getName() + "\n" + ge.getCompany().getName();
+									"\nGame: " + ge.getEnglishName() + "\n" + ge.getDescription() +
+									"\nEngine: " + ge.getEngine().getName() + "\n" + ge.getEngine().getDescription() +
+									"\nCompany: " + ge.getCompany().getName() + "\n" + ge.getCompany().getName();
 							image = ge.getImageURL();
 
 							// get the contents out and display
@@ -73,14 +74,14 @@ public class GameHandler implements ActionHandler {
 							images.add(image);
 						}
 
-						String[] entriesStr = entries.toArray(new String[0]);
-						String[] imagesStr = images.toArray(new String[0]);
+						String[] entriesStr = entriesNone(entries);
+						String[] imagesStr = entriesNone(entries);
 						req.setAttribute("images", imagesStr);
 						req.setAttribute("entries", entriesStr);
 					}
 
 					// quick list of results, nothing too heavy
-					else if(!gameList.equals("")) {
+					else if(gameList != null && !gameList.equals("")) {
 
 						// get our entries
 						ArrayList<GameEntry> gameEntries = site.getMatchingGameList(gameList);
@@ -89,12 +90,12 @@ public class GameHandler implements ActionHandler {
 						String add = "";
 
 						for (GameEntry ge : gameEntries) {
-							add = "Series: " + ge.getSeries().getName() + "\n" + ge.getSeries().getReleaseDate().toString() + "\n" +
+							add = "Series: " + ge.getSeries().getName() + "\n Series Release Date: " + ge.getSeries().getReleaseDate().toString() + "\n" +
 									"Game: " + ge.getEnglishName() + " - " + ge.getOtherName() + "\n" + ge.getDescription();
 							entries.add(add);
 						}
 
-						String[] entriesStr = entries.toArray(new String[0]);
+						String[] entriesStr = entriesNone(entries);
 						req.setAttribute("entries", entriesStr);
 					}
 
@@ -105,19 +106,19 @@ public class GameHandler implements ActionHandler {
 				else if(action.equals("series")) {
 					String gameTitle = req.getParameter("title");
 
-					if(!gameTitle.equals("")) {
+					if(gameTitle != null && !gameTitle.equals("")) {
 						// get game entries
 						ArrayList<GameEntry> gameEntries = site.getGamesBySeriesTitle(gameTitle);
 						ArrayList<String> entries = new ArrayList<>();
 
 						String add = "";
 						for (GameEntry ge : gameEntries) {
-							add = ge.getSeries().getName() + ": " + ge.getEnglishName() + "\n" + ge.getSeries().getDescription();
+							add = "Series: " + ge.getSeries().getName() + "\n Game: " + ge.getEnglishName() + "\n" + ge.getSeries().getDescription();
 							// get the contents out and display
 							entries.add(add);
 						}
 
-						String[] entriesStr = entries.toArray(new String[0]);
+						String[] entriesStr = entriesNone(entries);
 						req.setAttribute("entries", entriesStr);
 					}
 
@@ -128,7 +129,7 @@ public class GameHandler implements ActionHandler {
 					String gameTitle = req.getParameter("name");
 
 
-					if (!gameTitle.equals("")) {
+					if (gameTitle != null && !gameTitle.equals("")) {
 
 						ArrayList<WorkerEntry> workerEntries = site.getAllWorkersByGameName(gameTitle);
 
@@ -143,7 +144,7 @@ public class GameHandler implements ActionHandler {
 							entries.add(add);
 						}
 
-						String[] entriesStr = entries.toArray(new String[0]);
+						String[] entriesStr = entriesNone(entries);
 						req.setAttribute("entries", entriesStr);
 					}
 
@@ -154,7 +155,7 @@ public class GameHandler implements ActionHandler {
 					String gameCompTitle = req.getParameter("company");
 
 
-					if (!gameTitle.equals("")) {
+					if (gameTitle != null && !gameTitle.equals("")) {
 
 						ArrayList<GameEntry> gameEntries = site.getCompaniesByGameTitle(gameTitle);
 
@@ -169,11 +170,11 @@ public class GameHandler implements ActionHandler {
 							entries.add(add);
 						}
 
-						String[] entriesStr = entries.toArray(new String[0]);
+						String[] entriesStr = entriesNone(entries);
 						req.setAttribute("entries", entriesStr);
 
 					}
-					else if (!gameCompTitle.equals("")) {
+					else if (gameCompTitle != null && !gameCompTitle.equals("")) {
 						ArrayList<CompanyEntry> companyEntries = site.getGamesByCompanyName(gameCompTitle);
 
 						// get name of workers
@@ -187,7 +188,7 @@ public class GameHandler implements ActionHandler {
 							entries.add(add);
 						}
 
-						String[] entriesStr = entries.toArray(new String[0]);
+						String[] entriesStr = entriesNone(entries);
 						req.setAttribute("entries", entriesStr);
 
 					}
@@ -197,7 +198,7 @@ public class GameHandler implements ActionHandler {
 				else if(action.equals("characters")) {
 					String gameTitle = req.getParameter("game");
 
-					if (!gameTitle.equals("")) {
+					if (gameTitle != null && !gameTitle.equals("")) {
 
 						ArrayList<CharacterEntry> characterEntries = site.getAllMainCharactersByGameName(gameTitle);
 
@@ -211,7 +212,7 @@ public class GameHandler implements ActionHandler {
 							entries.add(add);
 						}
 
-						String[] entriesStr = entries.toArray(new String[0]);
+						String[] entriesStr = entriesNone(entries);
 						req.setAttribute("entries", entriesStr);
 					}
 
@@ -230,6 +231,19 @@ public class GameHandler implements ActionHandler {
 			return "wrongmethod";
 		}
 
-		return "games";
+		return "/";
+	}
+
+	// if entries array is empty, say none.
+	private String[] entriesNone(ArrayList<String> entries) {
+
+		String[] entriesStr = entries.toArray(new String[0]);
+		if(entriesStr.length <= 0) {
+			entriesStr = new String[1];
+			entriesStr[0] = "none";
+		}
+
+		return entriesStr;
+
 	}
 }
