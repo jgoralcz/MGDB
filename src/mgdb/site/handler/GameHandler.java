@@ -25,8 +25,9 @@ public class GameHandler implements ActionHandler {
 
 				// check for action
 				String action = req.getParameter("action");
-				System.out.println("Action POST or GET: " + action);
-				if (action == null || action.length() == 0) {
+				String action2 = req.getParameter("Action");
+				String search = req.getParameter("search");
+				if (action == null || action.length() == 0 || action2 == null || action2.length() == 0 || search == null || search.length() == 0) {
 					// redirect them back home.
 					req.setAttribute("error", "No action provided");
 					return "/";
@@ -47,15 +48,11 @@ public class GameHandler implements ActionHandler {
 
 				// list
 				else if (action.equals("games")) {
-					String gameList = req.getParameter("list");
-					String gameAll = req.getParameter("all");
 
-					System.out.println("Games: " + gameList + " " + gameAll);
-
-					if(gameAll != null && !gameAll.equals("")) {
+					if(action2.equals("all")) {
 
 						// get game entries
-						ArrayList<GameEntry> gameEntries = site.getAllInformationOnGame(gameAll);
+						ArrayList<GameEntry> gameEntries = site.getAllInformationOnGame(search);
 						ArrayList<String> entries = new ArrayList<>();
 						ArrayList<String> images = new ArrayList<>();
 
@@ -81,10 +78,10 @@ public class GameHandler implements ActionHandler {
 					}
 
 					// quick list of results, nothing too heavy
-					else if(gameList != null && !gameList.equals("")) {
+					else if(action2.equals("list")) {
 
 						// get our entries
-						ArrayList<GameEntry> gameEntries = site.getMatchingGameList(gameList);
+						ArrayList<GameEntry> gameEntries = site.getMatchingGameList(search);
 						ArrayList<String> entries = new ArrayList<>();
 
 						String add = "";
@@ -104,11 +101,10 @@ public class GameHandler implements ActionHandler {
 
 				// get series info
 				else if(action.equals("series")) {
-					String gameTitle = req.getParameter("title");
 
-					if(gameTitle != null && !gameTitle.equals("")) {
+					if(action2.equals("search")) {
 						// get game entries
-						ArrayList<GameEntry> gameEntries = site.getGamesBySeriesTitle(gameTitle);
+						ArrayList<GameEntry> gameEntries = site.getGamesBySeriesTitle(search);
 						ArrayList<String> entries = new ArrayList<>();
 
 						String add = "";
@@ -126,12 +122,10 @@ public class GameHandler implements ActionHandler {
 				}
 
 				else if(action.equals("workers")) {
-					String gameTitle = req.getParameter("name");
 
+					if (action2.equals("search")) {
 
-					if (gameTitle != null && !gameTitle.equals("")) {
-
-						ArrayList<WorkerEntry> workerEntries = site.getAllWorkersByGameName(gameTitle);
+						ArrayList<WorkerEntry> workerEntries = site.getAllWorkersByGameName(search);
 
 						// get name of workers
 						ArrayList<String> entries = new ArrayList<>();
@@ -151,13 +145,10 @@ public class GameHandler implements ActionHandler {
 					return "workers";
 				}
 				else if(action.equals("companies")) {
-					String gameTitle = req.getParameter("game");
-					String gameCompTitle = req.getParameter("company");
 
+					if (action2.equals("game")) {
 
-					if (gameTitle != null && !gameTitle.equals("")) {
-
-						ArrayList<GameEntry> gameEntries = site.getCompaniesByGameTitle(gameTitle);
+						ArrayList<GameEntry> gameEntries = site.getCompaniesByGameTitle(search);
 
 						// get name of workers
 						ArrayList<String> entries = new ArrayList<>();
@@ -174,8 +165,8 @@ public class GameHandler implements ActionHandler {
 						req.setAttribute("entries", entriesStr);
 
 					}
-					else if (gameCompTitle != null && !gameCompTitle.equals("")) {
-						ArrayList<CompanyEntry> companyEntries = site.getGamesByCompanyName(gameCompTitle);
+					else if (action2.equals("company")) {
+						ArrayList<CompanyEntry> companyEntries = site.getGamesByCompanyName(search);
 
 						// get name of workers
 						ArrayList<String> entries = new ArrayList<>();
@@ -196,11 +187,10 @@ public class GameHandler implements ActionHandler {
 					return "companies";
 				}
 				else if(action.equals("characters")) {
-					String gameTitle = req.getParameter("game");
 
-					if (gameTitle != null && !gameTitle.equals("")) {
+					if (action2.equals("search")) {
 
-						ArrayList<CharacterEntry> characterEntries = site.getAllMainCharactersByGameName(gameTitle);
+						ArrayList<CharacterEntry> characterEntries = site.getAllMainCharactersByGameName(search);
 
 						// get name of workers
 						ArrayList<String> entries = new ArrayList<>();

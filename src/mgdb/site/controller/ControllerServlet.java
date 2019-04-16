@@ -86,9 +86,6 @@ public class ControllerServlet extends HttpServlet {
 		String forwardPage = errorPage;
 
 		String action = request.getParameter("action");
-
-		// print out our action for debuggin
-		System.out.println("action: " + action);
 		
 		if (action != null && action.length() > 0) {
 			// Forward to web application to page indicated by action
@@ -111,9 +108,6 @@ public class ControllerServlet extends HttpServlet {
 		}
 
 		System.out.println("Forward Page: " + forwardPage);
-
-		System.out.println(request);
-		System.out.println(response);
 
 		// use our dispatcher to forward the request.
 		request.getRequestDispatcher(forwardPage).forward(request, response);

@@ -10,8 +10,8 @@
 <h3>Games</h3>
 <form action="controller?action=games" method="POST">
 	<!-- search by game name-->
-	Title: <input type="text" name="title" size="20" value=""/><br/>
-	<input type="submit" name="Action" value="title"/>
+	Title: <input type="text" name="search" size="20" value=""/><br/>
+	<input type="submit" name="Action" value="list"/>
 	<input type="submit" name="Action" value="all"/>
 </form>
 
@@ -19,26 +19,26 @@
 <h3>Series</h3>
 <form action="controller?action=series" method="POST">
 	<!-- search by series name-->
-	Title: <input type="text" name="title" size="20" value=""/><br/>
+	Title: <input type="text" name="search" size="20" value=""/><br/>
 	<input type="submit" name="Action" value="search"/>
 </form>
 
 
 <h3>Game Workers</h3>
 <form action="controller?action=workers" method="POST">
-	Game Name: <input type="text" name="name" size="20" value=""/><br/>
+	Game Name: <input type="text" name="search" size="20" value=""/><br/>
 	<input type="submit" name="Action" value="search"/>
 </form>
 
 <h3>Main Characters</h3>
 <form action="controller?action=characters" method="POST">
-	Game Name: <input type="text" name="charactername" size="20" value=""/><br/>
-	<input type="submit" name="Action" value="name"/>
+	Game Name: <input type="text" name="search" size="20" value=""/><br/>
+	<input type="submit" name="Action" value="search"/>
 </form>
 
 <h3>Companies</h3>
 <form action="controller?action=companies" method="POST">
-	Name: <input type="text" name="companyname" size="20" value=""/><br/>
+	Name: <input type="text" name="search" size="20" value=""/><br/>
 	<input type="submit" name="Action" value="company">
 	<input type="submit" name="Action" value="game"/>
 </form>
