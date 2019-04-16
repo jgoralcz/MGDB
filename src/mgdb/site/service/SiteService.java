@@ -21,9 +21,9 @@ public interface SiteService {
 
     ArrayList<GameEntry> getAllInformationOnGame(String gameTitle);
 
-    ArrayList<WorkerEntry> getAllWorkersByGameID(String gameID);
+    ArrayList<WorkerEntry> getAllWorkersByGameName(String gameTitle);
 
-    ArrayList<CharacterEntry> getAllMainCharactersByGameID(String gameID);
+    ArrayList<CharacterEntry> getAllMainCharactersByGameName(String gameTitle);
 
     ArrayList<SeriesEntry> getAllSeriesInfo(String id);
 

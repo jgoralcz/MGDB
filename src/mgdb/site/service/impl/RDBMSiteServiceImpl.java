@@ -222,7 +222,7 @@ public class RDBMSiteServiceImpl implements SiteService {
 	}
 
 	@Override
-	public ArrayList<WorkerEntry> getAllWorkersByGameID(String gameID) {
+	public ArrayList<WorkerEntry> getAllWorkersByGameName(String gameTitle) {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -230,8 +230,8 @@ public class RDBMSiteServiceImpl implements SiteService {
 		ArrayList<WorkerEntry> rval = new ArrayList<>();
 		try {
 			conn = getConnection();
-			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getAllWorkersByGameID"));
-			stmt.setString(1, gameID);
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getAllWorkersByGameName"));
+			stmt.setString(1, gameTitle);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 				rval.add(new WorkerEntry(-1, rs.getString(1), null, rs.getString(2), null));
@@ -254,7 +254,7 @@ public class RDBMSiteServiceImpl implements SiteService {
 	}
 
 	@Override
-	public ArrayList<CharacterEntry> getAllMainCharactersByGameID(String gameID) {
+	public ArrayList<CharacterEntry> getAllMainCharactersByGameName(String gameName) {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -262,8 +262,8 @@ public class RDBMSiteServiceImpl implements SiteService {
 		ArrayList<CharacterEntry> rval = new ArrayList<>();
 		try {
 			conn = getConnection();
-			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getAllMainCharactersByGameID"));
-			stmt.setString(1, gameID);
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getAllMainCharactersByGameName"));
+			stmt.setString(1, gameName);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 				rval.add(new CharacterEntry(-1, -1, rs.getString(1), rs.getString(2), true));

@@ -3,6 +3,9 @@ package mgdb.site.handler;
 import mgdb.site.model.GameEntry;
 import mgdb.site.service.SiteService;
 import mgdb.site.service.SiteServiceFactory;
+import mgdb.site.model.CompanyEntry;
+import mgdb.site.model.WorkerEntry;
+import mgdb.site.model.CharacterEntry;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,6 +45,7 @@ public class GameHandler implements ActionHandler {
 
 				// list
 				else if (action.equals("games")) {
+					String gameList = req.getParameter("list");
 					String gameAll = req.getParameter("all");
 
 					if(!gameAll.equals("")) {
@@ -71,6 +75,25 @@ public class GameHandler implements ActionHandler {
 						req.setAttribute("images", imagesStr);
 						req.setAttribute("entries", entriesStr);
 					}
+
+					// quick list of results, nothing too heavy
+					else if(!gameList.equals("")) {
+
+						// get our entries
+						ArrayList<GameEntry> gameEntries = site.getMatchingGameList(gameList);
+						ArrayList<String> entries = new ArrayList<>();
+
+						String add = "";
+
+						for (GameEntry ge : gameEntries) {
+							add = "Series: " + ge.getSeries().getName() + "\n" + ge.getSeries().getReleaseDate().toString() + "\n" +
+									"Game: " + ge.getEnglishName() + " - " + ge.getOtherName() + "\n" + ge.getDescription();
+							entries.add(add);
+						}
+
+						String[] entriesStr = entries.toArray(new String[0]);
+						req.setAttribute("entries", entriesStr);
+					}
 				}
 
 				// get series info
@@ -95,8 +118,92 @@ public class GameHandler implements ActionHandler {
 				}
 
 				else if(action.equals("workers")) {
+					String gameTitle = req.getParameter("name");
 
 
+					if (!gameTitle.equals("")) {
+
+						ArrayList<WorkerEntry> workerEntries = site.getAllWorkersByGameName(gameTitle);
+
+						// get name of workers
+						ArrayList<String> entries = new ArrayList<>();
+
+						String add = "";
+						for (WorkerEntry we : workerEntries) {
+							add = we.getFirstName() + " " + we.getLastName();
+
+							// get the contents out to display
+							entries.add(add);
+						}
+
+						String[] entriesStr = entries.toArray(new String[0]);
+						req.setAttribute("entries", entriesStr);
+
+					}
+				}
+				else if(action.equals("companies")) {
+					String gameTitle = req.getParameter("game");
+					String gameCompTitle = req.getParameter("company");
+
+
+					if (!gameTitle.equals("")) {
+
+						ArrayList<GameEntry> gameEntries = site.getCompaniesByGameTitle(gameTitle);
+
+						// get name of workers
+						ArrayList<String> entries = new ArrayList<>();
+
+						String add = "";
+						for (GameEntry ge : gameEntries) {
+							add = ge.getCompany().getName() + ": " + ge.getEnglishName();
+
+							// get the contents out to display
+							entries.add(add);
+						}
+
+						String[] entriesStr = entries.toArray(new String[0]);
+						req.setAttribute("entries", entriesStr);
+
+					}
+					else if (!gameCompTitle.equals("")) {
+						ArrayList<CompanyEntry> companyEntries = site.getGamesByCompanyName(gameCompTitle);
+
+						// get name of workers
+						ArrayList<String> entries = new ArrayList<>();
+
+						String add = "";
+						for (CompanyEntry ce : companyEntries) {
+							add = ce.getName() + ": " + ce.getNumGames();
+
+							// get the contents out to display
+							entries.add(add);
+						}
+
+						String[] entriesStr = entries.toArray(new String[0]);
+						req.setAttribute("entries", entriesStr);
+
+					}
+				}
+				else if(action.equals("characters")) {
+					String gameTitle = req.getParameter("game");
+
+					if (!gameTitle.equals("")) {
+
+						ArrayList<CharacterEntry> characterEntries = site.getAllMainCharactersByGameName(gameTitle);
+
+						// get name of workers
+						ArrayList<String> entries = new ArrayList<>();
+
+						String add = "";
+						for (CharacterEntry ce : characterEntries) {
+							add = ce.getName() + "\n" + ce.getDescription();
+							// get the contents out to display
+							entries.add(add);
+						}
+
+						String[] entriesStr = entries.toArray(new String[0]);
+						req.setAttribute("entries", entriesStr);
+					}
 				}
 
 			} else {

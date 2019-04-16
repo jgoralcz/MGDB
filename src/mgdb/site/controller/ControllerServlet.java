@@ -94,8 +94,10 @@ public class ControllerServlet extends HttpServlet {
 		// pages too
 		pageViews.put("/", "/index.html");
 		pageViews.put("games", "/games.ftl");
-		pageViews.put("series", "/series.html");
-		pageViews.put("workers", "/workers.html");
+		pageViews.put("series", "/series.ftl");
+		pageViews.put("workers", "/workers.ftl");
+		pageViews.put("characters", "/characters.ftl");
+		pageViews.put("companies", "/games.ftl");
 		pageViews.put("wrongmethod", "/wrongmethod.ftl");
     }
     

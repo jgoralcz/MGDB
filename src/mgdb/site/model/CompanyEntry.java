@@ -36,7 +36,7 @@ public class CompanyEntry {
         this.numGames = numGames;
     }
 
-    public int getNumGames(int numGames) {
+    public int getNumGames() {
         return numGames;
     }
 
