@@ -33,54 +33,21 @@ public class ControllerServlet extends HttpServlet {
 		// if you forget this your getServletContext() will get a NPE! 
 		super.init(config);
 
-//		which path this stuff is actually in
-//		System.out.println(this.getClass().getResource("/").getPath());
+		// which path this stuff is actually in
+		System.out.println(this.getClass().getResource("/").getPath());
 
 
 		// normally we read this in from a config file
-		handlers.put("/", new ActionHandler() {
-			@Override
-			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
-				req.setAttribute("error", "Unexpected error.");
-				return "/";
-			}
-		});
+//		handlers.put("/", new ActionHandler() {
+//			@Override
+//			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
+//				req.setAttribute("error", "Unexpected error.");
+//				return "/";
+//			}
+//		});
 
 
-		handlers.put("games", new ActionHandler() {
-			@Override
-			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
-				req.setAttribute("error", "Unexpected error.");
-				return "games";
-			}
-		});
-
-		handlers.put("series", new ActionHandler() {
-			@Override
-			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
-				req.setAttribute("error", "Unexpected error.");
-				return "series";
-			}
-		});
-
-
-		handlers.put("workers", new ActionHandler() {
-			@Override
-			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
-				req.setAttribute("error", "Unexpected error.");
-				return "workers";
-			}
-		});
-
-		handlers.put("characters", new ActionHandler() {
-			@Override
-			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
-				req.setAttribute("error", "Unexpected error.");
-				return "workers";
-			}
-		});
-
-
+		// wrong method error
 		handlers.put("wrongmethod", new ActionHandler() {
 			@Override
 			public String handleIt(HttpServletRequest req, HttpServletResponse resp) {
@@ -89,7 +56,12 @@ public class ControllerServlet extends HttpServlet {
 			}
 		});
 
-		handlers.put("game", new GameHandler());
+		// add to handler
+		handlers.put("games", new GameHandler());
+		handlers.put("series", new GameHandler());
+		handlers.put("workers", new GameHandler());
+		handlers.put("companies", new GameHandler());
+		handlers.put("characters", new GameHandler());
 		
 		// pages too
 		pageViews.put("/", "/index.html");
@@ -100,8 +72,15 @@ public class ControllerServlet extends HttpServlet {
 		pageViews.put("companies", "/games.ftl");
 		pageViews.put("wrongmethod", "/wrongmethod.ftl");
     }
-    
-    private void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	/**
+	 * do the requested action
+	 * @param request the request
+	 * @param response the response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	private void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get session
     	HttpSession session = request.getSession();
 		
@@ -112,7 +91,9 @@ public class ControllerServlet extends HttpServlet {
 		String action = request.getParameter("action");
 
 		// print out our action for debuggin
-		System.out.println(action);
+		System.out.println("action: " + action);
+
+		action = "games";
 		
 		
 		if (action != null && action.length() > 0) {
@@ -120,7 +101,9 @@ public class ControllerServlet extends HttpServlet {
 			ActionHandler handler = handlers.get(action);
 			if (handler != null) {
 				String result = handler.handleIt(request, response);
-				
+
+				System.out.println(result);
+
 				if (result != null && result.length() > 0) {
 					System.out.println("result: " + result);
 					forwardPage = pageViews.get(result);
@@ -132,6 +115,8 @@ public class ControllerServlet extends HttpServlet {
 				}
 			}
 		}
+
+		System.out.println("Forward Page: " + forwardPage);
 
 		// use our dispatcher to forward the request.
 		request.getRequestDispatcher(forwardPage).forward(request, response);

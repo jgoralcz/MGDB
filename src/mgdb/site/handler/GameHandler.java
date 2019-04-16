@@ -21,12 +21,15 @@ public class GameHandler implements ActionHandler {
 		try {
 
 			// verify correct method
-			if ("POST".equals(req.getMethod())) {
+			if ("POST".equals(req.getMethod()) || "GET".equals(req.getMethod())) {
 
 				// check for action
-				String action = req.getParameter("Action");
+				System.out.println("request URI: " + req.getRequestURI());
+				System.out.println("request URL: " + req.getRequestURL());
+				String action = req.getParameter("action");
 				if (action == null || action.length() == 0) {
 					req.setAttribute("error", "No action provided");
+					System.out.println("HIIIII!!");
 					return "wrongmethod";
 				}
 
@@ -94,6 +97,8 @@ public class GameHandler implements ActionHandler {
 						String[] entriesStr = entries.toArray(new String[0]);
 						req.setAttribute("entries", entriesStr);
 					}
+
+					return "games";
 				}
 
 				// get series info
@@ -115,6 +120,8 @@ public class GameHandler implements ActionHandler {
 						String[] entriesStr = entries.toArray(new String[0]);
 						req.setAttribute("entries", entriesStr);
 					}
+
+					return "series";
 				}
 
 				else if(action.equals("workers")) {
@@ -138,8 +145,9 @@ public class GameHandler implements ActionHandler {
 
 						String[] entriesStr = entries.toArray(new String[0]);
 						req.setAttribute("entries", entriesStr);
-
 					}
+
+					return "workers";
 				}
 				else if(action.equals("companies")) {
 					String gameTitle = req.getParameter("game");
@@ -183,6 +191,8 @@ public class GameHandler implements ActionHandler {
 						req.setAttribute("entries", entriesStr);
 
 					}
+
+					return "companies";
 				}
 				else if(action.equals("characters")) {
 					String gameTitle = req.getParameter("game");
@@ -204,6 +214,8 @@ public class GameHandler implements ActionHandler {
 						String[] entriesStr = entries.toArray(new String[0]);
 						req.setAttribute("entries", entriesStr);
 					}
+
+					return "characters";
 				}
 
 			} else {
@@ -218,6 +230,6 @@ public class GameHandler implements ActionHandler {
 			return "wrongmethod";
 		}
 
-		return "game";
+		return "games";
 	}
 }

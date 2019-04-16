@@ -2,26 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c2c935e-c556-437e-b34a-a40be7955e1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/dbunit-2.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/freemarker-2.3.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.annotation-api-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.inject-1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.inject-2.5.0-b42.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.json-1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.servlet-api-3.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.ws.rs-api-2.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/mysql-connector-java-5.1.47-bin.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/dbunit-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/freemarker-2.3.20.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.annotation-api-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.inject-1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.inject-2.5.0-b42.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.json-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.servlet-api-3.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/javax.ws.rs-api-2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/lib/mysql-connector-java-5.1.47-bin.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/properties/rdbm.properties" beforeDir="false" afterPath="$PROJECT_DIR$/properties/rdbm.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mgdb/site/controller/ControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mgdb/site/controller/ControllerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mgdb/site/handler/ActionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mgdb/site/handler/ActionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mgdb/site/handler/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mgdb/site/handler/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mgdb/site/model/CharacterEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mgdb/site/model/CharacterEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mgdb/site/model/CompanyEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mgdb/site/model/CompanyEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mgdb/site/model/WorkerEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mgdb/site/model/WorkerEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mgdb/site/service/SiteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mgdb/site/service/SiteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mgdb/site/service/impl/RDBMSiteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mgdb/site/service/impl/RDBMSiteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,23 +42,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/properties/rdbm.properties">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-116">
-              <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+            <state relative-caret-position="217">
+              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mgdb/site/handler/GameHandler.java">
+        <entry file="file://$PROJECT_DIR$/build.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -71,18 +65,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="421">
               <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/mgdb/site/controller/ControllerServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="98" column="51" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -97,63 +79,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/series.ftl">
+        <entry file="file://$PROJECT_DIR$/properties/rdbm.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/wrongmethod.ftl">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/workers.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mgdb/site/model/CharacterEntry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-213">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-              <folding>
-                <element signature="e#244#245#0" expanded="true" />
-                <element signature="e#277#278#0" expanded="true" />
-                <element signature="e#305#306#0" expanded="true" />
-                <element signature="e#335#336#0" expanded="true" />
-                <element signature="e#364#365#0" expanded="true" />
-                <element signature="e#405#406#0" expanded="true" />
-                <element signature="e#441#442#0" expanded="true" />
-                <element signature="e#472#473#0" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#609#610#0" expanded="true" />
-                <element signature="e#643#644#0" expanded="true" />
-                <element signature="e#697#698#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
-                <element signature="e#821#822#0" expanded="true" />
-                <element signature="e#880#881#0" expanded="true" />
-                <element signature="e#927#928#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/games.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="450">
+              <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -169,8 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Release_Date</find>
-      <find>Companies_Worker</find>
       <find>32</find>
       <find>randint</find>
       <find>Platforms</find>
@@ -199,6 +126,8 @@
       <find>getCompanies</find>
       <find>getCompaniesByGame</find>
       <find>getGamesBy</find>
+      <find>pageViews</find>
+      <find>forwardPage</find>
     </findStrings>
     <replaceStrings>
       <replace>INSERT IGNORE</replace>
@@ -222,7 +151,6 @@
         <option value="$PROJECT_DIR$/2019-04-05_22.38.27.958456.sql" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/src/mgdb/jdbc/dao/daos/PhoneDAO.java" />
-        <option value="$PROJECT_DIR$/src/mgdb/site/handler/ActionHandler.java" />
         <option value="$PROJECT_DIR$/resources/phone.ftl" />
         <option value="$PROJECT_DIR$/resources/series.html" />
         <option value="$PROJECT_DIR$/resources/series.ftl" />
@@ -239,9 +167,6 @@
         <option value="$PROJECT_DIR$/src/mgdb/site/model/PhoneEntry.java" />
         <option value="$PROJECT_DIR$/src/mgdb/site/service/PhoneBookService.java" />
         <option value="$PROJECT_DIR$/src/mgdb/site/service/PhoneBookServiceFactory.java" />
-        <option value="$PROJECT_DIR$/web.xml" />
-        <option value="$PROJECT_DIR$/build.properties" />
-        <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/src/mgdb/site/service/SiteServiceFactory.java" />
         <option value="$PROJECT_DIR$/src/mgdb/site/model/Engine.java" />
         <option value="$PROJECT_DIR$/game_db_init.sql" />
@@ -255,13 +180,18 @@
         <option value="$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/classes/rdbm.properties" />
         <option value="$PROJECT_DIR$/src/mgdb/site/model/WorkerEntry.java" />
         <option value="$PROJECT_DIR$/src/mgdb/site/service/impl/RDBMSiteServiceImpl.java" />
-        <option value="$PROJECT_DIR$/properties/rdbm.properties" />
         <option value="$PROJECT_DIR$/src/mgdb/site/service/SiteService.java" />
         <option value="$PROJECT_DIR$/src/mgdb/site/model/CompanyEntry.java" />
         <option value="$PROJECT_DIR$/src/mgdb/site/model/CharacterEntry.java" />
         <option value="$PROJECT_DIR$/resources/index.html" />
+        <option value="$PROJECT_DIR$/properties/rdbm.properties" />
+        <option value="$PROJECT_DIR$/src/mgdb/site/handler/ActionHandler.java" />
+        <option value="$PROJECT_DIR$/web.xml" />
         <option value="$PROJECT_DIR$/src/mgdb/site/handler/GameHandler.java" />
+        <option value="$PROJECT_DIR$/resources/wrongmethod.ftl" />
         <option value="$PROJECT_DIR$/src/mgdb/site/controller/ControllerServlet.java" />
+        <option value="$PROJECT_DIR$/build.properties" />
+        <option value="$PROJECT_DIR$/build.xml" />
       </list>
     </option>
   </component>
@@ -281,63 +211,6 @@
               <item name="MGDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="MGDB" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="MGDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MGDB" type="462c0819:PsiDirectoryNode" />
-              <item name="properties" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MGDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MGDB" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MGDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MGDB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MGDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MGDB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MGDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MGDB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MGDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MGDB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MGDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MGDB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MGDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MGDB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MGDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MGDB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -351,7 +224,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555375194503" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555384710455" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.path.for.package.jscs" value="project" />
@@ -439,12 +312,12 @@
       <workItem from="1553755047073" duration="31956000" />
       <workItem from="1554236102478" duration="92000" />
       <workItem from="1554399460395" duration="231000" />
-      <workItem from="1554997656057" duration="31089000" />
+      <workItem from="1554997656057" duration="37314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63368000" />
+    <option name="totallyTimeSpent" value="69593000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -455,11 +328,13 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17765568" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17094018" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Java Enterprise" />
       <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.2510204" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.30510205" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
@@ -470,6 +345,8 @@
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="CDI" />
+      <window_info anchor="right" id="Bean Validation" />
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -486,8 +363,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/2019-04-05_21.25.18.621599.sql" />
-    <entry file="file://$PROJECT_DIR$/2019-04-05_21.53.33.011027.sql" />
     <entry file="file://$PROJECT_DIR$/2019-04-05_21.59.32.025990.sql" />
     <entry file="file://$PROJECT_DIR$/2019-04-05_22.26.41.335555.sql" />
     <entry file="file://$PROJECT_DIR$/2019-04-05_22.38.27.958456.sql" />
@@ -657,13 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mgdb/site/model/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -724,13 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -745,13 +606,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="81" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -792,16 +646,6 @@
             <element signature="e#1866#1867#0" expanded="true" />
             <element signature="e#1918#1919#0" expanded="true" />
             <element signature="e#1956#1957#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mgdb/site/handler/ActionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -862,13 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/properties/service.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="54" lean-forward="true" selection-start-column="54" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mgdb/site/model/CompanyEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -911,22 +748,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/properties/rdbm.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/workers.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/wrongmethod.ftl">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/series.ftl">
       <provider selected="true" editor-type-id="text-editor">
@@ -935,20 +762,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/properties/service.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="54" selection-start-column="54" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/classes/service.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mgdb_jgoralcz_jcpowel5/WEB-INF/classes/rdbm.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/characters.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mgdb/site/handler/GameHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,13 +789,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mgdb/site/controller/ControllerServlet.java">
+    <entry file="file://$PROJECT_DIR$/properties/rdbm.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="98" column="51" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
+        <state relative-caret-position="450">
+          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mgdb/site/handler/ActionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/wrongmethod.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mgdb/site/handler/GameHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mgdb/site/controller/ControllerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1624">
+          <caret line="118" column="46" selection-start-line="118" selection-start-column="46" selection-end-line="118" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
         </state>
       </provider>
     </entry>
