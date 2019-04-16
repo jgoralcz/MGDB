@@ -51,7 +51,7 @@ class SeriesEntryTest {
 	void testSeriesEntry() {
 		Date newDate = new Date(2001, 04, 13);
 		SeriesEntry testSeriesEntry = new SeriesEntry(-1, "name", newDate, "description", "imageURL");
-		
+	
 		assertNotNull(testSeriesEntry);
 	}
 
@@ -64,6 +64,7 @@ class SeriesEntryTest {
 	@Test
 	void testSetId() {
 		seriesEntry.setId(10);
+		
 		assertTrue(seriesEntry.getId()==10);
 	}
 
@@ -76,12 +77,14 @@ class SeriesEntryTest {
 	@Test
 	void testSetName() {
 		seriesEntry.setName("new name");
+		
 		assertTrue(seriesEntry.getName().equals("new name"));
 	}
 
 	@Test
 	void testGetReleaseDate() {
 		Date matchDate = new Date(2001, 04, 13);
+		
 		assertTrue(seriesEntry.getReleaseDate().equals(matchDate));
 	}
 
@@ -89,6 +92,7 @@ class SeriesEntryTest {
 	void testSetReleaseDate() {
 		Date matchDate = new Date(1994, 07, 18);
 		seriesEntry.setReleaseDate(matchDate);
+		
 		assertTrue(seriesEntry.getReleaseDate().equals(matchDate));
 	}
 
@@ -101,6 +105,7 @@ class SeriesEntryTest {
 	@Test
 	void testSetDescription() {
 		seriesEntry.setDescription("new description");
+		
 		assertTrue(seriesEntry.getDescription().equals("new description"));
 	}
 
@@ -113,6 +118,7 @@ class SeriesEntryTest {
 	@Test
 	void testSetImageURL() {
 		seriesEntry.setImageURL("newImageURL");
+		
 		assertTrue(seriesEntry.getImageURL().equals("newImageURL"));
 	}
 
