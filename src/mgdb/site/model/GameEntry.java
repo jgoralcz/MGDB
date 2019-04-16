@@ -88,7 +88,7 @@ public class GameEntry {
 
 
 
-    public String toString() { return description + "\n" + englishName + "\n" + otherName + "\n" + imageURL + "\n" + engine.toString() + "\n" + series + "\n" + company.toString(); }
+    public String toString() { return description + "\n" + englishName + "\n" + otherName + "\n" + imageURL + "\n" + engine.toString() + "\n" + series.toString() + "\n" + company.toString(); }
 }
 
 
