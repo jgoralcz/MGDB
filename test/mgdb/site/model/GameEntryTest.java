@@ -34,8 +34,9 @@ import org.junit.jupiter.api.Test;
 
 
 class GameEntryTest {
+	
 	Date date = new Date(2001, 04, 13);
-	Engine engine = new Engine();
+	Engine engine = new Engine(-1, "name", "description", date, "imageURL");
 	SeriesEntry series = new SeriesEntry(-1, "name", date, "description", "imageURL");
 	CompanyEntry company = new CompanyEntry(-1, "main name", "main description", 5);
 	GameEntry gameEntry = new GameEntry(-1, "description", "english name", "other name", "imageURL", engine, series, company);
@@ -58,7 +59,6 @@ class GameEntryTest {
 	@Test
 	void testToString() {
 		//description + "\n" + englishName + "\n" + otherName + "\n" + imageURL + "\n" + engine.toString() + "\n" + series + "\n" + company.toString(); }
-		System.out.println(gameEntry.toString());
 		assertTrue(gameEntry.toString().contains("english name"));
 		assertTrue(gameEntry.toString().contains("other name"));
 		assertTrue(gameEntry.toString().contains("imageURL"));

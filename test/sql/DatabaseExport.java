@@ -36,7 +36,7 @@ public class DatabaseExport {
 
 	public static void main(String[] args) throws Exception
     {
-//        // database connection
+        // database connection
 //        Class driverClass = Class.forName("org.hsqldb.jdbcDriver");
 //        Connection jdbcConnection = DriverManager.getConnection(
 //                "jdbc:hsqldb:sample", "sa", "");
