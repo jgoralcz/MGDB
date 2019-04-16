@@ -6,8 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
-import mgdb.site.controller.ControllerServlet;
-
 /**
  * Copyright © 2019 Jeremy Powell
  *
@@ -50,15 +48,9 @@ class CharacterEntryTest {
 
 	@Test
 	void testCharacterEntry() {
-		assertFalse(mainCharacterEntry.toString()=="");
-		assertFalse(sideCharacterEntry.toString()=="");
-
-		assertTrue(mainCharacterEntry.toString().contains("main name"));
-		assertTrue(mainCharacterEntry.toString().contains(""));
-		assertTrue(sideCharacterEntry.toString().contains("side name"));
-		assertTrue(sideCharacterEntry.toString().contains("false"));
+		CharacterEntry characterEntry = new CharacterEntry(-1, -1, "name", "description", true);
 		
-		assertNotSame(sideCharacterEntry.toString(), mainCharacterEntry.toString());
+		assertNotNull(characterEntry);
 }
 
 	@Test

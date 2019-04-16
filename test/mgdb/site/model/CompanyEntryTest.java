@@ -6,10 +6,35 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Copyright © 2019 Jeremy Powell
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * I grant the right to the facility of and to Kevin Gary at
+ * Arizona State University the right to copy, compile, and execute
+ * this code. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SER322 Database Management - Project
+ * @author Jeremy Powell jcpowel5@asu.edu
+ *         Software Engineering, ASU Poly
+ * @version April 15, 2019
+ *
+ */
+
+
 class CompanyEntryTest {
 	
 	CompanyEntry mainCompanyEntry = new CompanyEntry(-1, "main name", "main description", 5);
-	CompanyEntry nullCompanyEntry = new CompanyEntry();
+	CompanyEntry blankCompanyEntry = new CompanyEntry();
 
 	@Before 
     public void setUp() throws Exception {}
@@ -17,22 +42,27 @@ class CompanyEntryTest {
     @After
     public void tearDown() throws Exception {
     	this.mainCompanyEntry = null;
-    	this.nullCompanyEntry = null;
+    	this.blankCompanyEntry = null;
     }
 
+    @Test
+	void testCompanyEntry() {
+		assertNotNull(mainCompanyEntry);
+		assertNotNull(blankCompanyEntry);
+	}
     
 	@Test
 	void testGetId() {
 		assertTrue(mainCompanyEntry.getId()== -1);
-		assertTrue(nullCompanyEntry.getId()== 0);
+		assertTrue(blankCompanyEntry.getId()== 0);
 	}
 
 	@Test
 	void testSetId() {
 		mainCompanyEntry.setId(10);
-		nullCompanyEntry.setId(20);
+		blankCompanyEntry.setId(20);
 		assertTrue(mainCompanyEntry.getId()== 10);
-		assertTrue(nullCompanyEntry.getId()== 20);
+		assertTrue(blankCompanyEntry.getId()== 20);
 	}
 
 	@Test
@@ -44,23 +74,23 @@ class CompanyEntryTest {
 	@Test
 	void testSetName() {
 		mainCompanyEntry.setName("new main name");
-		nullCompanyEntry.setName("new null name");
+		blankCompanyEntry.setName("new null name");
 		assertTrue(mainCompanyEntry.getName().equals("new main name"));
-		assertTrue(nullCompanyEntry.getName().equals("new null name"));
+		assertTrue(blankCompanyEntry.getName().equals("new null name"));
 	}
 
 	@Test
 	void testGetNumGames() {
 		assertTrue(mainCompanyEntry.getNumGames()==5);
-		assertTrue(nullCompanyEntry.getNumGames()==0);
+		assertTrue(blankCompanyEntry.getNumGames()==0);
 	}
 	
 	@Test
 	void testSetNumGames() {
 		mainCompanyEntry.setNumGames(15);
-		nullCompanyEntry.setNumGames(10);
+		blankCompanyEntry.setNumGames(10);
 		assertTrue(mainCompanyEntry.getNumGames()==15);
-		assertTrue(nullCompanyEntry.getNumGames()==10);
+		assertTrue(blankCompanyEntry.getNumGames()==10);
 	}
 
 	@Test
@@ -72,9 +102,9 @@ class CompanyEntryTest {
 	@Test
 	void testSetDescription() {
 		mainCompanyEntry.setDescription("new main description");
-		nullCompanyEntry.setDescription("new null description");
+		blankCompanyEntry.setDescription("new null description");
 		assertTrue(mainCompanyEntry.getDescription().equals("new main description"));
-		assertTrue(nullCompanyEntry.getDescription().equals("new null description"));
+		assertTrue(blankCompanyEntry.getDescription().equals("new null description"));
 	}
 
 	@Test
