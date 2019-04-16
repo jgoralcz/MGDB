@@ -1,6 +1,6 @@
 -- GAME DATABASE QUERIES
 -- SER 322 Deliverable 3
--- Authors: Josh Goralczyk (jgoralcz), Jeremy Powell (jcpowel5)
+-- Authors: Josh Goralczyk (mgdb), Jeremy Powell (jcpowel5)
 
 -- * realistic select queries for each tables *
 
@@ -10,7 +10,7 @@
 SELECT s.description, s.name, g.english_name
 FROM Series s
 JOIN Games g ON s.id = g.series_id
-WHERE s.name = 'Mass Effect';
+-- WHERE s.name = ?;
 
 --
 -- get 50 game info with series names and release date, order by name ascended where name LIKE (prepared statement).
@@ -21,7 +21,7 @@ FROM Games g
 JOIN Series s ON g.series_id=s.id
 ORDER BY g.english_name ASC
 LIMIT 50;
--- WHERE g.english_name LIKE '%name%' OR s.name ILIKE '%name%'
+# WHERE g.english_name LIKE '%name%' OR s.name ILIKE '%name%'
 
 --
 -- get the number of games in each series and name limit 50, allow pagination (when we do a prepared statement),
@@ -53,9 +53,9 @@ SELECT c.name, g.english_name
 FROM Games g
 JOIN Companies_Game cg ON g.id=cg.game_id
 JOIN Companies c ON c.id=cg.company_id
+WHERE g.english_name LIKE '%' || ? || '%'
 ORDER BY g.english_name ASC
 LIMIT 100;
--- WHERE GAME ILIKE '%name%'
 
 --
 -- get all information on a game (like a wikipedia page)
@@ -66,7 +66,7 @@ JOIN Series s ON g.series_id=s.id
 JOIN `Engines` e ON g.engine_id=e.id
 JOIN Companies_Game cg ON g.id=cg.game_id
   JOIN Companies c ON cg.company_id=c.id
-WHERE g.english_name = 'Mass Effect 2';
+WHERE g.english_name LIKE '%' || ? || '%';
 -- WHERE GAME LIKE '%name%'
 
 --
@@ -81,7 +81,8 @@ FROM Games g
   LEFT JOIN Writers wri ON w.id=dir.worker_id
   LEFT JOIN Composers comp ON w.id=comp.worker_id
   LEFT JOIN Producers pro ON w.id=pro.worker_id
-WHERE g.id= 100004
+# WHERE g.id = 100004
+WHERE g.id = ?
 ORDER BY first_name ASC;
 
 --
@@ -90,6 +91,6 @@ ORDER BY first_name ASC;
 SELECT mc.name, mc.description
 FROM Main_Characters mc
   JOIN Games g ON g.id=mc.game_id
-WHERE g.id = 100004
+# WHERE g.id = 100004
 ORDER BY mc.name ASC;
 

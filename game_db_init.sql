@@ -65,8 +65,8 @@ CREATE TABLE IF NOT EXISTS Games (
   image         VARCHAR(256),
 
   CONSTRAINT pk_game_id PRIMARY KEY (id),
-  CONSTRAINT fk_games_engine_id FOREIGN KEY (engine_id) REFERENCES Engines(id),
-  CONSTRAINT fk_games_series_id FOREIGN KEY (series_id) REFERENCES Series(id)
+  CONSTRAINT fk_games_engine_id FOREIGN KEY (engine_id) REFERENCES Engines(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_games_series_id FOREIGN KEY (series_id) REFERENCES Series(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT=100000;
 
@@ -80,8 +80,8 @@ CREATE TABLE IF NOT EXISTS Ratings (
   description    TEXT,
 
   CONSTRAINT pk_critic_id PRIMARY KEY(id),
-  CONSTRAINT fk_ratings_game_id FOREIGN KEY (game_id) REFERENCES Games(id),
-  CONSTRAINT fk_ratings_critic_id FOREIGN KEY (critic_id) REFERENCES Critics(id)
+  CONSTRAINT fk_ratings_game_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_ratings_critic_id FOREIGN KEY (critic_id) REFERENCES Critics(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT=1000000;
 
@@ -94,8 +94,8 @@ CREATE TABLE IF NOT EXISTS Companies_Game (
   date_end    DATE,
 
   CONSTRAINT pk_game_company_id PRIMARY KEY (id),
-  CONSTRAINT fk_game_company_id FOREIGN KEY (company_id) REFERENCES Companies(id),
-  CONSTRAINT fk_company_game_id FOREIGN KEY (game_id) REFERENCES Games(id)
+  CONSTRAINT fk_game_company_id FOREIGN KEY (company_id) REFERENCES Companies(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_company_game_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT=1000;
 
@@ -120,8 +120,8 @@ CREATE TABLE IF NOT EXISTS Game_Release_Date (
   date        DATE NOT NULL,
 
   CONSTRAINT pk_game_release_id PRIMARY KEY (id),
-  CONSTRAINT fk_game_releaseid FOREIGN KEY (game_id) REFERENCES Games(id),
-  CONSTRAINT fk_game_platform_id FOREIGN KEY (platform_id) REFERENCES Platforms(id)
+  CONSTRAINT fk_game_releaseid FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_game_platform_id FOREIGN KEY (platform_id) REFERENCES Platforms(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 1000000;
 
@@ -141,8 +141,8 @@ CREATE TABLE IF NOT EXISTS Game_Genres (
   genre_id INTEGER NOT NULL,
 
   CONSTRAINT pk_game_genre PRIMARY KEY (id),
-  CONSTRAINT fk_genre_game_id FOREIGN KEY (game_id) REFERENCES Games(id),
-  CONSTRAINT fk_game_genre_id FOREIGN KEY (genre_id) REFERENCES Genres(id)
+  CONSTRAINT fk_genre_game_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_game_genre_id FOREIGN KEY (genre_id) REFERENCES Genres(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 1;
 
@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS DLC (
   image           VARCHAR(256),
 
   CONSTRAINT pk_dlc_id PRIMARY KEY (id),
-  CONSTRAINT fk_game_id FOREIGN KEY (game_id) REFERENCES Games(id)
+  CONSTRAINT fk_game_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 100000;
 
@@ -169,9 +169,9 @@ CREATE TABLE IF NOT EXISTS DLC_Release_Dates (
   platform_id INTEGER NOT NULL,
   date        DATE NOT NULL,
 
-  CONSTRAINT pk_dlc_release_id PRIMARY KEY (id),
-  CONSTRAINT fk_release_dlc_id FOREIGN KEY (dlc_id) REFERENCES DLC(id),
-  CONSTRAINT fk_release_platform_id FOREIGN KEY (platform_id) REFERENCES Platforms(id)
+  CONSTRAINT pk_dlc_release_id PRIMARY KEY (id) ,
+  CONSTRAINT fk_release_dlc_id FOREIGN KEY (dlc_id) REFERENCES DLC(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_release_platform_id FOREIGN KEY (platform_id) REFERENCES Platforms(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 1000000;
 
@@ -180,13 +180,13 @@ CREATE TABLE IF NOT EXISTS Cosmetics (
 	id                INTEGER AUTO_INCREMENT,
 	game_id           INTEGER NOT NULL,
 	dlc_id            INTEGER,
-    name              VARCHAR(128),
+  name              VARCHAR(128),
 	description       TEXT NOT NULL,
 	stats             TEXT,
 
 	CONSTRAINT pk_cosmetic_id PRIMARY KEY(id),
-	CONSTRAINT fk_cosmetic_game_id FOREIGN KEY (game_id) REFERENCES Games(id),
-	CONSTRAINT fk_cosmetic_dlc_id FOREIGN KEY (dlc_id) REFERENCES DLC(id)
+	CONSTRAINT fk_cosmetic_game_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE,
+	CONSTRAINT fk_cosmetic_dlc_id FOREIGN KEY (dlc_id) REFERENCES DLC(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 10000;
 
@@ -200,8 +200,8 @@ CREATE TABLE IF NOT EXISTS Weapons (
   stats             TEXT,
 
   CONSTRAINT pk_weapons_id PRIMARY KEY(id),
-  CONSTRAINT fk_weapons_game_id FOREIGN KEY (game_id) REFERENCES Games(id),
-  CONSTRAINT fk_weapons_dlc_id FOREIGN KEY (dlc_id) REFERENCES DLC(id)
+  CONSTRAINT fk_weapons_game_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_weapons_dlc_id FOREIGN KEY (dlc_id) REFERENCES DLC(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 10000;
 
@@ -226,8 +226,8 @@ CREATE TABLE IF NOT EXISTS Main_Characters (
   description  TEXT,
 
   CONSTRAINT pk_mc_id PRIMARY KEY (id),
-  CONSTRAINT fk_mc_id FOREIGN KEY (character_id) REFERENCES Characters(id),
-  CONSTRAINT fk_mc_game_id FOREIGN KEY (game_id) REFERENCES Games(id)
+  CONSTRAINT fk_mc_id FOREIGN KEY (character_id) REFERENCES Characters(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_mc_game_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE
 ) AUTO_INCREMENT = 100000;
 
 -- games can have many side characters, which is a character from another game.
@@ -241,8 +241,8 @@ CREATE TABLE IF NOT EXISTS Side_Characters (
   description  TEXT,
 
   CONSTRAINT pk_sc_id PRIMARY KEY(id),
-  CONSTRAINT fk_sc_id FOREIGN KEY (character_id) REFERENCES Characters(id),
-  CONSTRAINT fk_sc_game_id FOREIGN KEY (game_id) REFERENCES Games(id)
+  CONSTRAINT fk_sc_id FOREIGN KEY (character_id) REFERENCES Characters(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_sc_game_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE
 ) AUTO_INCREMENT = 100000;
 
 -- worker that solves an impedance mismatch problem at the cost of another join.
@@ -266,8 +266,8 @@ CREATE TABLE IF NOT EXISTS Companies_Worker (
   date_end    DATE,
 
   CONSTRAINT pk_company_worker_id PRIMARY KEY (id),
-  CONSTRAINT fk_company_worker_id FOREIGN KEY (company_id) REFERENCES Companies(id),
-  CONSTRAINT fk_worker_company_id FOREIGN KEY (worker_id) REFERENCES Workers(id)
+  CONSTRAINT fk_company_worker_id FOREIGN KEY (company_id) REFERENCES Companies(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_worker_company_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 1000;
 
@@ -278,7 +278,7 @@ CREATE TABLE IF NOT EXISTS Developers (
   worker_id    INTEGER NOT NULL,
 
   CONSTRAINT pk_developer_id PRIMARY KEY(id),
-  CONSTRAINT fk_developer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id)
+  CONSTRAINT fk_developer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 100000;
 
@@ -287,7 +287,7 @@ CREATE TABLE IF NOT EXISTS Directors (
   worker_id    INTEGER NOT NULL,
 
   CONSTRAINT pk_director_id PRIMARY KEY(id),
-  CONSTRAINT fk_director_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id)
+  CONSTRAINT fk_director_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 100000;
 
@@ -297,7 +297,7 @@ CREATE TABLE IF NOT EXISTS Writers (
   worker_id    INTEGER NOT NULL,
 
   CONSTRAINT pk_writer_id PRIMARY KEY(id),
-  CONSTRAINT fk_writer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id)
+  CONSTRAINT fk_writer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 100000;
 
@@ -307,7 +307,7 @@ CREATE TABLE IF NOT EXISTS Composers (
   worker_id    INTEGER NOT NULL,
 
   CONSTRAINT pk_composer_id PRIMARY KEY(id),
-  CONSTRAINT fk_composer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id)
+  CONSTRAINT fk_composer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 100000;
 
@@ -317,7 +317,7 @@ CREATE TABLE IF NOT EXISTS Producers (
   worker_id    INTEGER NOT NULL,
 
   CONSTRAINT pk_producer_id PRIMARY KEY(id),
-  CONSTRAINT fk_producer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id)
+  CONSTRAINT fk_producer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 100000;
 
@@ -328,7 +328,7 @@ CREATE TABLE IF NOT EXISTS Works_On (
   game_id   INTEGER NOT NULL,
 
   CONSTRAINT pk_works_on_id PRIMARY KEY(id),
-  CONSTRAINT fk_worker_game_id FOREIGN KEY (worker_id) REFERENCES Workers(id),
-  CONSTRAINT fk_game_worker_id FOREIGN KEY (game_id) REFERENCES Games(id)
+  CONSTRAINT fk_worker_game_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_game_worker_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 1000000;
