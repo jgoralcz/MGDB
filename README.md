@@ -1,24 +1,38 @@
 # MGDB
-my game database deliverable 4
+my game database deliverable 5
 
 #### For the first part of this deliverable, you can populate the database with python (once you have the DDL added).
 To use the python autogeneration use it like so from the root directory of this file: 
 `python3 main.py <length> <depth>` where `length` (default 5) is the number of rows to generate and `depth` (default 2) is the extra random numbers to add to tables that depend on other tables (foreign key testing).
-An example could like like `python3 main.py 30, 10` or simply `python3 main.py`
+An example could like like `python3 main.py 30, 10` or simply `python3 main.py` **if you do not have python3 try just using python instead**
 
+####IMPORTANT: as of the 5th deliverable there is a 2nd python file to populate the database and a 2nd DDL with indexes and denormalization from its original (close) 3rd normal form.
+I updated main.py to work 
+
+To run tomcat go to the bin folder and type in `./catalina.sh run` for **mac/unix users** (not sure what windows uses).
+**To verify it's working simply go to localhost:8080** in your browser.
 
 To run mySQL on your system:
-    `- mysql -u root -p`
-Make sure you change the username/password in the properties/rdbm.properties file.
+    `mysql -u root -p`    
+**Make sure you change the username/password in the `properties/rdbm.properties` file. TO YOUR OWN MYSQL USERNAME/PASSWORD!!!**
     
-To build tomcat, make sure you point it to a correct tomcat instance in the build.properties file.
-The tomcat.home in the build should be enough to satisfy this.
+To build tomcat, make sure you point it to a correct tomcat instance in the `build.properties` file.
+The `tomcat.home` in the build should be enough to satisfy this. Also you must change the `tomcat_webapps` to points to your tomcat's webapps (basically same directory).
+
+then run `ant deploy` on the command line with the root of the folder having the `build.xml`
+you can then go to the `localhost:8080/mgdb/` as mentioned before.
 
 As for the website, make sure you are connected to your tomcat instance (I used port 8080)
 It will look something like: `localhost:8080/mgdb/` and then from there use the buttons to search.
 
+
+If you get a JDBC error check your `properties/rdbm.properties` and make sure you have the right info.
+Also make sure you have the right DDL and have populated it with a correct DML. Then do `ant deploy` to redo it.
+
+
+### Site
 In case you are given gibberish data, you can check in the properties/rdbm.properties file
-to see what each of them return.
+to see what each of them should return.
 
 Otherwise, I will explain:
 

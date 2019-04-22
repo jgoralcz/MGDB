@@ -1,106 +1,3 @@
-<!--<project name="mgdb" default="deploy" basedir=".">-->
-    <!---->
-    <!--<property file="build.properties" />-->
-
-    <!--<path id="classpath">-->
-        <!--<fileset dir="./">-->
-            <!--<include name="${srclib}/*.jar" />-->
-        <!--</fileset>-->
-    <!--</path>-->
-
-    <!--&lt;!&ndash;make directories&ndash;&gt;-->
-    <!--<target name="init">-->
-        <!--<tstamp/>-->
-        <!--<mkdir dir="${classesdir}"/>-->
-        <!--<mkdir dir="${destdir}/WEB-INF/classes"/>-->
-        <!--<mkdir dir="${properties}"/>-->
-        <!--<mkdir dir="${destdir}/WEB-INF/lib/"/>-->
-        <!--<copy todir="${destdir}/WEB-INF/lib">-->
-            <!--<fileset dir="${srclib}"/>-->
-        <!--</copy>-->
-    <!--</target>-->
-
-    <!--<target name="compile" depends="init">-->
-        <!--<javac-->
-            <!--srcdir="${srcdir}"-->
-            <!--destdir="${classesdir}">-->
-            <!--&lt;!&ndash; Make sure you set your classpath! &ndash;&gt;-->
-            <!--<classpath>-->
-                <!--<fileset dir="${srclib}" includes="*.jar"/>-->
-                <!--<fileset dir="${tomcat.home}/lib" includes="servlet-api.jar"/>-->
-                <!--<pathelement path="${classesdir}" />-->
-            <!--</classpath>-->
-        <!--</javac>-->
-
-        <!--&lt;!&ndash;<javac classpathref="classpath" srcdir="src" destdir="${destdir}/WEB-INF/classes/" />&ndash;&gt;-->
-        <!--&lt;!&ndash;<copy file="${properties}/service.properties" todir="${destdir}/WEB-INF/classes/"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;<copy file="${properties}/rdbm.properties" todir="${destdir}/WEB-INF/classes/"/>&ndash;&gt;-->
-    <!--</target>-->
-
-    <!--<target name="build" depends="compile">-->
-        <!--<mkdir dir="${build.home}"/>-->
-        <!--<mkdir dir="${build.home}/WEB-INF"/>-->
-
-        <!--<copy todir="${build.home}/WEB-INF">-->
-            <!--<fileset dir="." includes="${classesdir}/**,${srclib}/**" excludes="${classesdir}/driver/**"/>-->
-        <!--</copy>-->
-
-
-        <!--<copy todir="${build.home}/WEB-INF/${classesdir}">-->
-            <!--<fileset dir="${properties}"/>-->
-        <!--</copy>-->
-
-
-        <!--<copy todir="${build.home}">-->
-            <!--<fileset dir="${resources.dir}" includes="**/*.properties, *.html, *.jsp, *.ftl"/>-->
-        <!--</copy>-->
-
-
-        <!--<copy file="web.xml" todir="${destdir}/WEB-INF/web.xml"/>-->
-        <!--<copy file="${resources.dir}/index.html" tofile="${build.home}/index.html"/>-->
-        <!--<war destfile="${warfile}" basedir="${destdir}" needxmlfile="false"/>-->
-    <!--</target>-->
-
-
-    <!--<target name="deploy" depends="build">-->
-        <!--<echo message="Deploying to tomcat at ${tomcat_webapps}"/>-->
-        <!--<copy file="${warfile}" todir="${tomcat_webapps}" overwrite="yes"/>-->
-    <!--</target>-->
-    <!---->
-    <!--&lt;!&ndash; This example dist target merely jars up the webapp files. &ndash;&gt;-->
-    <!--<target name="submit" depends="clean">-->
-        <!--<jar destfile="${submit.jar}" basedir="." excludes="bin/**,${srclib}/**,classes/**,build/**">-->
-        <!--</jar>-->
-    <!--</target>-->
-    <!---->
-    <!--&lt;!&ndash; This example dist target merely jars up the webapp files. &ndash;&gt;-->
-    <!--<target name="dist" depends="build">-->
-        <!--<jar destfile="${warfile}" basedir="${build.home}">-->
-        <!--</jar>-->
-    <!--</target>-->
-    <!---->
-    <!--<target name="clean">-->
-        <!--<delete file="${warfile}" />-->
-        <!--<delete file="${submit.jar}" />-->
-        <!--<delete dir="${destdir}"/>-->
-    <!--</target>-->
-    <!---->
-    <!--<target name="undeploy">-->
-        <!--<delete file="${tomcat_webapps}/${warfile}" />-->
-    <!--</target>-->
-<!--</project>-->
-
-
-    <!--
-       build.xml file for SER422 Spring 2016
-       Copyright 2016 Kevin A. Gary
-       This build.xml does most of the things asked of you in the
-       submission guidelines document. However, you may need to
-       customize actions for these targets per each lab's
-       particular submission requirements, so please take the time
-       to understand how this works!
-    -->
-
 <project name="mgdb" default="compile" basedir=".">
     <property file="build.properties"/>
 
@@ -203,12 +100,28 @@
     <!-- Clean -->
     <target name="clean">
         <delete file="${dist.jar}"/>
-        <delete dir="${tomcat.home}-${tomcat-port1}/webapps/${app.name}"/>
-        <delete dir="${tomcat.home}-${tomcat-port2}/webapps/${app.name}"/>
-        <delete file="${tomcat.home}-${tomcat-port1}/webapps/${dist.jar}"/>
-        <delete file="${tomcat.home}-${tomcat.port2}/webapps/${dist.jar}"/>
+        <delete file="${tomcat.home}/webapps/${dist.jar}"/>
         <delete dir="${build.home}"/>
         <delete dir="${classes.dir}"/>
+    </target>
+
+    <target name="compileTest" depends="compile" description="compile jUnit Test cases ">
+        <javac srcdir="${test-junit-dir}" destdir="${test-junit-dir}" includeantruntime="true" nowarn="yes" debug="true" />
+    </target>
+
+    <target name="test" depends="compileTest">
+        <junit>
+            <classpath>
+                <pathelement location="test/mgdb" />
+                <pathelement location="lib/junit-jupiter-api-5.5.0-M1.jar"/>
+            </classpath>
+            <batchtest>
+                <fileset dir="${test-junit-dir}">
+                    <include name="**/*Test*" />
+                </fileset>
+            </batchtest>
+            <formatter type="brief" usefile="false"/>
+        </junit>
     </target>
 
     <!-- Clean all -->

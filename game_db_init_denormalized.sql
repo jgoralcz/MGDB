@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS Series (
 
 # INDEXES
 # unique already creates an index
-# CREATE INDEX series_name_idx ON Series(name);
+# CREATE INDEX idx_series_name ON Series(name);
 
 -- video games, starts at 1000000 (1 million)
 CREATE TABLE IF NOT EXISTS Games (
@@ -152,9 +152,9 @@ CREATE TABLE IF NOT EXISTS Game_Release_Date (
 
 -- genres, starts at 1
 CREATE TABLE IF NOT EXISTS Genres (
- id           INTEGER AUTO_INCREMENT,
- category     VARCHAR(32) NOT NULL,
- description  TEXT NOT NULL,
+  id           INTEGER AUTO_INCREMENT,
+  category     VARCHAR(32) NOT NULL,
+  description  TEXT NOT NULL,
 
   CONSTRAINT pk_genre_id PRIMARY KEY (id)
 ) AUTO_INCREMENT = 1;
@@ -192,14 +192,14 @@ CREATE TABLE IF NOT EXISTS DLC (
 CREATE INDEX idx_dlc_name ON DLC(name);
 
 -- the same dlc can have different release dates due to various platforms (consoles)
--- video games, starts at 1000000 (1 million)
+-- dlc release date, starts at 1000000 (1 million)
 CREATE TABLE IF NOT EXISTS DLC_Release_Dates (
   id          INTEGER AUTO_INCREMENT,
   dlc_id      INTEGER NOT NULL,
   platform_id INTEGER NOT NULL,
   date        DATE NOT NULL,
 
-  CONSTRAINT pk_dlc_release_id PRIMARY KEY (id) ,
+  CONSTRAINT pk_dlc_release_id PRIMARY KEY (id),
   CONSTRAINT fk_release_dlc_id FOREIGN KEY (dlc_id) REFERENCES DLC(id) ON UPDATE CASCADE,
   CONSTRAINT fk_release_platform_id FOREIGN KEY (platform_id) REFERENCES Platforms(id) ON UPDATE CASCADE
 
@@ -207,16 +207,16 @@ CREATE TABLE IF NOT EXISTS DLC_Release_Dates (
 
 -- games have many cosmetics and can be part of the DLC or not
 CREATE TABLE IF NOT EXISTS Cosmetics (
-	id                INTEGER AUTO_INCREMENT,
-	game_id           INTEGER NOT NULL,
-	dlc_id            INTEGER,
+  id                INTEGER AUTO_INCREMENT,
+  game_id           INTEGER NOT NULL,
+  dlc_id            INTEGER,
   name              VARCHAR(128),
-	description       TEXT NOT NULL,
-	stats             TEXT,
+  description       TEXT NOT NULL,
+  stats             TEXT,
 
-	CONSTRAINT pk_cosmetic_id PRIMARY KEY(id),
-	CONSTRAINT fk_cosmetic_game_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE,
-	CONSTRAINT fk_cosmetic_dlc_id FOREIGN KEY (dlc_id) REFERENCES DLC(id) ON UPDATE CASCADE
+  CONSTRAINT pk_cosmetic_id PRIMARY KEY(id),
+  CONSTRAINT fk_cosmetic_game_id FOREIGN KEY (game_id) REFERENCES Games(id) ON UPDATE CASCADE,
+  CONSTRAINT fk_cosmetic_dlc_id FOREIGN KEY (dlc_id) REFERENCES DLC(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 10000;
 
@@ -304,67 +304,22 @@ CREATE INDEX idx_workers_last_name ON Workers(last_name);
 
 -- a worker can work for various companies throughout his or her lifetime.
 CREATE TABLE IF NOT EXISTS Companies_Worker (
-  id          INTEGER AUTO_INCREMENT,
-  company_id  INTEGER NOT NULL,
-  worker_id   INTEGER,
-  date_start  DATE,
-  date_end    DATE,
+  id            INTEGER AUTO_INCREMENT,
+  company_id    INTEGER NOT NULL,
+  worker_id     INTEGER NOT NULL,
+  date_start    DATE,
+  date_end      DATE,
+  is_developer  BOOLEAN,
+  is_director   BOOLEAN,
+  is_writer     BOOLEAN,
+  is_composer   BOOLEAN,
+  is_producer   BOOLEAN,
 
   CONSTRAINT pk_company_worker_id PRIMARY KEY (id),
   CONSTRAINT fk_company_worker_id FOREIGN KEY (company_id) REFERENCES Companies(id) ON UPDATE CASCADE,
   CONSTRAINT fk_worker_company_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
 
 ) AUTO_INCREMENT = 1000;
-
-
--- separate tables in case we want to add more information later on, and separation of concerns to join on only stuff we want.
-CREATE TABLE IF NOT EXISTS Developers (
-  id           INTEGER AUTO_INCREMENT,
-  worker_id    INTEGER NOT NULL,
-
-  CONSTRAINT pk_developer_id PRIMARY KEY(id),
-  CONSTRAINT fk_developer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
-
-) AUTO_INCREMENT = 100000;
-
-CREATE TABLE IF NOT EXISTS Directors (
-  id           INTEGER AUTO_INCREMENT,
-  worker_id    INTEGER NOT NULL,
-
-  CONSTRAINT pk_director_id PRIMARY KEY(id),
-  CONSTRAINT fk_director_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
-
-) AUTO_INCREMENT = 100000;
-
-
-CREATE TABLE IF NOT EXISTS Writers (
-  id           INTEGER AUTO_INCREMENT,
-  worker_id    INTEGER NOT NULL,
-
-  CONSTRAINT pk_writer_id PRIMARY KEY(id),
-  CONSTRAINT fk_writer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
-
-) AUTO_INCREMENT = 100000;
-
-
-CREATE TABLE IF NOT EXISTS Composers (
-  id           INTEGER AUTO_INCREMENT,
-  worker_id    INTEGER NOT NULL,
-
-  CONSTRAINT pk_composer_id PRIMARY KEY(id),
-  CONSTRAINT fk_composer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
-
-) AUTO_INCREMENT = 100000;
-
-
-CREATE TABLE IF NOT EXISTS Producers (
-  id           INTEGER AUTO_INCREMENT,
-  worker_id    INTEGER NOT NULL,
-
-  CONSTRAINT pk_producer_id PRIMARY KEY(id),
-  CONSTRAINT fk_producer_worker_id FOREIGN KEY (worker_id) REFERENCES Workers(id) ON UPDATE CASCADE
-
-) AUTO_INCREMENT = 100000;
 
 -- many workers can work on various games throughout their life
 CREATE TABLE IF NOT EXISTS Works_On (
