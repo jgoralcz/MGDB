@@ -25,13 +25,7 @@
         </javac>
     </target>
 
-    <!-- The deploy target will be highly dependent on your deployed app.
-         For example, if you are building a web-app, you should include
-         commands to copy files over to your deploy directory according
-         to the servlet specification, or create a .war file (via dist)
-         and copy it over. If you are creating a standalone app (like this
-         example does), you can create it in a given directory, or create
-         your dist jar first that can be run using java -jar. -->
+    <!-- deploy our tomcat -->
     <target name="deploy" depends="dist">
         <echo message="Deploying to tomcat at ${tomcat.home}"/>
         <copy file="${dist.jar}" todir="${tomcat.home}/webapps" overwrite="yes"/>
@@ -105,15 +99,22 @@
         <delete dir="${classes.dir}"/>
     </target>
 
-    <target name="compileTest" depends="compile" description="compile jUnit Test cases ">
-        <javac srcdir="${test-junit-dir}" destdir="${test-junit-dir}" includeantruntime="true" nowarn="yes" debug="true" />
+    <target name="compileTests" depends="compile" description="compile jUnit Test cases">
+        <javac
+            srcdir="${test-junit-dir}"
+            destdir="${test-junit-dir}">
+            <classpath>
+                <fileset dir="${lib.dir}" includes="*.jar"/>
+                <pathelement path="${classes.dir}" />
+            </classpath>
+        </javac>
     </target>
 
-    <target name="test" depends="compileTest">
+    <target name="test" depends="compileTests">
         <junit>
             <classpath>
                 <pathelement location="test/mgdb" />
-                <pathelement location="lib/junit-jupiter-api-5.5.0-M1.jar"/>
+                <pathelement location="lib/junit-4.13-beta-2.jar" />
             </classpath>
             <batchtest>
                 <fileset dir="${test-junit-dir}">
