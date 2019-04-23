@@ -18,6 +18,7 @@ package mgdb.site.controller;
  * limitations under the License.
  *
  * SER322 Database Management - Project
+ * @author Joshua Goralczyk
  * @author Jeremy Powell jcpowel5@asu.edu
  *         Software Engineering, ASU Poly
  * @version April 15, 2019
@@ -30,7 +31,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-
 class ControllerServletTest {
 
 	ControllerServlet servlet;
@@ -39,16 +39,16 @@ class ControllerServletTest {
 	public void setUp() throws Exception {
 		servlet = new ControllerServlet();
 	}
-//
-//	@After
-//	public void tearDown() throws Exception {
-//		servlet.destroy();
-//	}
-//
-//	@Test
-//	void testInitServletConfig() {
-//		ControllerServlet servlet = new ControllerServlet();
-//		assertThat(servlet, is(notNullValue()));
-//	}
+
+	@After
+	public void tearDown() throws Exception {
+		servlet.destroy();
+	}
+
+	@Test
+	void testInitServletConfig() {
+		ControllerServlet servlet = new ControllerServlet();
+		assertThat(servlet, is(notNullValue()));
+	}
 
 }
