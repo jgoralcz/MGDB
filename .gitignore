@@ -30,5 +30,7 @@
 hs_err_pid*
 workspace.xml
 /bin/
+/classes/
+/build/
 .idea/misc.xml
 .idea/workspace.xml

@@ -33,29 +33,29 @@
 //
 //class CharacterEntryTest {
 //
-//	CharacterEntry mainCharacterEntry = new CharacterEntry(-1, -1, "main name", "main description", true);
-//	CharacterEntry sideCharacterEntry = new CharacterEntry(-1, -1, "side name", "side description", false);
+//    CharacterEntry mainCharacterEntry = new CharacterEntry(-1, -1, "main name", "main description", true);
+//    CharacterEntry sideCharacterEntry = new CharacterEntry(-1, -1, "side name", "side description", false);
 //
-//	@Before
+//    @Before
 //    public void setUp() throws Exception {}
 //
 //    @After
 //    public void tearDown() throws Exception {
-//    	mainCharacterEntry = null;
-//    	sideCharacterEntry = null;
+//        mainCharacterEntry = null;
+//        sideCharacterEntry = null;
 //    }
 //
 //
-//	@Test
-//	void testCharacterEntry() {
-//		CharacterEntry characterEntry = new CharacterEntry(-1, -1, "name", "description", true);
+//    @Test
+//    void testCharacterEntry() {
+//        CharacterEntry characterEntry = new CharacterEntry(-1, -1, "name", "description", true);
 //
-//		assertNotNull(characterEntry);
-//}
+//        assertNotNull(characterEntry);
+//    }
 //
-//	@Test
-//	void testToString() {
-//		assertTrue(true);
-//	}
+//    @Test
+//    void testToString() {
+//        assertTrue(true);
+//    }
 //
 //}
