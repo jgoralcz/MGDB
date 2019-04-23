@@ -222,46 +222,12 @@ INSERT IGNORE INTO Workers VALUES (NULL, 'Mathias', 'Forest', 'Parker', 'Mathias
 
 -- Data for table: Companies Worker
 -- Keys start at: 1000
-INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1000, 10000, '2008-06-17', '2019-03-28');
-INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1001, 10001, '2002-11-23', '2002-11-24');
-INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1002, 10002, '2010-04-20', '2018-04-20');
-INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1003, 10003, '2016-12-25', '2017-01-01');
-INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1004, 10004, '2015-02-05', '2019-02-12');
-
-
--- Data for table: Developers
--- Keys start at: 100000
-INSERT IGNORE INTO Developers VALUES (NULL, 10000);
-INSERT IGNORE INTO Developers VALUES (NULL, 10001);
-INSERT IGNORE INTO Developers VALUES (NULL, 10002);
-
-
--- Data for table: Directors
--- Keys start at: 100000
-INSERT IGNORE INTO Directors VALUES (NULL, 10003);
-INSERT IGNORE INTO Directors VALUES (NULL, 10004);
-INSERT IGNORE INTO Directors VALUES (NULL, 10005);
-
-
--- Data for table: Writers
--- Keys start at: 100000
-INSERT IGNORE INTO Writers VALUES (NULL, 10006);
-INSERT IGNORE INTO Writers VALUES (NULL, 10007);
-INSERT IGNORE INTO Writers VALUES (NULL, 10008);
-
-
--- Data for table: Composers
--- Keys start at: 100000
-INSERT IGNORE INTO Composers VALUES (NULL, 10009);
-INSERT IGNORE INTO Composers VALUES (NULL, 10010);
-INSERT IGNORE INTO Composers VALUES (NULL, 10011);
-
-
--- Data for table: Producers
--- Keys start at: 100000
-INSERT IGNORE INTO Producers VALUES (NULL, 10012);
-INSERT IGNORE INTO Producers VALUES (NULL, 10013);
-INSERT IGNORE INTO Producers VALUES (NULL, 10014);
+INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1000, 10000, '2008-06-17', '2019-03-28', true, false, false, false, false);
+INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1001, 10001, '2002-11-23', '2002-11-24', true, false, true, false, false);
+INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1002, 10002, '2010-04-20', '2018-04-20', true, false, false, false, false);
+INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1003, 10003, '2016-12-25', '2017-01-01', false, false, false, true, false);
+INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1004, 10004, '2015-02-12', '2019-09-15', false, false, false, true, false);
+INSERT IGNORE INTO Companies_Worker VALUES (NULL, 1004, 10004, '2015-02-05', '2019-02-12', false, false, false, false, true);
 
 
 -- Data for table: Work On

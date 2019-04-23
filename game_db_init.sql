@@ -303,7 +303,7 @@ CREATE INDEX idx_workers_middle_name ON Workers(middle_name);
 CREATE INDEX idx_workers_last_name ON Workers(last_name);
 
 
--- a worker can work for various companies throughout his or her lifetime.
+-- a worker can work for various companies throughout his or her lifetime where they are a developer, dierctor, writer, etc.
 CREATE TABLE IF NOT EXISTS Companies_Worker (
   id            INTEGER AUTO_INCREMENT,
   company_id    INTEGER NOT NULL,
