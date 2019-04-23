@@ -31,7 +31,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-class ControllerServletTest {
+public class ControllerServletTest {
 
 	ControllerServlet servlet;
 
@@ -46,9 +46,9 @@ class ControllerServletTest {
 	}
 
 	@Test
-	void testInitServletConfig() {
+	public void testInitServletConfig() {
 		ControllerServlet servlet = new ControllerServlet();
-		assertThat(servlet, is(notNullValue()));
+		assertNotNull(servlet);
 	}
 
 }

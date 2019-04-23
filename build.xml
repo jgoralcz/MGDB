@@ -10,6 +10,11 @@
         <mkdir dir="${javadoc.dir}"/>
         <mkdir dir="${properties.dir}"/>
     </target>
+    
+    <!-- Compiles your java files and puts the classes in classes.dir -->
+    <target name="targets">
+        <echo message="Targets are cleanAll, deploy, javadoc, test, targets"/>
+    </target>
 
     <!-- Compiles your java files and puts the classes in classes.dir -->
     <target name="compile" depends="init">
@@ -136,6 +141,7 @@
             <classpath>
                 <pathelement location="test/" />
                 <pathelement location="lib/hamcrest-all-1.3.jar" />
+                <pathelement location="lib/javax.servlet-api-3.0.1.jar"/>
                 <pathelement location="lib/junit-4.13-beta-2.jar" />
             </classpath>
             <batchtest fork="yes" todir="${src.dir}">
