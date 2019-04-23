@@ -13,7 +13,7 @@
     
     <!-- Compiles your java files and puts the classes in classes.dir -->
     <target name="targets">
-        <echo message="Targets are cleanAll, deploy, javadoc, test, targets"/>
+        <echo message="Targets are clean, deploy, javadoc, test, targets"/>
     </target>
 
     <!-- Compiles your java files and puts the classes in classes.dir -->
