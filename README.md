@@ -100,3 +100,6 @@ CREATE TABLE IF NOT EXISTS Companies_Worker (
 ```
 This table has a problem with nulls and redundant company/worker_id combination. Although I could add a default constraint of false,
 that would also be wasting data.
+
+
+I thought about optimizing JDBC driver settings because that sounded pretty easy, but I thought about it. 
