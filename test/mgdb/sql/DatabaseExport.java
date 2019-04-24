@@ -38,7 +38,7 @@ public class DatabaseExport {
 	
 	private static String URL = "jdbc:mysql://localhost:3306/mygame_db?useSSL=false";
 	private static String USERNAME = "root";
-	private static String PASSWORD = "CooPer1sCute"; // TODO Change to YOUR SQL db password
+	private static String PASSWORD = "Josh1997"; // TODO Change to YOUR SQL db password
 
 	public static void main(String[] args) throws Exception {
         // database connection

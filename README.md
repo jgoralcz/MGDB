@@ -56,7 +56,7 @@ As for the DBUnit testing, we attempted it.
 
 ________
 
-## Optimizations
+## Optimizations and Rationale
 Before we were in the third normal form. However, after this we have denormalized.
 
 1) The first optimization is a minor optimization on joins. Instead of joining on multiple attributes, I chose to make an autoincrementing index and make the joins easier.
@@ -65,7 +65,11 @@ Before we were in the third normal form. However, after this we have denormalize
 While some attributes have a UNIQUE constraint, these already create indexes. However, in this deliverable, you can see that an index was added to nearly every table where a name attribute is applicable.
 Examples include (but not limited to): `CREATE INDEX idx_company_name ON Companies(name);`, `CREATE INDEX idx_english_name ON Games(english_name);` and more.
 
-3) Denormalization on workers. Whether they are developers, directors, composers, etc, they are now boolean expressions in Companies_Worker. However, this can either leave some of the data as useless and some of it redudant. Updating could potentially be awful as a result.
+3) Thirdly, we added prepared statements in a properties file to 
+(1) add separation of concerns (why would we hardcode a string without it being a file??)
+and (2) now the database can execute partially compiled/cached statements.
+
+4) Denormalization on workers. Whether they are developers, directors, composers, etc, they are now boolean expressions in Companies_Worker. However, this can either leave some of the data as useless and some of it redudant. Updating could potentially be awful as a result.
 
 Before: 
 ```$xslt
@@ -100,3 +104,24 @@ CREATE TABLE IF NOT EXISTS Companies_Worker (
 ```
 This table has a problem with nulls and redundant company/worker_id combination. Although I could add a default constraint of false,
 that would also be wasting data.
+
+I was considering optimizing JDBC settings, but looking through some of the options, I thought it would be unnecessary, except for a few obvious things.
+First of all, I'm not sure if a connection pool is necessary this early on. Secondly, I wanted to optimize the structure of the tree to do more selects before joins first on all of the queries,
+but I only did it on 1 query, where I selected out the main stuff, then limited the query (getAllInformationOnGame).
+Overall, I also performed JDBC best practices, which could be treated as an optimization if you consider than I'm not wasting memory by using `select *`.
+
+I also set the fetchSize to 100 at most in the game side. This is because there can be a ton of games, but we only need a certain amount at a time.
+Otherwise, I added a limit where needed on the database side.
+
+I looked into object caching, attempted it using VO (like in 422) and considered its use cases by checking for the object first before querying. 
+While this would be nice, it would require a bit more work to refactor the code. I started with it a little bit, then I didn't want to pursue refactoring the code.
+Although I do already have the classes created in the model directories, I would need to store them, which, as stated before, would require more refactoring.
+While the above a little more realistic, sharding or partitioning the database is way out of the question. For an application like this,
+I do not ever foresee partioning the database (unless we somehow take over YouTube) because I don't think we'll have over several gigabytes of data.
+
+_________
+
+## Optimization Benchmarks
+To perform optimizations, I ran mysql workbench with my database seed script. Remember, I updated the script.
+For this test (this will generate A LOT of data; between 2-3 GB, either take my word, do a smaller portion, or take the risk).
+Run `python main.py 4000 100` (this will also take some time inserting into the database; even worse inserting with an index trade-off; took be about an hour).

@@ -94,6 +94,7 @@ public class RDBMSiteServiceImpl implements SiteService {
 		try {
 			conn = getConnection();
 			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getMatchingGameList"));
+
 			stmt.setString(1, word);
 			stmt.setString(2, word);
 			rs = stmt.executeQuery();
@@ -195,8 +196,14 @@ public class RDBMSiteServiceImpl implements SiteService {
 		ArrayList<GameEntry> rval = new ArrayList<>();
 		try {
 			conn = getConnection();
+
+			conn.setAutoCommit(false);
 			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getAllInformationOnGame"));
+			stmt.setFetchSize(100);
+
 			stmt.setString(1, gameTitle);
+
+
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 				rval.add(new GameEntry(-1, rs.getString(2), rs.getString(1), null, rs.getString(3),
