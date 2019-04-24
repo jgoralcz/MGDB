@@ -35,16 +35,19 @@ import java.sql.Connection;
 import java.io.FileOutputStream;
 
 public class DatabaseExport {
+	
+	private static String URL = "jdbc:mysql://localhost:3306/mygame_db?useSSL=false";
+	private static String USERNAME = "root";
+	private static String PASSWORD = "CooPer1sCute"; // TODO Change to YOUR SQL db password
 
 	public static void main(String[] args) throws Exception {
         // database connection
-        Class driverClass = Class.forName("com.mysql.jdbc.Driver");
-        Connection jdbcConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mygame_db?useSSL=false", "root", "Josh1997");
+        Connection jdbcConnection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         IDatabaseConnection connection = new DatabaseConnection(jdbcConnection);
 
         // full database export
         IDataSet fullDataSet = connection.createDataSet();
-        FlatXmlDataSet.write(fullDataSet, new FileOutputStream("full.xml"));
+        FlatXmlDataSet.write(fullDataSet, new FileOutputStream("fullData.xml"));
 
         jdbcConnection.close();
         connection.close();

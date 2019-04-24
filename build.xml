@@ -13,7 +13,7 @@
     
     <!-- Compiles your java files and puts the classes in classes.dir -->
     <target name="targets">
-        <echo message="Targets are clean, deploy, javadoc, test, targets"/>
+        <echo message="Targets are clean, deploy, javadoc, runTests, targets"/>
     </target>
 
     <!-- Compiles your java files and puts the classes in classes.dir -->
@@ -97,7 +97,7 @@
     </target>
 
     <!-- Clean -->
-    <target name="clean">
+    <target name="clean" depends="cleanTests">
         <delete file="${dist.jar}"/>
         <delete file="${tomcat.home}/webapps/${dist.jar}"/>
         <delete dir="${build.home}"/>
@@ -121,8 +121,19 @@
         <pathelement path="test/"/>
     </path>
 
-    <target name="compileSrcAndTest">
-        <javac destdir="test">
+    <target name="cleanTests" description="removes all class files from test directory">
+        <delete
+            includeEmptyDirs="true"
+            failonerror="false">
+            <fileset dir="test/" includes="**/*.class"/>
+            <fileset dir="test/build"/>
+        </delete>
+    </target>
+    
+    <target name="compileSrcAndTest" depends="cleanTests">
+        <javac
+            includeantruntime="false"
+            destdir="test">
             <src path="src"/>
             <classpath refid="compile.path"/>
         </javac>
@@ -130,13 +141,32 @@
 
     <target name="compileTests" depends="compileSrcAndTest" description="compile jUnit Test cases">
         <javac
+            includeantruntime="false"
             srcdir="${test-junit-dir}"
             destdir="${test-junit-dir}">
                 <classpath refid="unit.test.path"/>
         </javac>
+        
+        <mkdir dir="test/build/classes"/>
+        <javac
+            includeantruntime="false"
+            srcdir="test/sql"
+            destdir="test/build/classes"
+            classpathref="compile.path"/>
+            
+        <mkdir dir="test/build/jar"/>
+        <jar
+            destfile="test/build/jar/TestsSQL.jar"
+            basedir="test/build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="DatabaseExport"/>
+            </manifest>
+        </jar>
+        
     </target>
 
-    <target name="test" depends="compileTests">
+    <target name="runTests" depends="compileTests">
+        <java jar="test/build/jar/TestsSQL.jar" fork="true"/>
         <junit>
             <classpath>
                 <pathelement location="test/" />
