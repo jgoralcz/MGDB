@@ -62,10 +62,12 @@ Before we were in the third normal form. However, after this we have denormalize
 1) The first optimization is a minor optimization on joins. Instead of joining on multiple attributes, I chose to make an autoincrementing index and make the joins easier.
 
 2) The second optimization is adding indexes to commonly used attributes especially when used on a where clause.
-While some attributes have a UNIQUE constraint, these already create indexes. However, in this deliverable, you can see that an index was added to nearly every table where a name attribute is applicable.
+While some attributes have a UNIQUE constraint, mysql sometimes doesn't add the index. I had to add a normal index on top of a unique constraint for Series.
+I wanted to play it safe, so I did this for most of them as well. 
+Additionally, in this deliverable, you can see that an index was added to nearly every table where a name attribute is applicable.
 Examples include (but not limited to): `CREATE INDEX idx_company_name ON Companies(name);`, `CREATE INDEX idx_english_name ON Games(english_name);` and more.
 
-3) Thirdly, we added prepared statements in a properties file to 
+3) Thirdly, we added prepared statements in the rdbm.properties file to 
 (1) add separation of concerns (why would we hardcode a string without it being a file??)
 and (2) now the database can execute partially compiled/cached statements.
 
@@ -125,3 +127,20 @@ _________
 To perform optimizations, I ran mysql workbench with my database seed script. Remember, I updated the script.
 For this test (this will generate A LOT of data; between 2-3 GB, either take my word, do a smaller portion, or take the risk).
 Run `python main.py 4000 100` (this will also take some time inserting into the database; even worse inserting with an index trade-off; took be about an hour).
+I ended up with about 470,000 rows in each table. **I limited each row to 1000 in mysql workbench**
+
+Here's what adding an index did, despite me having a unique constraint on it (I used 'a' as the '?'):
+1) This query is for `sql.getMatchingGameList` (it used to also have a search through the series)... 12.028 sec / 0.0042 sec, now it is 
+0.00070 sec / 0.00022 sec **(adding indexes was a HUGE improvement!)**
+
+2) The minor optimization on joins was mainly for a ease of joining. I couldn't find a solid way to determine it was a huge improvement.
+
+3) Adding a prepared statement adds the cache. I could not use mysql workbench for this because it is a jdbc/java thing. It was hard to accurately measure it.
+
+4) the denormalization with the tables representing developers, composers, producers, directors, etc, has been removed and combined (see above).
+Before this query (sql.getAllWorkersByGameName) ran about: 7.764 sec / 0.0024 sec (this is also with indexes)
+
+However, after I denormalized, the query took 2.967 sec / .00075 sec (huge improvement! At a cost... See above)
+This huge improvement is because of the 5 joins I did not have to perform.
+
+

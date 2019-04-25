@@ -66,8 +66,7 @@ CREATE TABLE IF NOT EXISTS Series (
 ) AUTO_INCREMENT=1000;
 
 # INDEXES
-# unique already creates an index
-# CREATE INDEX idx_series_name ON Series(name);
+CREATE INDEX idx_series_name ON Series(name);
 
 -- video games, starts at 1000000 (1 million)
 CREATE TABLE IF NOT EXISTS Games (
@@ -107,7 +106,7 @@ CREATE TABLE IF NOT EXISTS Ratings (
 #INDEXES
 CREATE INDEX idx_score_id ON Ratings(score);
 
--- a game can be part of a series.
+-- a company can own a game
 CREATE TABLE IF NOT EXISTS Companies_Game (
   id          INTEGER AUTO_INCREMENT,
   company_id  INTEGER NOT NULL,

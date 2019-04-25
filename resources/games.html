@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <a href="/index.html">Home</a><a href="/games.html">Games</a> | <a href="/series.html">Series</a> | <a href="/workers.html">Workers</a> | <a
+            href="/characters.html">Characters</a> | <a href="/companies.html">Game Companies</a>
+    </nav>
+
+    <h3>Games</h3>
+    <form action="controller?action=games" method="POST">
+        <!-- search by game name-->
+        Title: <input type="text" name="search" size="20" value=""/><br/>
+        <input type="submit" name="Action" value="list"/>
+        <input type="submit" name="Action" value="all"/>
+    </form>
+
+</body>
+</html>
