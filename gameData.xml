@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <Characters id="100000" name="Commander Shepard" description="All character types in Mass Effect 2"/>
+  <Characters id="100001" name="Chell" description="Portal 2 Main Character"/>
+  <Characters id="100002" name="GlaDOS" description="Portal 2 Robot and Antagonist"/>
+  <Characters id="100003" name="Trevor Philips" description="GTAV Mani Character"/>
+  <Characters id="100004" name="Ganondorf" description="Main Antagonist for most Zelda."/>
+  <Characters id="100005" name="Link" description="Main Protagonist for most Zelda."/>
+  <Characters id="100006" name="Princess Zelda" description="Main supporter or damsel in distress in Zelda."/>
+  <Characters id="100007" name="Geralt of Rivia" description="Main Character of Witcher Series"/>
+  <Characters id="100008" name="Yennefer" description="Helps Geralt"/>
+  <Characters id="100009" name="Ciri" description="Helps Geralt"/>
+  <Characters id="100010" name="Triss Merigold" description="Helps Geralt"/>
+  <Characters id="100011" name="Wheatly" description="Main Antagonist of Portal 2"/>
+  <Characters id="100012" name="Impa" description="Helps Zelda"/>
+  <Characters id="100013" name="Sheik" description="alter ego to Zelda"/>
+  <Characters id="100014" name="Keira Metz" description="Sorceress"/>
+  <Characters id="200000" name="Commander" description="All character types in Mass Effect 2"/>
+  <Companies id="1000" name="Electronic Arts" description="An American video game company headquartered in Redwood City, California."/>
+  <Companies id="1001" name="Valve Corporation" description="An American video game developer, publisher and digital distribution company headquartered in Bellevue, Washington."/>
+  <Companies id="1002" name="Rockstar Games" description="An American video game publisher based in New York City."/>
+  <Companies id="1003" name="Nintendo" description="A Japanese multinational consumer electronics and video game company headquartered in Kyoto."/>
+  <Companies id="1004" name="CD Projekt" description="A Polish video game publisher and distributor based in Warsaw, founded in May 1994 by Marcin Iwiński and Michał Kiciński."/>
+  <Companies_Game id="1000" company_id="1000" game_id="100000" date_start="2007-10-26" date_end="2019-03-28"/>
+  <Companies_Game id="1001" company_id="1001" game_id="100001" date_start="1986-02-21" date_end="2019-03-28"/>
+  <Companies_Game id="1002" company_id="1002" game_id="100002" date_start="1997-10-21" date_end="2019-03-28"/>
+  <Companies_Game id="1003" company_id="1003" game_id="100003" date_start="2007-10-10" date_end="2019-03-28"/>
+  <Companies_Game id="1004" company_id="1004" game_id="100004" date_start="2007-11-20" date_end="2019-03-28"/>
+  <Companies_Game id="1005" company_id="1004" game_id="100005" date_start="2007-11-20" date_end="2019-03-28"/>
+  <Companies_Worker id="1000" company_id="1000" worker_id="10000" date_start="2008-06-17" date_end="2019-03-28" is_developer="1" is_director="0" is_writer="0" is_composer="0" is_producer="0"/>
+  <Companies_Worker id="1001" company_id="1001" worker_id="10001" date_start="2002-11-23" date_end="2002-11-24" is_developer="1" is_director="0" is_writer="1" is_composer="0" is_producer="0"/>
+  <Companies_Worker id="1002" company_id="1002" worker_id="10002" date_start="2010-04-20" date_end="2018-04-20" is_developer="1" is_director="0" is_writer="0" is_composer="0" is_producer="0"/>
+  <Companies_Worker id="1003" company_id="1003" worker_id="10003" date_start="2016-12-25" date_end="2017-01-01" is_developer="0" is_director="0" is_writer="0" is_composer="1" is_producer="0"/>
+  <Companies_Worker id="1004" company_id="1004" worker_id="10004" date_start="2015-02-12" date_end="2019-09-15" is_developer="0" is_director="0" is_writer="0" is_composer="1" is_producer="0"/>
+  <Companies_Worker id="1005" company_id="1004" worker_id="10004" date_start="2015-02-05" date_end="2019-02-12" is_developer="0" is_director="0" is_writer="0" is_composer="0" is_producer="1"/>
+  <Cosmetics id="10000" game_id="100000" dlc_id="100003" name="Alternate Appearance Pack" description="3 new outfits, one each for squadmates Garrus Vakarian, Jack, and Thane Krios" stats="Jack straps on a black biker vest, low-slung jeans, and steel-toe boots made for starting riots. Garrus suits up in a new military-grade, blue-lit armor equipped with a dual-input communication headset."/>
+  <Cosmetics id="10001" game_id="100001" dlc_id="100003" name="Headwear" description="Items that can be equipped in the &quot;Head&quot; slot of the loadout screen." stats=""/>
+  <Cosmetics id="10002" game_id="100001" dlc_id="100003" name="Skins" description="Items that can be equipped in the &quot;Skins&quot; slot of the loadout screen, and change the default textures of Atlas and P-body." stats=""/>
+  <Cosmetics id="10003" game_id="100002" dlc_id="100003" name="Clothes" description="Dress characters however you please, with a default wardrobe located in their closets." stats=""/>
+  <Cosmetics id="10004" game_id="100002" dlc_id="100006" name="Lowriders" description="Dozens of new options to match your new Lowriders." stats=""/>
+  <Cosmetics id="10005" game_id="100004" dlc_id="100003" name="Alternative Look for Yennefer" description="Check out this entirely new look for the mighty sorceress Yennefer of Vengerberg!" stats=""/>
+  <Critics id="1000" name="Metacritic"/>
+  <Critics id="1001" name="Game Informer"/>
+  <Critics id="1002" name="Forbes"/>
+  <Critics id="1003" name="IGN"/>
+  <Critics id="1004" name="GameSpot"/>
+  <DLC id="100000" game_id="100000" name="Kasumi: Stolen Memory" description="Concerns the recovery of data of great importance to Kasumi Goto. Adds two missions, a squad member, a submachine gun, and other items." date="2010-04-06" image="https://en.wikipedia.org/wiki/File:Mass_Effect_2_Kasumi_Stolen_Memory_logo.jpg"/>
+  <DLC id="100001" game_id="100000" name="Overlord" description="Concerns the events of an experimental virtual intelligence that has gone rogue. Adds five missions and other items." date="2010-06-15" image="https://en.wikipedia.org/wiki/File:Mass_Effect_2_Overlord_logo.jpg"/>
+  <DLC id="100002" game_id="100000" name="Lair of the Shadow Broker" description="Concerns Liara T Soni and her history with an information dealer known as the Shadow Broker. Adds a mission and other items." date="2010-09-01" image="https://en.wikipedia.org/wiki/File:Mass_Effect_2_Lair_of_the_Shadow_Broker_logo.jpg"/>
+  <DLC id="100003" game_id="100000" name="Arrival" description="Concerns the events of an imminent invasion of a highly advanced machine race of synthetic-organic starships. Adds a mission and other items." date="2011-05-29" image="https://en.wikipedia.org/wiki/File:Mass_Effect_2_Arrival_logo.jpg"/>
+  <DLC id="100004" game_id="100001" name="Peer Review" description="Introduces Challenge modes for both single-player and co-op, a leaderboards system, and a mini-hub area reserved for additional co-op tracks." date="2011-10-04" image="https://alternativemagazine.files.wordpress.com/2011/10/p2_1.jpg?w=500&amp;h=283&amp;zoom=2"/>
+  <DLC id="100005" game_id="100001" name="Perpetual Testing Initiative" description="It introduces the concept of multiple alternate universes, simply shortened as &quot;the multiverse.&quot;" date="2012-05-08" image="http://store.steampowered.com/app/620/"/>
+  <DLC id="100006" game_id="100002" name="Criminal Enterprise Starter Pack" description="The Criminal Enterprise Starter Pack is the fastest way for new Grand Theft Auto Online players to jumpstart their criminal empires. Do not purchase if you already own the Criminal Enterprise Starter Pack." date="2017-12-14" image="https://steamcdn-a.akamaihd.net/steam/apps/771300/header.jpg?t=1533746423"/>
+  <DLC id="100007" game_id="100002" name="Shark Cash Cards" description="Cash is king in this town. Solve your money problem and help get what you want across Los Santos and Blaine County with the occasional purchase of cash packs for Grand Theft Auto Online." date="2015-06-09" image="https://steamcdn-a.akamaihd.net/steam/apps/376850/header.jpg?t=1447375880"/>
+  <DLC id="100008" game_id="100004" name="Blood and Wine" description="Blood and Wine offers over 30 hours of adventure, where beauty clashes with horror, and love dances with deceit." date="2016-05-30" image="https://en.wikipedia.org/wiki/File:Blood_and_wine_art.jpg"/>
+  <DLC id="100009" game_id="100004" name="Hearts of Stone" description="Hearts of Stone packs over 10 hours of new adventures, introducing new characters, powerful monsters, unique romance and a brand new storyline shaped by your choices." date="2015-10-12" image="https://en.wikipedia.org/wiki/File:Hearts_of_stone_art.jpg"/>
+  <DLC_Release_Dates id="1000000" dlc_id="100007" platform_id="1" date="2014-11-18"/>
+  <DLC_Release_Dates id="1000001" dlc_id="100007" platform_id="4" date="2015-06-09"/>
+  <Engines id="1" name="Unreal Engine 3" description="The Unreal Engine is a game engine developed by Epic Games, first showcased in the 1998 first-person shooter game Unreal." date="1998-05-01" image="https://en.wikipedia.org/wiki/File:UE_Logo_Black_Centered.svg"/>
+  <Engines id="2" name="Source" description="Source is a 3D video game engine developed by Valve Corporation. " date="2004-06-01" image="https://en.wikipedia.org/wiki/File:Source_engine_logo_and_wordmark.svg"/>
+  <Engines id="3" name="Rockstar Advanced Game Engine" description="The Rockstar Advanced Game Engine (RAGE) is a proprietary game engine developed by RAGE Technology Group, a division of Rockstar Games Rockstar San Diego studio." date="2006-05-23" image="https://en.wikipedia.org/wiki/File:Rockstar_Advanced_Game_Engine_Logo.svg"/>
+  <Engines id="4" name="M64 engine" description="The engine details are unknown." date="1996-01-01" image="https://en.wikipedia.org/wiki/File:Nintendo.svg"/>
+  <Engines id="5" name="REDengine 3" description="REDengine is a game engine developed by CD Projekt Red. It was designed for CD Projekt Red nonlinear role-playing video games." date="2011-05-01" image="https://en.wikipedia.org/wiki/File:REDEngine_3_logo.jpg"/>
+  <Game_Genres id="1" game_id="100000" genre_id="1"/>
+  <Game_Genres id="2" game_id="100000" genre_id="4"/>
+  <Game_Genres id="3" game_id="100001" genre_id="3"/>
+  <Game_Genres id="4" game_id="100002" genre_id="2"/>
+  <Game_Genres id="5" game_id="100003" genre_id="2"/>
+  <Game_Genres id="6" game_id="100004" genre_id="1"/>
+  <Game_Genres id="7" game_id="100005" genre_id="1"/>
+  <Game_Release_Date id="1000000" game_id="100000" platform_id="3" date="2010-01-26"/>
+  <Game_Release_Date id="1000001" game_id="100001" platform_id="4" date="2011-04-19"/>
+  <Game_Release_Date id="1000002" game_id="100002" platform_id="1" date="2008-12-02"/>
+  <Game_Release_Date id="1000003" game_id="100003" platform_id="5" date="1998-11-21"/>
+  <Game_Release_Date id="1000004" game_id="100004" platform_id="2" date="2015-05-19"/>
+  <Game_Release_Date id="1000005" game_id="100005" platform_id="3" date="2011-05-17"/>
+  <Game_Release_Date id="1000006" game_id="100005" platform_id="4" date="2011-05-17"/>
+  <Games id="100000" engine_id="1" series_id="1000" description="Mass Effect 2 is an action role-playing video game developed by BioWare and published by Electronic Arts." english_name="Mass Effect 2" other_name="ME2" image="https://en.wikipedia.org/wiki/File:MassEffect2_cover.PNG"/>
+  <Games id="100001" engine_id="2" series_id="1001" description="Like the original Portal (2007), players solve puzzles by placing portals and teleporting between them. Portal 2 adds features including tractor beams, lasers, light bridges, and paint-like gels that alter player movement or allow portals to be placed on any surface." english_name="Portal 2" other_name="" image="https://en.wikipedia.org/wiki/File:Portal2cover.jpg"/>
+  <Games id="100002" engine_id="3" series_id="1002" description="Grand Theft Auto V is an action-adventure video game developed by Rockstar North and published by Rockstar Games." english_name="Grand Theft Auto V" other_name="GTAV" image="https://en.wikipedia.org/wiki/File:Grand_Theft_Auto_V.png"/>
+  <Games id="100003" engine_id="4" series_id="1003" description="The Legend of Zelda: Ocarina of Time is an action-adventure game developed and published by Nintendo for the Nintendo 64." english_name="The Legend of Zelda: Ocarina of Time" other_name="Zelda 10" image="https://en.wikipedia.org/wiki/File:The_Legend_of_Zelda_Ocarina_of_Time_box_art.png"/>
+  <Games id="100004" engine_id="5" series_id="1004" description="The Witcher 3: Wild Hunt is a 2015 action role-playing game developed and published by CD Projekt." english_name="Witcher 3" other_name="Witcher" image="https://en.wikipedia.org/wiki/File:Witcher_3_cover_art.jpg"/>
+  <Games id="100005" engine_id="5" series_id="1004" description="The Witcher 2: Assassins of Kings is a 2012 action role-playing game developed and published by CD Projekt." english_name="Witcher 2" other_name="Witcher" image="https://en.wikipedia.org/wiki/File:Witcher_2_cover.jpg"/>
+  <Genres id="1" category="Action Role-playing" description="The games emphasize real-time combat where the player has direct control over the characters as opposed to turn or menu-based combat"/>
+  <Genres id="2" category="Action-adventure" description="Action-adventure is a video game genre that combine core elements from both the action game and adventure game genres."/>
+  <Genres id="3" category="Puzzle-platform" description="In a platformer the player controlled character must jump and climb between suspended platforms while avoiding obstacles."/>
+  <Genres id="4" category="Third-person Shooter" description="A third-person shooter is a game structured around shooting,[1] and in which the player can see the avatar on-screen in a third-person view."/>
+  <Main_Characters id="100000" character_id="100000" game_id="100000" name="Commander Shepard" description="Lieutenant Commander Shepard is the human protagonist of Mass Effect, Mass Effect 2, and Mass Effect 3, whose gender, appearance, skills and pre-service history are all customizable and have an impact on the story."/>
+  <Main_Characters id="100001" character_id="100001" game_id="100001" name="Chell" description="Chell is the silent protagonist in the Portal video game series developed by Valve Corporation."/>
+  <Main_Characters id="100002" character_id="100002" game_id="100001" name="GLaDOS" description="GLaDOS (Genetic Lifeform and Disk Operating System) is the central core designed to control, guide, and oversee the Aperture Science computer-aided Enrichment Center."/>
+  <Main_Characters id="100003" character_id="100003" game_id="100002" name="Trevor Philips" description="Trevor Philips is a fictional character in Grand Theft Auto V, a video game in the Grand Theft Auto series made by Rockstar Games."/>
+  <Main_Characters id="100004" character_id="100004" game_id="100003" name="Ganondorf" description="Ganondorf Dragmire known as the King of Thieves, the Great King of Evil, the Emperor of the Dark Realm[1], or the Dark Lord, is the primary antagonist of the majority of games in the Legend of Zelda series."/>
+  <Main_Characters id="100005" character_id="100005" game_id="100003" name="Link" description="Link He is the everlasting hero of the setting, having appeared throughout the ages in a never ending line of incarnations."/>
+  <Main_Characters id="100006" character_id="100006" game_id="100003" name="Princess Zelda" description="Zelda, Princess of Hyrule, best known simply as Princess Zelda is the name for several female Hylians, usually members of the Royal Family of Hyrule, who often play an integral role in the series."/>
+  <Main_Characters id="100007" character_id="100007" game_id="100004" name="Geralt of Rivia" description="Geralt of Rivia is a fictional character, the protagonist of The Witcher series of short stories and novels by Polish writer Andrzej Sapkowski, as well as its adaptations, which include film, TV series, comic books and video games."/>
+  <Main_Characters id="100008" character_id="100008" game_id="100004" name="Yennefer" description="Yennefer, born on Belleteyn in 1173, was a sorceress who lived in Vengerberg, the capital city of Aedirn."/>
+  <Main_Characters id="100009" character_id="100009" game_id="100004" name="Ciri" description="Cirilla Fiona Elen Riannon (better known as Ciri), was born in 1253, and most likely during the Belleteyn holiday."/>
+  <Main_Characters id="100010" character_id="100010" game_id="100004" name="Triss Merigold" description="Triss Merigold of Maribor was a legendary Temerian sorceress of the 13th century."/>
+  <Platforms id="1" name="PlayStation 4" description="The PlayStation 4 (PS4) is an eighth-generation home video game console developed by Sony Interactive Entertainment." date="2013-11-15" image="https://en.wikipedia.org/wiki/File:PS4-Console-wDS4.jpg"/>
+  <Platforms id="2" name="Xbox One" description="Xbox One is a line of eighth generation home video game consoles developed by Microsoft. Announced in May 2013, it is the successor to Xbox 360 and the third console in the Xbox family." date="2013-11-22" image="https://en.wikipedia.org/wiki/File:Microsoft-Xbox-One-Console-Set-wKinect.jpg"/>
+  <Platforms id="3" name="Xbox 360" description="The Xbox 360 is a home video game console developed by Microsoft. As the successor to the original Xbox, it is the second console in the Xbox series." date="2016-04-20" image="https://en.wikipedia.org/wiki/File:Xbox-360-Pro-wController.jpg"/>
+  <Platforms id="4" name="PC" description="A gaming computer or gaming rig is a personal computer designed for playing video games that normally require a lot of power." date="1970-01-01" image="https://en.wikipedia.org/wiki/File:Gaming_PC_set_up.jpg"/>
+  <Platforms id="5" name="Nintendo 64" description="The Nintendo 64, stylized as NINTENDO64 and abbreviated as N64, is Nintendo third home video game console for the international market." date="1996-10-29" image="https://en.wikipedia.org/wiki/File:Nintendo-64-wController-L.jpg"/>
+  <Ratings id="1000000" game_id="100000" critic_id="1000" score="94" date="2010-01-26" description="Mass Effect 2 metascore on Metacritic based on 55 critics"/>
+  <Ratings id="1000001" game_id="100001" critic_id="1001" score="95" date="2011-04-18" description="Portal 2 score on Game Informer"/>
+  <Ratings id="1000002" game_id="100002" critic_id="1002" score="100" date="2013-09-16" description="Grand Theft Auto V score on Forbes"/>
+  <Ratings id="1000003" game_id="100003" critic_id="1003" score="100" date="1998-11-25" description="The Legend of Zelda: Ocarina of Time score on IGN"/>
+  <Ratings id="1000004" game_id="100004" critic_id="1004" score="80" date="2016-05-26" description="The Witcher 3 score on GameSpot based on 2110 ratings"/>
+  <Series id="1000" name="Mass Effect" release_date="2007-11-20" description="Mass Effect is a science-fiction action-role-playing third-person-shooter video-game series developed by the Canadian company BioWare and released for the Xbox 360, PlayStation 3, and Microsoft Windows, with the third instalment also released on the Wii U." image="https://en.wikipedia.org/wiki/File:Logo_of_Mass_Effect.png"/>
+  <Series id="1001" name="Portal" release_date="2007-10-10" description="Portal is a series of first-person puzzle-platform video games developed by Valve Corporation." image="https://en.wikipedia.org/wiki/File:Portal_logo.png"/>
+  <Series id="1002" name="Grand Theft Auto" release_date="1997-10-21" description="Grand Theft Auto (GTA) is a long-running series of video games, published by Rockstar Games and developed by subsidiary companies." image="https://en.wikipedia.org/wiki/File:Grand_Theft_Auto_logo_series.svg"/>
+  <Series id="1003" name="Zelda" release_date="1986-02-21" description="The Legend of Zelda is a fantasy action-adventure video game franchise created by Japanese game designers Shigeru Miyamoto and Takashi Tezuka." image="https://en.wikipedia.org/wiki/File:Zelda_Logo.svg"/>
+  <Series id="1004" name="Witcher" release_date="2007-10-26" description="The Witcher by Polish writer Andrzej Sapkowski, is a fantasy series of short stories and novels about the witcher Geralt of Rivia." image="https://en.wikipedia.org/wiki/File:The_Witcher_EU_box.jpg"/>
+  <Side_Characters id="100000" character_id="100010" game_id="100004" name="Triss Merigold" description="Triss Merigold of Maribor was a legendary Temerian sorceress of the 13th century, she has many side quests."/>
+  <Side_Characters id="100001" character_id="100011" game_id="100001" name="Wheatley" description="Wheatley is a fictional artificial intelligence from the Portal franchise first introduced in the 2011 video game Portal 2."/>
+  <Side_Characters id="100002" character_id="100012" game_id="100003" name="Impa" description="Impa typically serves as a nursemaid and/or bodyguard to Princess Zelda and often offers guidance to Link."/>
+  <Side_Characters id="100003" character_id="100013" game_id="100003" name="Sheik" description="Sheik serves as Princess Zelda alter ego in the game; to escape Ganondorf capture, Zelda passes herself off as a male Sheikah known as Sheik."/>
+  <Side_Characters id="100004" character_id="100014" game_id="100004" name="Keira Metz" description="Keira Metz of Carreras was a sorceress and former advisor to King Foltest of Temeria, a role that had also been held by Triss Merigold and Fercart."/>
+  <Weapons id="10000" game_id="100000" dlc_id="100001" name="M-8 Avenger" description="Default starting assault rifle" stats="Type: Assault Rifle, Accuracy: Moderate, Recoil: Moderate, Fire Mode: Automatic, Fire Rate: 850 RPM, Ammo Per Clip: 40"/>
+  <Weapons id="10001" game_id="100000" dlc_id="100001" name="M-92 Mantis" description="A sniper rifle." stats="Type: Sniper Rifle, Accuracy: High, Recoil: High, Fire Mode: Single shot, Fire Rate: Low, Ammo Per Clip: 1"/>
+  <Weapons id="10002" game_id="100000" dlc_id="100001" name="M-490 Mantis" description="A heavy weapon." stats="Type: Heavy Weapon, Accuracy: Unknown, Recoil: Unknown, Fire Mode: Single-Shot, Fire Rate: Low (Charge-Time: 3 s), Ammo Per Clip: N/A"/>
+  <Weapons id="10003" game_id="100001" dlc_id="100001" name="Handheld Portal Device" description="The Aperture Science Handheld Portal Device (also known as the Portal Gun, ASHPoD or ASHPD) is the experimental tool designed to place two portals that objects can pass through." stats="Type: Prototype teleportation weapon, Affiliation: Aperture Science, Manufacturer: Aperture Science, Magazine size: N/A, Accuracy: High, Range: Long"/>
+  <Weapons id="10004" game_id="100002" dlc_id="100001" name="Railgun" description="The Coil Railgun is an experimental weapon featured in the Enhanced Version of Grand Theft Auto V." stats="Weapon class: Heavy Weapons, Weapon type: Rail Gun, Ammunition capacity: 20 rounds"/>
+  <Weapons id="10005" game_id="100002" dlc_id="100006" name="Gusenberg Sweeper" description="It is based on the .45 ACP M1928A1 Thompson Submachine Gun (popularly known as the &quot;Tommy Gun&quot;), which is famous for its role in 1920s gangster culture and in the Second World War." stats="Weapon class: Machine Gun, Weapon type: Submachine gun, Ammunition capacity: 30 rounds (50 with extended clip)"/>
+  <Weapons id="10006" game_id="100003" dlc_id="100001" name="Ocarina of Time" description="An instrument Link uses to play music." stats="Use(s): Various"/>
+  <Weapons id="10007" game_id="100003" dlc_id="100001" name="Master Sword" description="The Master Sword is the final key to the sacred realm that holds the Triforce, and only the one worthy of the title of the Hero of Time can draw it." stats="Durability: Continuous"/>
+  <Weapons id="10008" game_id="100004" dlc_id="100001" name="Griffin Silver Sword" description="Griffin Silver Sword is a Diagram in the Witcher 3: Wild Hunt that can be crafted by a Blacksmith (Weapons) or Armorsmith (Armor)." stats="Damage: 180"/>
+  <Weapons id="10009" game_id="100004" dlc_id="100008" name="Aerondight" description="Aerondight is a legendary sword that has appeard in all Witcher games. Now it has been added to The Witcher 3 as well, and it’s probably the best sword there is." stats="Stats"/>
+  <Workers id="10000" first_name="Nadine" middle_name="" last_name="Briggs" bio="Nadine is a considerate personal trainer who is obsessed with the murder of her friend Jasper, nine years ago." image_url=""/>
+  <Workers id="10001" first_name="Flora" middle_name="" last_name="Davis" bio="Flora is a brave former gallery-commisioned artist who is obsessed with running." image_url=""/>
+  <Workers id="10002" first_name="Gregory" middle_name="" last_name="Plumb" bio="He grew up in an upper class neighbourhood. He was raised in a happy family home with three loving parents." image_url=""/>
+  <Workers id="10003" first_name="Laura" middle_name="" last_name="Wishmonger" bio="He grew up in a working class neighbourhood. He was raised by his father, his mother having left when he was young." image_url=""/>
+  <Workers id="10004" first_name="Kevin" middle_name="" last_name="Thornton" bio="Kevin has a best friend who is a personal trainer named Edgar Mackay. They have a very firey friendship. He also hangs around with a personal trainer called Kaden Banks. They enjoy ferret racing together." image_url=""/>
+  <Workers id="10005" first_name="Aryaan" middle_name="Farrington" last_name="Markham" bio="She is a Dutch Hindu who defines herself as bisexual. She did not finish school. She is allergic to nickel." image_url=""/>
+  <Workers id="10006" first_name="Kevin" middle_name="Kaia" last_name="Pate" bio="Kevin is a British Christian who suffers from a severe phobia of butterflies." image_url=""/>
+  <Workers id="10007" first_name="Roger" middle_name="Hannah" last_name="Wilson" bio="Roger is a former cleaner at a studio with a serious addiction to chocolate." image_url=""/>
+  <Workers id="10008" first_name="Cuthbert" middle_name="Mohammad" last_name="Sparkle" bio="Cuthbert is a 52-year-old trainee tradesperson who enjoys listening to music, glamping and meditation. He is bright and exciting, but can also be very standoffish and a bit unstable." image_url=""/>
+  <Workers id="10009" first_name="Carla" middle_name="kinkle" last_name="Dinkle" bio="Physically, Carla is slightly overweight but otherwise in good shape. She is tall with brown skin, black hair and green eyes. She has a mole on the end of her nose." image_url=""/>
+  <Workers id="10010" first_name="Fred" middle_name="Rob" last_name="Mohammad" bio="Fred is a brave partner at a law firm who enjoys stealing candy from babies." image_url=""/>
+  <Workers id="10011" first_name="Garth" middle_name="Pete" last_name="Meadows" bio="She is an 45-year-old Australian senior Jedi who who enjoys checking news stories against Snopes." image_url=""/>
+  <Workers id="10012" first_name="Phil" middle_name="Steven" last_name="Zeus" bio="He grew up in an upper class neighbourhood. His parents separated when he was small, but remained friends and provided a happy, stable home." image_url=""/>
+  <Workers id="10013" first_name="Naomi" middle_name="Lauren" last_name="McCallister" bio="She is currently single. Her most recent romance was with a kitchen assistant named Taren Redd Hamilton, who was the same age as her. They broke up because Taren wanted somebody more reliable." image_url=""/>
+  <Workers id="10014" first_name="Mathias" middle_name="Forest" last_name="Parker" bio="Mathias Forest Parker is a 61-year-old with an unfortunate habit of bumping off the people around him. His first victim was his late wife, Tia Lorraine Dunn, who he killed because he thought she was flirting with other people. He has since killed two more people." image_url=""/>
+  <Works_On/>
+</dataset>

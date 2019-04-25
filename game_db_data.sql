@@ -203,21 +203,21 @@ INSERT IGNORE INTO Side_Characters VALUES (NULL, 100014, 100004, 'Keira Metz', '
 
 -- Data for table: Workers
 -- Keys start at: 10000
-INSERT IGNORE INTO Workers VALUES (NULL, 'Nadine', NULL, 'Briggs', 'Nadine is a considerate personal trainer who is obsessed with the murder of her friend Jasper, nine years ago.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Flora', NULL, 'Davis', 'Flora is a brave former gallery-commisioned artist who is obsessed with running.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Gregory', NULL, 'Plumb', 'He grew up in an upper class neighbourhood. He was raised in a happy family home with three loving parents.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Laura', NULL, 'Wishmonger', 'He grew up in a working class neighbourhood. He was raised by his father, his mother having left when he was young.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Kevin', NULL, 'Thornton', 'Kevin has a best friend who is a personal trainer named Edgar Mackay. They have a very firey friendship. He also hangs around with a personal trainer called Kaden Banks. They enjoy ferret racing together.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Aryaan', 'Farrington', 'Markham', 'She is a Dutch Hindu who defines herself as bisexual. She did not finish school. She is allergic to nickel.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Kevin', 'Kaia', 'Pate', 'Kevin is a British Christian who suffers from a severe phobia of butterflies.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Roger', 'Hannah', 'Wilson', 'Roger is a former cleaner at a studio with a serious addiction to chocolate.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Cuthbert', 'Mohammad', 'Sparkle', 'Cuthbert is a 52-year-old trainee tradesperson who enjoys listening to music, glamping and meditation. He is bright and exciting, but can also be very standoffish and a bit unstable.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Carla', 'kinkle', 'Dinkle', 'Physically, Carla is slightly overweight but otherwise in good shape. She is tall with brown skin, black hair and green eyes. She has a mole on the end of her nose.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Fred', 'Rob', 'Mohammad', 'Fred is a brave partner at a law firm who enjoys stealing candy from babies.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Garth', 'Pete', 'Meadows', 'She is an 45-year-old Australian senior Jedi who who enjoys checking news stories against Snopes.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Phil', 'Steven', 'Zeus', 'He grew up in an upper class neighbourhood. His parents separated when he was small, but remained friends and provided a happy, stable home.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Naomi', 'Lauren', 'McCallister', 'She is currently single. Her most recent romance was with a kitchen assistant named Taren Redd Hamilton, who was the same age as her. They broke up because Taren wanted somebody more reliable.');
-INSERT IGNORE INTO Workers VALUES (NULL, 'Mathias', 'Forest', 'Parker', 'Mathias Forest Parker is a 61-year-old with an unfortunate habit of bumping off the people around him. His first victim was his late wife, Tia Lorraine Dunn, who he killed because he thought she was flirting with other people. He has since killed two more people.');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Nadine', NULL, 'Briggs', 'Nadine is a considerate personal trainer who is obsessed with the murder of her friend Jasper, nine years ago.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Flora', NULL, 'Davis', 'Flora is a brave former gallery-commisioned artist who is obsessed with running.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Gregory', NULL, 'Plumb', 'He grew up in an upper class neighbourhood. He was raised in a happy family home with three loving parents.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Laura', NULL, 'Wishmonger', 'He grew up in a working class neighbourhood. He was raised by his father, his mother having left when he was young.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Kevin', NULL, 'Thornton', 'Kevin has a best friend who is a personal trainer named Edgar Mackay. They have a very firey friendship. He also hangs around with a personal trainer called Kaden Banks. They enjoy ferret racing together.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Aryaan', 'Farrington', 'Markham', 'She is a Dutch Hindu who defines herself as bisexual. She did not finish school. She is allergic to nickel.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Kevin', 'Kaia', 'Pate', 'Kevin is a British Christian who suffers from a severe phobia of butterflies.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Roger', 'Hannah', 'Wilson', 'Roger is a former cleaner at a studio with a serious addiction to chocolate.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Cuthbert', 'Mohammad', 'Sparkle', 'Cuthbert is a 52-year-old trainee tradesperson who enjoys listening to music, glamping and meditation. He is bright and exciting, but can also be very standoffish and a bit unstable.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Carla', 'kinkle', 'Dinkle', 'Physically, Carla is slightly overweight but otherwise in good shape. She is tall with brown skin, black hair and green eyes. She has a mole on the end of her nose.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Fred', 'Rob', 'Mohammad', 'Fred is a brave partner at a law firm who enjoys stealing candy from babies.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Garth', 'Pete', 'Meadows', 'She is an 45-year-old Australian senior Jedi who who enjoys checking news stories against Snopes.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Phil', 'Steven', 'Zeus', 'He grew up in an upper class neighbourhood. His parents separated when he was small, but remained friends and provided a happy, stable home.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Naomi', 'Lauren', 'McCallister', 'She is currently single. Her most recent romance was with a kitchen assistant named Taren Redd Hamilton, who was the same age as her. They broke up because Taren wanted somebody more reliable.', '');
+INSERT IGNORE INTO Workers VALUES (NULL, 'Mathias', 'Forest', 'Parker', 'Mathias Forest Parker is a 61-year-old with an unfortunate habit of bumping off the people around him. His first victim was his late wife, Tia Lorraine Dunn, who he killed because he thought she was flirting with other people. He has since killed two more people.', '');
 
 
 -- Data for table: Companies Worker
