@@ -49,10 +49,11 @@ Companies searches by either company name or game name. Where you can find game 
 ________
 
 ## Testing
-Finally, JUnit testing was finished. The tests are found in the `/test` folder
-to run the unit tests use `ant test`
+Finally, JUnit & DBUnit testing was finished. The tests are found in the `/test` folder. 
 
-As for the DBUnit testing, we attempted it.
+To execute the tests:
+1. Change password variable in the TestDb.class file to your MySql password.  
+2. Run in the terminal in the root folder `ant test`.
 
 ________
 

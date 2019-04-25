@@ -150,7 +150,7 @@
         </javac>
     </target>
 
-    <target name="runTests" depends="compileTests">
+    <target name="test" depends="compileTests">
         <junit>
             <classpath>
                 <pathelement location="test/" />

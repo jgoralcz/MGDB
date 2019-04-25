@@ -39,9 +39,9 @@ import org.dbunit.operation.DatabaseOperation;
 import org.junit.Test;
 
 public class TestDb extends DBTestCase {
-	
+
 	IDataSet actualDataSet, expectedDataSet;
-	
+
 	private static String URL = "jdbc:mysql://localhost:3306/mygame_db?useSSL=false";
 	private static String USERNAME = "root";
 	private static String PASSWORD = "YOUR PASSWORD"; // TODO Change to YOUR SQL db password
@@ -53,7 +53,7 @@ public class TestDb extends DBTestCase {
        System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_USERNAME, USERNAME);
        System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, PASSWORD);
    }
-   
+
    protected void setUpDatabaseConfig(DatabaseConfig config)
    {
        config.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY,
@@ -64,7 +64,7 @@ public class TestDb extends DBTestCase {
 
 
    protected IDataSet getDataSet() throws Exception {
-//	   ReplacementDataSet dataSet = new ReplacementDataSet(new FlatXmlDataSet(new File("fullData.xml"))); 
+//	   ReplacementDataSet dataSet = new ReplacementDataSet(new FlatXmlDataSet(new File("fullData.xml")));
 //	   dataSet.addReplacementObject("[NULL]", null);
 //	   dataSet.setStrictReplacement(true);
 //	   return dataSet;
@@ -72,7 +72,7 @@ public class TestDb extends DBTestCase {
        builder.setColumnSensing(true);
        actualDataSet = getConnection().createDataSet();
        expectedDataSet = new FlatXmlDataSetBuilder().build(new File("test/sql/xml/gameDataExpected.xml"));
-       return builder.build(new File("gameData.xml"));
+       return builder.build(new File("test/sql/xml/gameDataExpected.xml"));
    }
 
    protected DatabaseOperation getSetUpOperation() throws Exception {
@@ -85,211 +85,211 @@ public class TestDb extends DBTestCase {
 
    @Test
    public void testCharactersTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Characters"); 
+
+       ITable actualTable = actualDataSet.getTable("Characters");
        ITable expectedTable = expectedDataSet.getTable("Characters");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testCompaniesTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Companies"); 
+
+       ITable actualTable = actualDataSet.getTable("Companies");
        ITable expectedTable = expectedDataSet.getTable("Companies");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testCompaniesGameTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Companies_Game"); 
+
+       ITable actualTable = actualDataSet.getTable("Companies_Game");
        ITable expectedTable = expectedDataSet.getTable("Companies_Game");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testCompaniesWorkerTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Companies_Worker"); 
+
+       ITable actualTable = actualDataSet.getTable("Companies_Worker");
        ITable expectedTable = expectedDataSet.getTable("Companies_Worker");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testCosmeticsTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Cosmetics"); 
+
+       ITable actualTable = actualDataSet.getTable("Cosmetics");
        ITable expectedTable = expectedDataSet.getTable("Cosmetics");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
 
    @Test
    public void testCriticsTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Critics"); 
+
+       ITable actualTable = actualDataSet.getTable("Critics");
        ITable expectedTable = expectedDataSet.getTable("Critics");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testDLCTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("DLC"); 
+
+       ITable actualTable = actualDataSet.getTable("DLC");
        ITable expectedTable = expectedDataSet.getTable("DLC");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testDLCReleaseDatesTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("DLC_Release_Dates"); 
+
+       ITable actualTable = actualDataSet.getTable("DLC_Release_Dates");
        ITable expectedTable = expectedDataSet.getTable("DLC_Release_Dates");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testEnginesTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Engines"); 
+
+       ITable actualTable = actualDataSet.getTable("Engines");
        ITable expectedTable = expectedDataSet.getTable("Engines");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testGameGenresTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Game_Genres"); 
+
+       ITable actualTable = actualDataSet.getTable("Game_Genres");
        ITable expectedTable = expectedDataSet.getTable("Game_Genres");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testGameReleaseDateTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Game_Release_Date"); 
+
+       ITable actualTable = actualDataSet.getTable("Game_Release_Date");
        ITable expectedTable = expectedDataSet.getTable("Game_Release_Date");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testGamesTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Games"); 
+
+       ITable actualTable = actualDataSet.getTable("Games");
        ITable expectedTable = expectedDataSet.getTable("Games");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testMainCharactersTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Main_Characters"); 
+
+       ITable actualTable = actualDataSet.getTable("Main_Characters");
        ITable expectedTable = expectedDataSet.getTable("Main_Characters");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testSideCharactersTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Side_Characters"); 
+
+       ITable actualTable = actualDataSet.getTable("Side_Characters");
        ITable expectedTable = expectedDataSet.getTable("Side_Characters");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testPlatformsTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Platforms"); 
+
+       ITable actualTable = actualDataSet.getTable("Platforms");
        ITable expectedTable = expectedDataSet.getTable("Platforms");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testRatingsTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Ratings"); 
+
+       ITable actualTable = actualDataSet.getTable("Ratings");
        ITable expectedTable = expectedDataSet.getTable("Ratings");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testSeriesTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Series"); 
+
+       ITable actualTable = actualDataSet.getTable("Series");
        ITable expectedTable = expectedDataSet.getTable("Series");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testWeaponsTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Weapons"); 
+
+       ITable actualTable = actualDataSet.getTable("Weapons");
        ITable expectedTable = expectedDataSet.getTable("Weapons");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
    @Test
    public void testWorkersTable() throws Exception {
-	   
-       ITable actualTable = actualDataSet.getTable("Workers"); 
+
+       ITable actualTable = actualDataSet.getTable("Workers");
        ITable expectedTable = expectedDataSet.getTable("Workers");
-       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable, 
+       ITable filteredTable = DefaultColumnFilter.includedColumnsTable(actualTable,
     		   expectedTable.getTableMetaData().getColumns());
-       
+
        assertEquals(expectedTable.getRowCount(), filteredTable.getRowCount());
    }
-   
+
 }
