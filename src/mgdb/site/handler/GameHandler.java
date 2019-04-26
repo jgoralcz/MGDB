@@ -33,17 +33,48 @@ public class GameHandler implements ActionHandler {
 				}
 
 				// add a new game
-				// for the purpose of our assignment, we will not be adding a game.
-//				if (action.equals("Add")) {
-//					String fName = req.getParameter("title");
-//
-//					// create game
-//					PhoneVO phoneVO = DAOMockBizLayer.createGame(title);
-//					// inserts if it's not found
-//					DAOMockBizLayer.insert(phoneVO);
-//
-//					req.setAttribute("add", "Added the new game.");
-//				}
+				if (action.equals("Add")) {
+
+					// get all of our data
+					String englishName = req.getParameter("english_name");
+					String otherName = req.getParameter("other_name");
+					String gameDescription = req.getParameter("game_description");
+					String gameImage = req.getParameter("image");
+
+					// series
+					String seriesName = req.getParameter("series_name");
+
+					// engine
+					String engineName = req.getParameter("english_name");
+
+					// company
+					String companyName = req.getParameter("company_name");
+
+					// Platform
+					String platformName = req.getParameter("platform_name");
+
+					// Genres
+					String genres = req.getParameter("genres");
+					
+
+					// create new game
+
+					// create new series
+
+					// create new engine
+
+					// add platform stuff
+
+					// split commas, add genres stuff
+
+
+					// create game
+					PhoneVO phoneVO = DAOMockBizLayer.createGame(title);
+					// inserts if it's not found
+					DAOMockBizLayer.insert(phoneVO);
+
+					req.setAttribute("add", "Added the new game.");
+				}
 
 				// list
 				else if (action.equals("search")) {
@@ -91,7 +122,7 @@ public class GameHandler implements ActionHandler {
 			return "wrongmethod";
 		}
 
-		return "/";
+		return "games";
 	}
 
 	// if entries array is empty, say none.
