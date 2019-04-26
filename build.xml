@@ -118,7 +118,7 @@
 
     <path id="unit.test.path">
         <path refid="compile.path"/>
-        <pathelement path="test/"/>
+        <pathelement path="test/mgdb"/>
     </path>
 
     <target name="cleanTests" description="removes all class files from test directory">
@@ -128,6 +128,8 @@
             <fileset dir="test/" includes="**/*.class"/>
             <fileset dir="test/build"/>
         </delete>
+<!--        <delete file="gameData.xml" failonerror="false"/>-->
+<!--        <delete file="gameSchema.dtd" failonerror="false"/>-->
     </target>
     
     <target name="compileSrcAndTest" depends="cleanTests">
@@ -146,27 +148,9 @@
             destdir="${test-junit-dir}">
                 <classpath refid="unit.test.path"/>
         </javac>
-        
-        <mkdir dir="test/build/classes"/>
-        <javac
-            includeantruntime="false"
-            srcdir="test/sql"
-            destdir="test/build/classes"
-            classpathref="compile.path"/>
-            
-        <mkdir dir="test/build/jar"/>
-        <jar
-            destfile="test/build/jar/TestsSQL.jar"
-            basedir="test/build/classes">
-            <manifest>
-                <attribute name="Main-Class" value="DatabaseExport"/>
-            </manifest>
-        </jar>
-        
     </target>
 
-    <target name="runTests" depends="compileTests">
-        <java jar="test/build/jar/TestsSQL.jar" fork="true"/>
+    <target name="test" depends="compileTests">
         <junit>
             <classpath>
                 <pathelement location="test/" />

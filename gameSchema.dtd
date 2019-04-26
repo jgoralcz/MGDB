@@ -1,0 +1,209 @@
+<!ELEMENT dataset (
+    Characters*,
+    Companies*,
+    Companies_Game*,
+    Companies_Worker*,
+    Cosmetics*,
+    Critics*,
+    DLC*,
+    DLC_Release_Dates*,
+    Engines*,
+    Game_Genres*,
+    Game_Release_Date*,
+    Games*,
+    Genres*,
+    Main_Characters*,
+    Platforms*,
+    Ratings*,
+    Series*,
+    Side_Characters*,
+    Weapons*,
+    Workers*,
+    Works_On*)>
+
+<!ELEMENT Characters EMPTY>
+<!ATTLIST Characters
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    description CDATA #REQUIRED
+>
+
+<!ELEMENT Companies EMPTY>
+<!ATTLIST Companies
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+>
+
+<!ELEMENT Companies_Game EMPTY>
+<!ATTLIST Companies_Game
+    id CDATA #REQUIRED
+    company_id CDATA #REQUIRED
+    game_id CDATA #IMPLIED
+    date_start CDATA #IMPLIED
+    date_end CDATA #IMPLIED
+>
+
+<!ELEMENT Companies_Worker EMPTY>
+<!ATTLIST Companies_Worker
+    id CDATA #REQUIRED
+    company_id CDATA #REQUIRED
+    worker_id CDATA #REQUIRED
+    date_start CDATA #IMPLIED
+    date_end CDATA #IMPLIED
+    is_developer CDATA #IMPLIED
+    is_director CDATA #IMPLIED
+    is_writer CDATA #IMPLIED
+    is_composer CDATA #IMPLIED
+    is_producer CDATA #IMPLIED
+>
+
+<!ELEMENT Cosmetics EMPTY>
+<!ATTLIST Cosmetics
+    id CDATA #REQUIRED
+    game_id CDATA #REQUIRED
+    dlc_id CDATA #IMPLIED
+    name CDATA #IMPLIED
+    description CDATA #REQUIRED
+    stats CDATA #IMPLIED
+>
+
+<!ELEMENT Critics EMPTY>
+<!ATTLIST Critics
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+>
+
+<!ELEMENT DLC EMPTY>
+<!ATTLIST DLC
+    id CDATA #REQUIRED
+    game_id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    description CDATA #IMPLIED
+    date CDATA #IMPLIED
+    image CDATA #IMPLIED
+>
+
+<!ELEMENT DLC_Release_Dates EMPTY>
+<!ATTLIST DLC_Release_Dates
+    id CDATA #REQUIRED
+    dlc_id CDATA #REQUIRED
+    platform_id CDATA #REQUIRED
+    date CDATA #REQUIRED
+>
+
+<!ELEMENT Engines EMPTY>
+<!ATTLIST Engines
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    date CDATA #IMPLIED
+    image CDATA #IMPLIED
+>
+
+<!ELEMENT Game_Genres EMPTY>
+<!ATTLIST Game_Genres
+    id CDATA #REQUIRED
+    game_id CDATA #REQUIRED
+    genre_id CDATA #REQUIRED
+>
+
+<!ELEMENT Game_Release_Date EMPTY>
+<!ATTLIST Game_Release_Date
+    id CDATA #REQUIRED
+    game_id CDATA #REQUIRED
+    platform_id CDATA #REQUIRED
+    date CDATA #REQUIRED
+>
+
+<!ELEMENT Games EMPTY>
+<!ATTLIST Games
+    id CDATA #REQUIRED
+    engine_id CDATA #REQUIRED
+    series_id CDATA #IMPLIED
+    description CDATA #IMPLIED
+    english_name CDATA #REQUIRED
+    other_name CDATA #IMPLIED
+    image CDATA #IMPLIED
+>
+
+<!ELEMENT Genres EMPTY>
+<!ATTLIST Genres
+    id CDATA #REQUIRED
+    category CDATA #REQUIRED
+    description CDATA #REQUIRED
+>
+
+<!ELEMENT Main_Characters EMPTY>
+<!ATTLIST Main_Characters
+    id CDATA #REQUIRED
+    character_id CDATA #REQUIRED
+    game_id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    description CDATA #IMPLIED
+>
+
+<!ELEMENT Platforms EMPTY>
+<!ATTLIST Platforms
+    id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    description CDATA #IMPLIED
+    date CDATA #IMPLIED
+    image CDATA #IMPLIED
+>
+
+<!ELEMENT Ratings EMPTY>
+<!ATTLIST Ratings
+    id CDATA #REQUIRED
+    game_id CDATA #REQUIRED
+    critic_id CDATA #REQUIRED
+    score CDATA #REQUIRED
+    date CDATA #IMPLIED
+    description CDATA #IMPLIED
+>
+
+<!ELEMENT Series EMPTY>
+<!ATTLIST Series
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    release_date CDATA #IMPLIED
+    description CDATA #IMPLIED
+    image CDATA #IMPLIED
+>
+
+<!ELEMENT Side_Characters EMPTY>
+<!ATTLIST Side_Characters
+    id CDATA #REQUIRED
+    character_id CDATA #REQUIRED
+    game_id CDATA #REQUIRED
+    name CDATA #IMPLIED
+    description CDATA #IMPLIED
+>
+
+<!ELEMENT Weapons EMPTY>
+<!ATTLIST Weapons
+    id CDATA #REQUIRED
+    game_id CDATA #REQUIRED
+    dlc_id CDATA #IMPLIED
+    name CDATA #IMPLIED
+    description CDATA #REQUIRED
+    stats CDATA #IMPLIED
+>
+
+<!ELEMENT Workers EMPTY>
+<!ATTLIST Workers
+    id CDATA #REQUIRED
+    first_name CDATA #REQUIRED
+    middle_name CDATA #IMPLIED
+    last_name CDATA #REQUIRED
+    bio CDATA #IMPLIED
+    image_url CDATA #REQUIRED
+>
+
+<!ELEMENT Works_On EMPTY>
+<!ATTLIST Works_On
+    id CDATA #REQUIRED
+    worker_id CDATA #REQUIRED
+    game_id CDATA #REQUIRED
+>
+
