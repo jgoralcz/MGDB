@@ -49,14 +49,14 @@
   
   
 	 <servlet>
-        <servlet-name>Controller</servlet-name>
-	    <servlet-class>mgdb.site.controller.ControllerServlet</servlet-class>
+        <servlet-name>Game</servlet-name>
+	    <servlet-class>mgdb.site.controller.GameServlet</servlet-class>
 	    <load-on-startup>1</load-on-startup>
 	 </servlet>
 	 
 	 <servlet-mapping>
-	    <servlet-name>Controller</servlet-name>
-	    <url-pattern>/controller/*</url-pattern>
+	    <servlet-name>Game</servlet-name>
+	    <url-pattern>/games/*</url-pattern>
 	 </servlet-mapping>
   
     

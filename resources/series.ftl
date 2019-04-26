@@ -4,7 +4,12 @@
     </head>
 
     <body>
-    <a href="index.html">Home</a>
+
+    <nav>
+        <a href="/mgdb">Home</a> | <a href="/games">Games</a> | <a href="/series">Series</a> | <a href="/workers">Workers</a> | <a
+                href="/characters">Characters</a> | <a href="/companies">Game Companies</a>
+    </nav>
+
     <br>
         <#if add??>
             ${add}

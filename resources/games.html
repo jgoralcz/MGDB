@@ -6,17 +6,24 @@
 </head>
 <body>
     <nav>
-        <a href="/index.html">Home</a> | <a href="/games.html">Games</a> | <a href="/series.html">Series</a> | <a href="/workers.html">Workers</a> | <a
-            href="/characters.html">Characters</a> | <a href="/companies.html">Game Companies</a>
+        <a href="/mgdb">Home</a> | <a href="/games">Games</a> | <a href="/series">Series</a> | <a href="/workers">Workers</a> | <a
+            href="/characters">Characters</a> | <a href="/companies">Game Companies</a>
     </nav>
 
     <h3>Games</h3>
-    <form action="controller?action=games" method="POST">
+    <form action="games?action=search" method="POST">
         <!-- search by game name-->
         Title: <input type="text" name="search" size="20" value=""/><br/>
-        <input type="submit" name="Action" value="list"/>
-        <input type="submit" name="Action" value="all"/>
+        <input type="submit" name="Action" value="search"/>
     </form>
+
+    <!--<h3>Add a game</h3>-->
+    <!--<form action="games?action=add" method="POST">-->
+        <!--&lt;!&ndash; search by game name&ndash;&gt;-->
+        <!--Title: <input type="text" name="search" size="20" value=""/><br/>-->
+        <!--<input type="submit" name="Action" value="search"/>-->
+    <!--</form>-->
+
 
 </body>
 </html>

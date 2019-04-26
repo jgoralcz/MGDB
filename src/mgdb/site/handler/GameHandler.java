@@ -27,6 +27,8 @@ public class GameHandler implements ActionHandler {
 				String action = req.getParameter("action");
 				String action2 = req.getParameter("Action");
 				String search = req.getParameter("search");
+
+				System.out.println(action + " " + action2 + " " + search);
 				if (action == null || action.length() == 0 || action2 == null || action2.length() == 0 || search == null || search.length() == 0) {
 					// redirect them back home.
 					req.setAttribute("error", "No action provided");
@@ -47,9 +49,9 @@ public class GameHandler implements ActionHandler {
 //				}
 
 				// list
-				else if (action.equals("games")) {
+				else if (action.equals("search")) {
 
-					if(action2.equals("all")) {
+//					if(action2.equals("search")) {
 
 						// get game entries
 						ArrayList<GameEntry> gameEntries = site.getAllInformationOnGame(search);
@@ -72,29 +74,10 @@ public class GameHandler implements ActionHandler {
 						}
 
 						String[] entriesStr = entriesNone(entries);
-						String[] imagesStr = entriesNone(entries);
+						String[] imagesStr = entriesNone(images);
 						req.setAttribute("images", imagesStr);
 						req.setAttribute("entries", entriesStr);
-					}
-
-					// quick list of results, nothing too heavy
-					else if(action2.equals("list")) {
-
-						// get our entries
-						ArrayList<GameEntry> gameEntries = site.getMatchingGameList(search);
-						ArrayList<String> entries = new ArrayList<>();
-
-						String add = "";
-
-						for (GameEntry ge : gameEntries) {
-							add = "Series: " + ge.getSeries().getName() + "\n Series Release Date: " + ge.getSeries().getReleaseDate().toString() + "\n" +
-									"Game: " + ge.getEnglishName() + " - " + ge.getOtherName() + "\n" + ge.getDescription();
-							entries.add(add);
-						}
-
-						String[] entriesStr = entriesNone(entries);
-						req.setAttribute("entries", entriesStr);
-					}
+//					}
 
 					return "games";
 				}

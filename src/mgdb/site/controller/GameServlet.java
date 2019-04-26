@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 
-public class ControllerServlet extends HttpServlet {
+public class GameServlet extends HttpServlet {
 
 	private static Logger log = Logger.getLogger(GameHandler.class.getName());
     
@@ -54,20 +54,21 @@ public class ControllerServlet extends HttpServlet {
 		});
 
 		// add to handler
-		handlers.put("games", new GameHandler());
-		handlers.put("series", new GameHandler());
-		handlers.put("workers", new GameHandler());
-		handlers.put("companies", new GameHandler());
-		handlers.put("characters", new GameHandler());
+		handlers.put("search", new GameHandler());
+//		handlers.put("series", new GameHandler());
+//		handlers.put("workers", new GameHandler());
+//		handlers.put("companies", new GameHandler());
+//		handlers.put("characters", new GameHandler());
 		
 		// pages too
 		pageViews.put("/", "/index.html");
+		pageViews.put("gamesHome", "/games.html");
 		pageViews.put("games", "/games.ftl");
-		pageViews.put("series", "/series.ftl");
-		pageViews.put("workers", "/workers.ftl");
-		pageViews.put("characters", "/characters.ftl");
-		pageViews.put("companies", "/games.ftl");
-		pageViews.put("wrongmethod", "/wrongmethod.ftl");
+//		pageViews.put("series", "/series.ftl");
+//		pageViews.put("workers", "/workers.ftl");
+//		pageViews.put("characters", "/characters.ftl");
+//		pageViews.put("companies", "/games.ftl");
+//		pageViews.put("wrongmethod", "/wrongmethod.ftl");
     }
 
 	/**
@@ -82,8 +83,9 @@ public class ControllerServlet extends HttpServlet {
     	HttpSession session = request.getSession();
 		
 		// if there are errors, set in case.
-		request.setAttribute("error", "Page Action Error");
-		String forwardPage = errorPage;
+//		request.setAttribute("error", "Page Action Error");
+//		String forwardPage = errorPage;
+		String forwardPage = pageViews.get("gamesHome");
 
 		String action = request.getParameter("action");
 		

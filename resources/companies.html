@@ -6,15 +6,14 @@
 </head>
 <body>
     <nav>
-        <a href="/index.html">Home</a> | <a href="/games.html">Games</a> | <a href="/series.html">Series</a> | <a href="/workers.html">Workers</a> | <a
-            href="/characters.html">Characters</a> | <a href="/companies.html">Game Companies</a>
+        <a href="/mgdb">Home</a> | <a href="/">Games</a> | <a href="/">Series</a> | <a href="/workers">Workers</a> | <a
+            href="/characters">Characters</a> | <a href="/companies">Games Companies</a>
     </nav>
 
     <h3>Companies</h3>
-    <form action="controller?action=companies" method="POST">
+    <form action="companies?action=search" method="POST">
         Name: <input type="text" name="search" size="20" value=""/><br/>
-        <input type="submit" name="Action" value="company">
-        <input type="submit" name="Action" value="game"/>
+        <input type="submit" name="Action" value="search"/>
     </form>
 
 </body>
