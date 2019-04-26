@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 // get out database info
 
-public class GameHandler implements ActionHandler {
+public class CompaniesHandler implements ActionHandler {
 
 	private SiteService site = SiteServiceFactory.getInstance();
 
@@ -33,7 +33,7 @@ public class GameHandler implements ActionHandler {
 				}
 
 				// add a new game
-				// for the purpose of our assignment, we will not be adding a game.
+				// for the purpose of our assignment, we will not be adding a character.
 //				if (action.equals("Add")) {
 //					String fName = req.getParameter("title");
 //
@@ -45,43 +45,32 @@ public class GameHandler implements ActionHandler {
 //					req.setAttribute("add", "Added the new game.");
 //				}
 
-				// list
-				else if (action.equals("search")) {
+				else if(action.equals("search")) {
 
-//					if(action2.equals("search")) {
+					if (action2.equals("search")) {
 
-						// get game entries
-						ArrayList<GameEntry> gameEntries = site.getAllInformationOnGame(search);
+						ArrayList<GameEntry> gameEntries = site.getCompaniesByGameTitle(search);
+
+						// get name of workers
 						ArrayList<String> entries = new ArrayList<>();
-						ArrayList<String> images = new ArrayList<>();
 
 						String add = "";
-						String image = "";
 						for (GameEntry ge : gameEntries) {
-							// output = g.english_name, g.description, g.image, s.name, s.description, e.name, e.description, c.name, c.description
-							add = "Series: " + ge.getSeries().getName() + "\n" + ge.getSeries().getDescription() +
-									"\nGame: " + ge.getEnglishName() + "\n" + ge.getDescription() +
-									"\nEngine: " + ge.getEngine().getName() + "\n" + ge.getEngine().getDescription() +
-									"\nCompany: " + ge.getCompany().getName() + "\n" + ge.getCompany().getName();
-							image = ge.getImageURL();
+							add = ge.getCompany().getName() + ": " + ge.getEnglishName();
 
-							// get the contents out and display
+							// get the contents out to display
 							entries.add(add);
-							images.add(image);
 						}
 
 						String[] entriesStr = entriesNone(entries);
-						String[] imagesStr = entriesNone(images);
-						req.setAttribute("images", imagesStr);
 						req.setAttribute("entries", entriesStr);
-//					}
 
-					return "games";
+					}
+					return "companies";
 				}
-
 			} else {
 				resp.setStatus(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
-				req.setAttribute("error", "Get not supported by this servlet.");
+				req.setAttribute("error", "not supported by this servlet.");
 				return "wrongmethod";
 			}
 		} catch (Exception e) {

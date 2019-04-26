@@ -71,6 +71,17 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>Companies</servlet-name>
+        <servlet-class>mgdb.site.controller.CompaniesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Companies</servlet-name>
+        <url-pattern>/companies/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>Characters</servlet-name>
         <servlet-class>mgdb.site.controller.CharacterServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
