@@ -1,15 +1,12 @@
 package mgdb.site.service.impl;
 
+import mgdb.site.model.*;
 import mgdb.site.service.SiteService;
 
-import mgdb.site.model.CompanyEntry;
-import mgdb.site.model.CharacterEntry;
-import mgdb.site.model.GameEntry;
-import mgdb.site.model.SeriesEntry;
-import mgdb.site.model.WorkerEntry;
-import mgdb.site.model.Engine;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -201,7 +198,12 @@ public class RDBMSiteServiceImpl implements SiteService {
 			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getAllInformationOnGame"));
 			stmt.setFetchSize(100);
 
+			System.out.println("searching for: " + gameTitle);
+
+			// search by and order by our game title
 			stmt.setString(1, gameTitle);
+			stmt.setString(2, gameTitle);
+			stmt.setString(3, gameTitle);
 
 
 			rs = stmt.executeQuery();

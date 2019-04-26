@@ -68,7 +68,7 @@ public class GameServlet extends HttpServlet {
 //		pageViews.put("workers", "/workers.ftl");
 //		pageViews.put("characters", "/characters.ftl");
 //		pageViews.put("companies", "/games.ftl");
-//		pageViews.put("wrongmethod", "/wrongmethod.ftl");
+		pageViews.put("wrongmethod", "/wrongmethod.ftl");
     }
 
 	/**
@@ -83,7 +83,7 @@ public class GameServlet extends HttpServlet {
     	HttpSession session = request.getSession();
 		
 		// if there are errors, set in case.
-//		request.setAttribute("error", "Page Action Error");
+		request.setAttribute("error", "Page Action Error");
 //		String forwardPage = errorPage;
 		String forwardPage = pageViews.get("gamesHome");
 

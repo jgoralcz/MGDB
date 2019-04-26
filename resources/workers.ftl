@@ -5,9 +5,12 @@
 
     <body>
 
+    <h1>My Game Database</h1>
+    <h2>The best SER322 Project BY FAR</h2>
+
     <nav>
-        <a href="/mgdb">Home</a> | <a href="/games">Games</a> | <a href="/series">Series</a> | <a href="/workers">Workers</a> | <a
-                href="/characters">Characters</a> | <a href="/companies">Game Companies</a>
+        <a href="/mgdb">Home</a> | <a href="/mgdb/games">Games</a> | <a href="/mgdb/series">Series</a> | <a href="/mgdb/workers">Workers</a> | <a
+                href="/mgdb/characters">Characters</a> | <a href="/mgdb/companies">Game Companies</a>
     </nav>
 
     <br>
