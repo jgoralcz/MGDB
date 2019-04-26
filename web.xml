@@ -58,6 +58,17 @@
 	    <servlet-name>Game</servlet-name>
 	    <url-pattern>/games/*</url-pattern>
 	 </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Series</servlet-name>
+        <servlet-class>mgdb.site.controller.SeriesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Series</servlet-name>
+        <url-pattern>/series/*</url-pattern>
+    </servlet-mapping>
   
     
 	<welcome-file-list>

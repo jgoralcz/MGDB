@@ -1,7 +1,7 @@
 package mgdb.site.controller;
 
 import mgdb.site.handler.ActionHandler;
-import mgdb.site.handler.GameHandler;
+import mgdb.site.handler.SeriesHandler;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -15,9 +15,9 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 
-public class GameServlet extends HttpServlet {
+public class SeriesServlet extends HttpServlet {
 
-	private static Logger log = Logger.getLogger(GameHandler.class.getName());
+	private static Logger log = Logger.getLogger(SeriesHandler.class.getName());
     
     private static final long serialVersionUID = 1L;
     private static String errorPage = "wrongmethod.ftl";
@@ -54,12 +54,20 @@ public class GameServlet extends HttpServlet {
 		});
 
 		// add to handler
-		handlers.put("search", new GameHandler());
+		handlers.put("search", new SeriesHandler());
+//		handlers.put("series", new GameHandler());
+//		handlers.put("workers", new GameHandler());
+//		handlers.put("companies", new GameHandler());
+//		handlers.put("characters", new GameHandler());
 		
 		// pages too
 		pageViews.put("/", "/index.html");
-		pageViews.put("gamesHome", "/games.html");
-		pageViews.put("games", "/games.ftl");
+		pageViews.put("seriesHome", "/series.html");
+		pageViews.put("series", "/series.ftl");
+//		pageViews.put("series", "/series.ftl");
+//		pageViews.put("workers", "/workers.ftl");
+//		pageViews.put("characters", "/characters.ftl");
+//		pageViews.put("companies", "/games.ftl");
 		pageViews.put("wrongmethod", "/wrongmethod.ftl");
     }
 
@@ -77,7 +85,7 @@ public class GameServlet extends HttpServlet {
 		// if there are errors, set in case.
 		request.setAttribute("error", "Page Action Error");
 //		String forwardPage = errorPage;
-		String forwardPage = pageViews.get("gamesHome");
+		String forwardPage = pageViews.get("seriesHome");
 
 		String action = request.getParameter("action");
 		
