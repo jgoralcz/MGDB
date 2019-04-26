@@ -1,11 +1,10 @@
 package mgdb.site.handler;
 
+import mgdb.site.model.CharacterEntry;
+import mgdb.site.model.CompanyEntry;
 import mgdb.site.model.GameEntry;
 import mgdb.site.service.SiteService;
 import mgdb.site.service.SiteServiceFactory;
-import mgdb.site.model.CompanyEntry;
-import mgdb.site.model.WorkerEntry;
-import mgdb.site.model.CharacterEntry;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -80,52 +79,6 @@ public class GameHandler implements ActionHandler {
 //					}
 
 					return "games";
-				}
-
-				// get series info
-				else if(action.equals("series")) {
-
-					if(action2.equals("search")) {
-						// get game entries
-						ArrayList<GameEntry> gameEntries = site.getGamesBySeriesTitle(search);
-						ArrayList<String> entries = new ArrayList<>();
-
-						String add = "";
-						for (GameEntry ge : gameEntries) {
-							add = "Series: " + ge.getSeries().getName() + "\n Game: " + ge.getEnglishName() + "\n" + ge.getSeries().getDescription();
-							// get the contents out and display
-							entries.add(add);
-						}
-
-						String[] entriesStr = entriesNone(entries);
-						req.setAttribute("entries", entriesStr);
-					}
-
-					return "series";
-				}
-
-				else if(action.equals("workers")) {
-
-					if (action2.equals("search")) {
-
-						ArrayList<WorkerEntry> workerEntries = site.getAllWorkersByGameName(search);
-
-						// get name of workers
-						ArrayList<String> entries = new ArrayList<>();
-
-						String add = "";
-						for (WorkerEntry we : workerEntries) {
-							add = we.getFirstName() + " " + we.getLastName();
-
-							// get the contents out to display
-							entries.add(add);
-						}
-
-						String[] entriesStr = entriesNone(entries);
-						req.setAttribute("entries", entriesStr);
-					}
-
-					return "workers";
 				}
 				else if(action.equals("companies")) {
 

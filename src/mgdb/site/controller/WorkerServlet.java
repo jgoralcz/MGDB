@@ -1,7 +1,7 @@
 package mgdb.site.controller;
 
 import mgdb.site.handler.ActionHandler;
-import mgdb.site.handler.SeriesHandler;
+import mgdb.site.handler.WorkersHandler;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -15,9 +15,9 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 
-public class SeriesServlet extends HttpServlet {
+public class WorkerServlet extends HttpServlet {
 
-	private static Logger log = Logger.getLogger(SeriesHandler.class.getName());
+	private static Logger log = Logger.getLogger(WorkersHandler.class.getName());
     
     private static final long serialVersionUID = 1L;
     private static String errorPage = "wrongmethod.ftl";
@@ -54,12 +54,12 @@ public class SeriesServlet extends HttpServlet {
 		});
 
 		// add to handler
-		handlers.put("search", new SeriesHandler());
+		handlers.put("search", new WorkersHandler());
 		
 		// pages too
 		pageViews.put("/", "/index.html");
-		pageViews.put("seriesHome", "/series.html");
-		pageViews.put("series", "/series.ftl");
+		pageViews.put("workersHome", "/workers.html");
+		pageViews.put("workers", "/workers.ftl");
 		pageViews.put("wrongmethod", "/wrongmethod.ftl");
     }
 
@@ -77,7 +77,7 @@ public class SeriesServlet extends HttpServlet {
 		// if there are errors, set in case.
 		request.setAttribute("error", "Page Action Error");
 //		String forwardPage = errorPage;
-		String forwardPage = pageViews.get("seriesHome");
+		String forwardPage = pageViews.get("workersHome");
 
 		String action = request.getParameter("action");
 		

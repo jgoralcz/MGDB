@@ -69,6 +69,17 @@
         <servlet-name>Series</servlet-name>
         <url-pattern>/series/*</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Workers</servlet-name>
+        <servlet-class>mgdb.site.controller.WorkerServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Workers</servlet-name>
+        <url-pattern>/workers/*</url-pattern>
+    </servlet-mapping>
   
     
 	<welcome-file-list>
