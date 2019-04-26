@@ -1,6 +1,5 @@
 package mgdb.site.handler;
 
-import mgdb.site.model.CharacterEntry;
 import mgdb.site.model.CompanyEntry;
 import mgdb.site.model.GameEntry;
 import mgdb.site.service.SiteService;
@@ -100,8 +99,7 @@ public class GameHandler implements ActionHandler {
 						String[] entriesStr = entriesNone(entries);
 						req.setAttribute("entries", entriesStr);
 
-					}
-					else if (action2.equals("company")) {
+					} else if (action2.equals("company")) {
 						ArrayList<CompanyEntry> companyEntries = site.getGamesByCompanyName(search);
 
 						// get name of workers
@@ -121,28 +119,6 @@ public class GameHandler implements ActionHandler {
 					}
 
 					return "companies";
-				}
-				else if(action.equals("characters")) {
-
-					if (action2.equals("search")) {
-
-						ArrayList<CharacterEntry> characterEntries = site.getAllMainCharactersByGameName(search);
-
-						// get name of workers
-						ArrayList<String> entries = new ArrayList<>();
-
-						String add = "";
-						for (CharacterEntry ce : characterEntries) {
-							add = ce.getName() + "\n" + ce.getDescription();
-							// get the contents out to display
-							entries.add(add);
-						}
-
-						String[] entriesStr = entriesNone(entries);
-						req.setAttribute("entries", entriesStr);
-					}
-
-					return "characters";
 				}
 
 			} else {
