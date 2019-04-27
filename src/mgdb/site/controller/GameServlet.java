@@ -55,6 +55,7 @@ public class GameServlet extends HttpServlet {
 
 		// add to handler
 		handlers.put("search", new GameHandler());
+		handlers.put("add", new GameHandler());
 		
 		// pages too
 		pageViews.put("/", "/index.html");
@@ -80,6 +81,7 @@ public class GameServlet extends HttpServlet {
 		String forwardPage = pageViews.get("gamesHome");
 
 		String action = request.getParameter("action");
+		System.out.println(action);
 		
 		if (action != null && action.length() > 0) {
 			// Forward to web application to page indicated by action

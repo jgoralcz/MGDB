@@ -26,24 +26,26 @@ public class SeriesHandler implements ActionHandler {
 				String search = req.getParameter("search");
 
 				System.out.println(action + " " + action2 + " " + search);
-				if (action == null || action.length() == 0 || action2 == null || action2.length() == 0 || search == null || search.length() == 0) {
+				if (action == null || action.length() == 0 || action2 == null || action2.length() == 0) {
 					// redirect them back home.
 					req.setAttribute("error", "No action provided");
 					return "/";
 				}
 
 				// add a new game
-				// for the purpose of our assignment, we will not be adding a game.
-//				if (action.equals("Add")) {
-//					String fName = req.getParameter("title");
-//
-//					// create game
-//					PhoneVO phoneVO = DAOMockBizLayer.createGame(title);
-//					// inserts if it's not found
-//					DAOMockBizLayer.insert(phoneVO);
-//
-//					req.setAttribute("add", "Added the new game.");
-//				}
+				else if (action.equals("add")) {
+
+					// get all of our data
+					String seriesName = req.getParameter("name");
+					String description = req.getParameter("description");
+					String image = req.getParameter("image");
+
+					System.out.println(site.insertSeries(seriesName, null, description, image));
+
+					req.setAttribute("add", "Added the new series.");
+
+					return "series";
+				}
 
 				// get series info
 				else if(action.equals("search")) {
@@ -78,7 +80,7 @@ public class SeriesHandler implements ActionHandler {
 			return "wrongmethod";
 		}
 
-		return "/";
+		return "series";
 	}
 
 	// if entries array is empty, say none.

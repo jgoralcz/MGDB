@@ -9,7 +9,7 @@
 --
 SELECT s.description, s.name, g.english_name
 FROM Series s
-JOIN Games g ON s.id = g.series_id
+JOIN Games g ON s.id = g.series_id;
 -- WHERE s.name = ?;
 
 --
@@ -68,22 +68,6 @@ JOIN Companies_Game cg ON g.id=cg.game_id
   JOIN Companies c ON cg.company_id=c.id
 WHERE g.english_name LIKE '%' || ? || '%';
 -- WHERE GAME LIKE '%name%'
-
---
--- get all workers who worked on a game, order by the first name ascending
---
-SELECT first_name, last_name
-FROM Games g
-  LEFT JOIN Works_On wo ON g.id=game_id
-  LEFT JOIN Workers w ON w.id=wo.worker_id
-  LEFT JOIN Developers dev ON w.id=dev.worker_id
-  LEFT JOIN Directors dir ON w.id=dir.worker_id
-  LEFT JOIN Writers wri ON w.id=dir.worker_id
-  LEFT JOIN Composers comp ON w.id=comp.worker_id
-  LEFT JOIN Producers pro ON w.id=pro.worker_id
-# WHERE g.id = 100004
-WHERE g.id = ?
-ORDER BY first_name ASC;
 
 --
 -- get all main character names and descriptions who are in a specific game

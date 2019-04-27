@@ -25,15 +25,17 @@ public class GameHandler implements ActionHandler {
 				String action2 = req.getParameter("Action");
 				String search = req.getParameter("search");
 
-				System.out.println(action + " " + action2 + " " + search);
-				if (action == null || action.length() == 0 || action2 == null || action2.length() == 0 || search == null || search.length() == 0) {
+				System.out.println("actions: " + action + " " + action2 + " " + search);
+				if (action == null || action.length() == 0 || action2 == null || action2.length() == 0) {
 					// redirect them back home.
 					req.setAttribute("error", "No action provided");
 					return "/";
 				}
 
+
 				// add a new game
-				if (action.equals("Add")) {
+				else if (action.equals("add")) {
+					System.out.println("hi");
 
 					// get all of our data
 					String englishName = req.getParameter("english_name");
@@ -47,33 +49,24 @@ public class GameHandler implements ActionHandler {
 					// engine
 					String engineName = req.getParameter("english_name");
 
-					// company
-					String companyName = req.getParameter("company_name");
-
 					// Platform
 					String platformName = req.getParameter("platform_name");
-
-					// Genres
-					String genres = req.getParameter("genres");
-					
-
-					// create new game
-
-					// create new series
-
-					// create new engine
-
-					// add platform stuff
-
-					// split commas, add genres stuff
-
-
 					// create game
-					PhoneVO phoneVO = DAOMockBizLayer.createGame(title);
-					// inserts if it's not found
-					DAOMockBizLayer.insert(phoneVO);
+
+					// notice: while I could put it into a transaction, it doesn't really matter in my opinion.
+					// the whole point of the site is to add as much details as we possibly can. That's it.
+
+					System.out.println(site.insertSeries(seriesName, null, null, null));
+
+					System.out.println(site.insertEngine(engineName, null, null, null));
+
+//					site.insertPlatform(platformName, null, null, null);
+
+//					site.insertGame(engineID, seriesID, englishName, otherName, gameDescription, gameImage);
 
 					req.setAttribute("add", "Added the new game.");
+
+					return "games";
 				}
 
 				// list

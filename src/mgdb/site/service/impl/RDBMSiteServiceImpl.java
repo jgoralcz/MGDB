@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.sql.Statement;
 
 public class RDBMSiteServiceImpl implements SiteService {
 	private static Properties __dbProperties;
@@ -58,6 +59,8 @@ public class RDBMSiteServiceImpl implements SiteService {
 			conn = getConnection();
 			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.getGamesBySeriesTitle"));
 			stmt.setString(1, seriesTitle);
+			stmt.setString(2, seriesTitle);
+			stmt.setString(3, seriesTitle);
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 				rval.add(new GameEntry(-1, null, rs.getString(3), null, null, null,
@@ -182,6 +185,183 @@ public class RDBMSiteServiceImpl implements SiteService {
 			}
 		}
 		return rval;
+	}
+
+	@Override
+	public Integer insertGame(int engineID, int seriesID, String englishName, String otherName, String gameDescription, String image) {
+
+		Integer res = -1;
+
+		// must have valid input
+		if (englishName == null) {
+			return -1;
+		}
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
+			conn = getConnection();
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.insertGame"), Statement.RETURN_GENERATED_KEYS);
+			stmt.setInt(1, engineID);
+			stmt.setInt(2, seriesID);
+			stmt.setString(3, englishName);
+			stmt.setString(4, otherName);
+			stmt.setString(5, gameDescription);
+			stmt.setString(6, image);
+			int updatedRows = stmt.executeUpdate();
+
+			// get our key back.
+			ResultSet rs = stmt.getGeneratedKeys();
+			if (rs.next()){
+				res = rs.getInt(1);
+			}
+			rs.close();
+
+		} catch (Exception sqe) {
+			sqe.printStackTrace();
+			return -1;
+		} finally {  // why nest all of these try/finally blocks?
+			try {
+				if (stmt != null) { stmt.close(); }
+			} catch (Exception e2) { e2.printStackTrace(); }
+			finally {
+				try {
+					if (conn != null) { conn.close(); }
+				} catch (Exception e3) { e3.printStackTrace(); }
+			}
+		}
+
+		return res;
+	}
+
+	@Override
+	public Integer insertSeries(String seriesName, String date, String description, String image) {
+
+		Integer res = -1;
+
+		// must have valid input
+		if (seriesName == null) {
+			return -1;
+		}
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
+			conn = getConnection();
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.insertSeries"));
+			stmt.setString(1, seriesName);
+			stmt.setString(2, description);
+			stmt.setString(3, image);
+			int updatedRows = stmt.executeUpdate();
+
+			// get our key back.
+			ResultSet rs = stmt.getGeneratedKeys();
+			if (rs.next()){
+				res = rs.getInt(1);
+			}
+			rs.close();
+
+		} catch (Exception sqe) {
+			sqe.printStackTrace();
+			return -1;
+		} finally {  // why nest all of these try/finally blocks?
+			try {
+				if (stmt != null) { stmt.close(); }
+			} catch (Exception e2) { e2.printStackTrace(); }
+			finally {
+				try {
+					if (conn != null) { conn.close(); }
+				} catch (Exception e3) { e3.printStackTrace(); }
+			}
+		}
+
+		return res;
+	}
+
+	@Override
+	public Integer insertEngine(String engineName, String date, String description, String image) {
+
+		Integer res = -1;
+
+		// must have valid input
+		if (engineName == null) {
+			return -1;
+		}
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
+			conn = getConnection();
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.insertEngine"));
+			stmt.setString(1, engineName);
+			stmt.setString(2, date);
+			stmt.setString(3, description);
+			stmt.setString(4, image);
+			int updatedRows = stmt.executeUpdate();
+			// get our key back.
+
+			ResultSet rs = stmt.getGeneratedKeys();
+			if (rs.next()){
+				res = rs.getInt(1);
+			}
+			rs.close();
+
+		} catch (Exception sqe) {
+			sqe.printStackTrace();
+			return -1;
+		} finally {  // why nest all of these try/finally blocks?
+			try {
+				if (stmt != null) { stmt.close(); }
+			} catch (Exception e2) { e2.printStackTrace(); }
+			finally {
+				try {
+					if (conn != null) { conn.close(); }
+				} catch (Exception e3) { e3.printStackTrace(); }
+			}
+		}
+
+		return res;
+	}
+
+	@Override
+	public Integer insertPlatform(String platformName, String date, String description, String image) {
+
+		Integer res = -1;
+
+		// must have valid input
+		if (platformName == null) {
+			return -1;
+		}
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
+			conn = getConnection();
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.insertPlatform"));
+			stmt.setString(1, platformName);
+			stmt.setString(2, date);
+			stmt.setString(3, description);
+			stmt.setString(4, image);
+			int updatedRows = stmt.executeUpdate();
+
+			// get our key back.
+			ResultSet rs = stmt.getGeneratedKeys();
+			if (rs.next()){
+				res = rs.getInt(1);
+			}
+			rs.close();
+
+		} catch (Exception sqe) {
+			sqe.printStackTrace();
+			return -1;
+		} finally {  // why nest all of these try/finally blocks?
+			try {
+				if (stmt != null) { stmt.close(); }
+			} catch (Exception e2) { e2.printStackTrace(); }
+			finally {
+				try {
+					if (conn != null) { conn.close(); }
+				} catch (Exception e3) { e3.printStackTrace(); }
+			}
+		}
+
+		return res;
 	}
 
 	@Override

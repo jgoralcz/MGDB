@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS Companies_Game (
 -- platform id, starts at 1
 CREATE TABLE IF NOT EXISTS Platforms (
   id          INTEGER AUTO_INCREMENT,
-  name        VARCHAR(32),
+  name        VARCHAR(32) NOT NULL UNIQUE,
   description TEXT,
   date        DATE,
   image       VARCHAR(256),

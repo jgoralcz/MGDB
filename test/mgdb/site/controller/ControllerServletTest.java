@@ -33,11 +33,11 @@ import org.junit.Test;
 
 public class ControllerServletTest {
 
-	ControllerServlet servlet;
+	GameServlet servlet;
 
 	@Before
 	public void setUp() throws Exception {
-		servlet = new ControllerServlet();
+		servlet = new GameServlet();
 	}
 
 	@After
@@ -47,7 +47,7 @@ public class ControllerServletTest {
 
 	@Test
 	public void testInitServletConfig() {
-		ControllerServlet servlet = new ControllerServlet();
+		GameServlet servlet = new GameServlet();
 		assertNotNull(servlet);
 	}
 

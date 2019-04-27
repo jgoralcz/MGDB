@@ -55,6 +55,7 @@ public class SeriesServlet extends HttpServlet {
 
 		// add to handler
 		handlers.put("search", new SeriesHandler());
+		handlers.put("add", new SeriesHandler());
 		
 		// pages too
 		pageViews.put("/", "/index.html");

@@ -27,4 +27,12 @@ public interface SiteService {
 
     ArrayList<SeriesEntry> getAllSeriesInfo(String id);
 
+    Integer insertGame(int engineID, int seriesID, String englishName, String otherName, String gameDescription, String image);
+
+    Integer insertSeries(String seriesName, String date, String description, String image);
+
+    Integer insertEngine(String engineName, String date, String description, String image);
+
+    Integer insertPlatform(String platformName, String date, String description, String image);
+
 }

@@ -34,17 +34,9 @@ _________
 In case you are given gibberish data, you can check in the properties/rdbm.properties file
 to see what each of them should return.
 
-Otherwise, I will explain:
+The site has also been updated with its own servlets. I added a write operation for the Game servlet.
+Otherwise, you can search for each thing by clicking on them.
 
-Games has two functions when searching: list and all. List is a brief overview, while all is mostly all information on it (descriptions).
-
-Series searches for games when you're searching for a series name.
-
-Game Workers searches for workers by a given game's name. In other words, who all worked on this game?
-
-Main Character searches for main characters of a given game by game name.
-
-Companies searches by either company name or game name. Where you can find game info or company info based on which one you choose.
 
 ________
 
@@ -52,7 +44,7 @@ ________
 Finally, JUnit & DBUnit testing was finished. The tests are found in the `/test` folder. 
 
 To execute the tests:
-1. Change password variable in the TestDb.class file to your MySql password.  
+1. Change password variable in the TestDb.class file to your MySQL password.  
 2. Run in the terminal in the root folder `ant test`.
 
 ________
