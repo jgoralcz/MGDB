@@ -135,3 +135,8 @@ Before this query (sql.getAllWorkersByGameName) ran about: 7.764 sec / 0.0024 se
 
 However, after I denormalized, the query took 2.967 sec / .00075 sec (huge improvement! At a cost... See above)
 This huge improvement is because of the 5 joins I did not have to perform.
+
+5) As for testing the site, I tried to open up Tomcat in about 30 tabs and press enter on the search each time while 
+using a keyboard shortcut to jump between tabs. While being unorthodox, I could not determine any slowness when searching, 
+except for workers (see above; again this is on about 450,000+ records per table).
+

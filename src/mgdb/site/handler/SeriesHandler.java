@@ -40,6 +40,8 @@ public class SeriesHandler implements ActionHandler {
 					String description = req.getParameter("description");
 					String image = req.getParameter("image");
 
+					Integer seriesKey = site.insertSeries(seriesName, null, description, image);
+
 					req.setAttribute("add", "Added the new series.");
 
 					return "series";

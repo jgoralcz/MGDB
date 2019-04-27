@@ -35,7 +35,6 @@ public class GameHandler implements ActionHandler {
 
 				// add a new game
 				else if (action.equals("add")) {
-					System.out.println("hi");
 
 					// get all of our data
 					String englishName = req.getParameter("english_name");
