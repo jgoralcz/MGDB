@@ -50,19 +50,18 @@ public class GameHandler implements ActionHandler {
 					String engineName = req.getParameter("english_name");
 
 					// Platform
-					String platformName = req.getParameter("platform_name");
+//					String platformName = req.getParameter("platform_name");
 					// create game
 
 					// notice: while I could put it into a transaction, it doesn't really matter in my opinion.
 					// the whole point of the site is to add as much details as we possibly can. That's it.
 
-					System.out.println(site.insertSeries(seriesName, null, null, null));
-
-					System.out.println(site.insertEngine(engineName, null, null, null));
+					Integer seriesKey = site.insertSeries(seriesName, null, null, null);
+					Integer engineKey = site.insertEngine(engineName, null, null, null);
 
 //					site.insertPlatform(platformName, null, null, null);
 
-//					site.insertGame(engineID, seriesID, englishName, otherName, gameDescription, gameImage);
+					site.insertGame(engineKey, seriesKey, englishName, otherName, gameDescription, gameImage);
 
 					req.setAttribute("add", "Added the new game.");
 

@@ -246,10 +246,11 @@ public class RDBMSiteServiceImpl implements SiteService {
 		PreparedStatement stmt = null;
 		try {
 			conn = getConnection();
-			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.insertSeries"));
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.insertSeries"), Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, seriesName);
-			stmt.setString(2, description);
-			stmt.setString(3, image);
+			stmt.setString(2, seriesName);
+			stmt.setString(3, description);
+			stmt.setString(4, image);
 			int updatedRows = stmt.executeUpdate();
 
 			// get our key back.
@@ -289,7 +290,7 @@ public class RDBMSiteServiceImpl implements SiteService {
 		PreparedStatement stmt = null;
 		try {
 			conn = getConnection();
-			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.insertEngine"));
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.insertEngine"), Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, engineName);
 			stmt.setString(2, date);
 			stmt.setString(3, description);
@@ -333,7 +334,7 @@ public class RDBMSiteServiceImpl implements SiteService {
 		PreparedStatement stmt = null;
 		try {
 			conn = getConnection();
-			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.insertPlatform"));
+			stmt = conn.prepareStatement(__dbProperties.getProperty("sql.insertPlatform"), Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, platformName);
 			stmt.setString(2, date);
 			stmt.setString(3, description);
